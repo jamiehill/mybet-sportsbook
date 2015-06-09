@@ -1,6 +1,7 @@
 {
   "jspm": {
     "registry": "jspm",
+		"configFile": "config.js",
     "directories": {
       "baseURL": "./",
       "jspmPackages": "vendor",
