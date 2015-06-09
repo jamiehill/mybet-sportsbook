@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Marionette ES6</title>
+    <script src="vendor/system.js"></script>
+    <script src="config.js"></script>
+</head>
+<body>
+    <div id="main">
+    <script>
+        System.import('backbone').then(function(Backbone) {
+            System.import('jquery').then(function() {
+                System.import('app/boot');
+            });
+        });
+    </script>
+</body>
+</html>
