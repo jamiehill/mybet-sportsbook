@@ -1,6 +1,7 @@
-import 'marionette-shim';
 import Marionette from 'marionette';
 import AppLayout from 'app/view/app-layout';
+// shims marionette with backbone/jquery
+import 'marionette-shim';
 
 var App = App || {};
 
