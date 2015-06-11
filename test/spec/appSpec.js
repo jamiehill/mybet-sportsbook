@@ -8,10 +8,10 @@ describe('app', function() {
 	});
 
 	it('should be instance of Marionette.Application', function() {
-		expect(App.core instanceof Marionette.Application).toBeTruthy();
+		expect(App instanceof Marionette.Application).toBeTruthy();
 	})
 
 	it('should expose start method', function() {
-		expect(_.isFunction(App.core.start)).toBeTruthy();
+		expect(_.isFunction(App.start)).toBeTruthy();
 	})
 });
