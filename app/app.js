@@ -1,15 +1,16 @@
+import 'marionette-shim';
 import Marionette from 'marionette';
-import AppView from 'app/view/AppView'
+import AppLayout from 'app/view/app-layout';
 
-var App = new Marionette.Application();
+var App = App || {};
 
-App.addRegions({
-    main: "#main"
+App.core = new Marionette.Application();
+App.core.addInitializer(function() {
+
+	App.layout = new AppLayout({el: '#main'});
+	App.layout.render();
+
 });
 
-App.on('start', function() {
-    'use strict';
-    App.main.show(new AppView());
-});
-
-App.start();
+export default App;
+App.core.start();

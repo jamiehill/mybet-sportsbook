@@ -1,26 +1,21 @@
 module.exports = function(config) {
 	config.set({
 
-		basePath: '.',
-		frameworks: ['systemjs', 'jasmine'],
 
-		jspm: {
-			config: 'system.config.js',
-			packages: 'vendor/',
-			loadFiles: [
-				'test/unit/**/*Spec.js'
-			],
-			serveFiles: [
-				'app/**/**'
-			]
-		},
+		basePath: '.',
+		frameworks: ['systemjs', 'jasmine', 'fixture'],
+		logLevel: config.LOG_INFO,
+
 
 		systemjs: {
 			configFile: 'system.config.js',
 			testFileSuffix: 'Spec.js',
 			files: [
-				'app/**/**',
-				'test/unit/**/*Spec.js'
+				'marionette-shim.js',
+				'vendor/**/**',
+				'test/spec/**/*Spec.js',
+				'test/spec/fixtures/**/*',
+				'app/**/*.*'
 			],
 			config: {
 				paths: {
@@ -31,17 +26,12 @@ module.exports = function(config) {
 		},
 
 
-		plugins: [
-			'karma-systemjs',
-			'karma-jasmine',
-			'karma-chrome-launcher',
-			'karma-spec-reporter',
-			'karma-babel-preprocessor'
-		],
-
 		preprocessors: {
-			'test/unit/**/*.js': ['babel']
+			'test/unit/**/*.js': ['babel'],
+			'app/**/*.js': ['babel'],
+			'test/unit/fixtures/**/*.html': ['html2js']
 		},
+
 
 		'babelPreprocessor': {
 			options: {
@@ -50,20 +40,33 @@ module.exports = function(config) {
 			}
 		},
 
+
 		coverageReporter: {
 			type : 'html',
 			dir : 'coverage/'
 		},
 
-		browsers: ['Chrome'],
+
+		plugins: [
+			'karma-systemjs',
+			'karma-jasmine',
+			'karma-chrome-launcher',
+			'karma-phantomjs-launcher',
+			'karma-spec-reporter',
+			'karma-babel-preprocessor',
+			'karma-html2js-preprocessor',
+			'karma-fixture'
+		],
+
+
+		browsers: ['PhantomJS'],
 		reporters: ['spec'],
+
 
 		singleRun: false,
 		colors: true,
-
 		files: [],
-		exclude: [],
+		exclude: []
 
-		logLevel: config.LOG_DEBUG
 	});
 };
