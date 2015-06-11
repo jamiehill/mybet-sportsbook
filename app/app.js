@@ -3,15 +3,15 @@ import AppLayout from 'app/view/app-layout';
 // shims marionette with backbone/jquery
 import 'marionette-shim';
 
-var App = App || {};
 
-App.core = new Marionette.Application();
-App.core.addInitializer(function() {
+var App = new Marionette.Application();
+App.addInitializer(function() {
 
 	App.layout = new AppLayout({el: '#main'});
 	App.layout.render();
 
 });
 
+// export the application
 export default App;
-App.core.start();
+App.start();
