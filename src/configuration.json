@@ -1,0 +1,18 @@
+{
+	"client": "pokerstars",
+	"application": "web-sportsbook",
+	"title": "Pokerstars Sportsbook",
+	"defaultLotteryDomain": "http://trading-baba.amelco.co.uk",
+	"defaultDomainThers": "https://sports.uat.pyr/",
+	"defaultDomain": "https://sports.uat.pyr/",
+	"defaultDomain": "https://sports.pokerstars.com",
+	"defaultDomain": "https://sports-ats1.uat.pyrsoftware.ca",
+	"endpoint": "sportsbook/v1/api",
+	"wsendpoint": "/websocket",
+	"lpendpoint": "/longpoll",
+	"lotteryEndpoint": "rgs/lottery/",
+	"traderEndpoint": "ats-trader/api/",
+	"ctx": "app/local/PokerstarsConfig",
+	"useSecure": "true",
+	"defaultLocale": "en-ie"
+}

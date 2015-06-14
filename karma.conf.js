@@ -3,19 +3,29 @@ module.exports = function(config) {
 
 
 		basePath: '.',
-		frameworks: ['systemjs', 'jasmine', 'fixture'],
 		logLevel: config.LOG_INFO,
-
+		frameworks: ['systemjs', 'mocha', 'chai', 'chai-as-promised', 'sinon-chai'],
+		plugins: [
+			'karma-mocha',
+			'karma-chai',
+			'karma-chai-plugins',
+			'karma-systemjs',
+			'karma-chrome-launcher',
+			'karma-phantomjs-launcher',
+			'karma-spec-reporter',
+			'karma-mocha-reporter',
+			'karma-babel-preprocessor'
+		],
 
 		systemjs: {
 			configFile: 'system.config.js',
 			testFileSuffix: 'Spec.js',
 			files: [
-				'marionette-shim.js',
+				'marionette.shim.js',
+				//'test/setup/**.js',
 				'vendor/**/**',
 				'test/spec/**/*Spec.js',
-				'test/spec/fixtures/**/*',
-				'app/**/*.*'
+				'src/**/*.*'
 			],
 			config: {
 				paths: {
@@ -27,9 +37,8 @@ module.exports = function(config) {
 
 
 		preprocessors: {
-			'test/unit/**/*.js': ['babel'],
-			'app/**/*.js': ['babel'],
-			'test/unit/fixtures/**/*.html': ['html2js']
+			'test/**/*.js': ['babel'],
+			'src/**/*.js': ['babel']
 		},
 
 
@@ -45,18 +54,6 @@ module.exports = function(config) {
 			type : 'html',
 			dir : 'coverage/'
 		},
-
-
-		plugins: [
-			'karma-systemjs',
-			'karma-jasmine',
-			'karma-chrome-launcher',
-			'karma-phantomjs-launcher',
-			'karma-spec-reporter',
-			'karma-babel-preprocessor',
-			'karma-html2js-preprocessor',
-			'karma-fixture'
-		],
 
 
 		browsers: ['PhantomJS'],
