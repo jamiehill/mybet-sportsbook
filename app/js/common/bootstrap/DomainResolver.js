@@ -1,12 +1,10 @@
 import * as regEx from '../utils/RegEx';
 import DeferredBase from '../core/Deferred';
 
-
 export default class DomainResolver extends DeferredBase {
 	constructor(name) {
 		super('DomainResolver');
 	}
-
 
 	initialize() {
 
@@ -31,7 +29,6 @@ export default class DomainResolver extends DeferredBase {
 
 		this.success();
 	}
-
 
 	/**
 	 * @param name

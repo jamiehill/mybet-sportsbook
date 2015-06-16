@@ -1,12 +1,10 @@
 import DeferredBase from '../core/Deferred';
 import Translator from '../../common/translation/Translator';
 
-
 export default class TranslatorConfig extends DeferredBase {
 	constructor(name) {
 		super('TranslatorConfig');
 	}
-
 
 	initialize() {
 		App.Translator = new Translator();
