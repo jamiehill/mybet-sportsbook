@@ -1,0 +1,182 @@
+
+
+#betslip {
+	
+	ul.tabs {
+		
+		 background-color: #A63B25;
+		 padding:0;
+		 
+		&:after {
+			content:'';
+			clear:both;
+			display: table;
+		}	
+		
+		
+		li {
+			  float: left;
+			  width: 33%;
+			  border-bottom: 1px solid #A03925;
+			  box-shadow: 1px 0px 0px #9B3622;
+			  padding-bottom: 2px;
+			
+			a {
+		      color: #ECCAC2;
+			  text-decoration: none;
+			  font-family: 'Ubuntu', sans-serif;
+			  font-weight: 400;
+			  font-size: 15px;
+			  display: block;
+			  color: #FFF;
+			  padding: 7px;
+			  text-align: center;
+			}
+			
+			&.active {
+				  border-bottom: 1px solid #C6452B;
+				  box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.17);
+				  background-color: #C6452B;
+				
+				a {
+					font-weight: 600;
+					color:#fff;
+				}
+			}
+		}
+		
+	}
+	
+	.tab-pane {
+		
+		.tab {
+			display:none;
+			
+			&.open {
+				display:block;
+			}
+		}
+	}
+	
+	.inner-slip {
+		background-color: #C6452B;
+		width: 100%; 
+		color:#fff;
+		@extend .clearfix; 
+		  
+	}
+	
+	.left {
+		float:left;
+		width:50%;
+	}
+	.right {
+		float:left;
+		width:50%;
+		position: relative;
+	}
+	
+	ul {
+	 	padding: 12px;
+	 	padding-bottom: 0;
+	}
+	
+	span.small{
+	    font-size: 12px;
+		font-weight: 400;
+		display: block;
+		padding-bottom: 1px;
+	}
+	span.large {
+		  padding: 1px 0px 12px;
+		  display: block;
+		  font-size: 25px;
+		  font-weight: 500;
+	}
+	
+	
+	
+	// single bet row styles
+	.bet-row {
+		 
+		 border-bottom: 1px solid #AA3B24;
+		 line-height: 19px;
+		 
+		.left {
+		  float: left;
+		  width: 13%;
+		  padding: 13px;
+		  text-align: center;
+		}
+		.right {
+		  float: left;
+		  width: 87%;
+		  padding: 12px;
+		  font-size: 13px;
+		  font-weight: 400;
+		  padding-left: 0;
+		}
+		
+		ul {
+			padding:0;
+			margin:0;
+			
+			li {
+				
+				&:after {
+					@extend .clearfix;
+				}
+				
+				span {
+						font-weight:400;
+				}
+				
+				.left, .right {
+					float:left;
+					padding:0;
+					 text-align: left;
+				}
+				
+				.left {
+					  width: 75%;
+				}
+				
+				.right {
+					text-align: right;	
+					width:25%;
+				}
+			}
+		}
+		
+		.sel-stake span {
+			font-weight: 600;
+		}
+	}
+
+
+}
+
+#place-bet {
+	
+  background-color: #FFF;
+  padding: 12px;
+  margin: 12px;
+  text-align: center;
+  color: #C6452B;
+  border-radius: 2px;
+  display: block;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+.bet-chart{
+	margin-right:10px;
+	margin-top:10px;
+}
+
+
+
+
+
+

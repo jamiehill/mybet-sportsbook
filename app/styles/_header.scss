@@ -1,0 +1,156 @@
+
+
+
+@mixin navLink() {
+	color:#C9C9C9;
+	text-decoration: none;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    display: block;
+
+	&:hover {
+		color:#fff;
+	}
+}
+
+
+#header {
+	  background-color: rgba(35, 35, 35, 0.93);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+}
+
+.logo {
+	  height: 50px;
+	  display: block;
+	  width: 200px;
+	  float: left;
+	  background-image: url('../images/logo.gif');
+	  background-repeat: no-repeat;
+	  background-position: left;
+	  text-decoration: none;
+	  text-indent: -9999px;
+	  margin-left: 5px;
+}
+
+
+#top-nav {
+
+	float:right;
+	margin-right: 5px;
+
+	ul{
+		@extend .clearfix;
+	}
+
+
+	li {
+		float:left;
+		margin-left: 30px;
+		margin-top: 2px;
+
+		a {
+			 @include navLink();
+		}
+
+	}
+}
+
+#sub-nav-container {
+
+	@include transition(all .2s ease);
+	 border-bottom: 1px solid transparent;
+	 border-top: 1px solid transparent;
+
+	&.fixed {
+		  position: fixed;
+		  top: 50px;
+		  left: 0px;
+		  width: 100%;
+		  z-index: 100;
+		  background-color: rgba(35, 35, 35, 0.93);
+		  border-bottom: 1px solid #212121;
+		  border-top: 1px solid #1A1A1A;
+		  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+
+		&:before {
+			content:'';
+			position: relative;
+			height:51px;
+		}
+	}
+}
+
+
+#sub-nav {
+
+	  display: block;
+	  padding: 6px;
+	   padding-bottom: 6px;
+
+
+	  &:after {
+		  @extend .clearfix;
+	  }
+
+	ul {
+		float:right;
+
+		li {
+		    float: left;
+			text-align: center;
+
+		  a {
+			 @include navLink();
+		  }
+		}
+	}
+
+
+	ul.icon-links {
+
+		 margin-top: 6px;
+
+		 li {
+			a {
+				  border: 1px solid #424242;
+				  padding: 3px 10px;
+				  border-radius: 2px;
+				  margin-right: 12px;
+
+				  &:hover {
+					   border: 1px solid #777777;
+				  }
+			}
+
+			&:last-child {
+				a { margin-right:0; }
+			}
+		}
+	}
+
+	ul.text-links {
+		li {
+			  margin-right: 35px;
+		}
+	}
+
+	ul.menu-links {
+		float:left;
+
+		i {
+			  font-size: 37px;
+			  line-height: 10px;
+			  vertical-align: sub;
+			  margin-right:10px;
+		}
+	}
+
+
+}
+

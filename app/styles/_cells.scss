@@ -1,0 +1,75 @@
+
+.all-cells {
+	padding:$cell-padding;
+	min-height:$cell-min-height;
+	float:left;
+	
+	> .inner-cell {
+		padding: $cell-inner-padding;
+		min-height:($cell-min-height - ($cell-padding*2));
+	}
+}
+
+
+.cell-1 {
+	@extend .all-cells;
+	width:25%;
+	@media #{$below-1680} {
+		width:50%;
+	}
+}
+
+.cell-2 {
+	@extend .all-cells;
+	width:25%;
+	@media #{$below-1680} {
+		width:33.333%;
+	}
+}
+
+.cell-3 {
+	@extend .all-cells;
+	width:50%;
+	@media #{$below-1680} {
+		width:66.666%;
+	}
+}
+
+.cell-4 {
+	@extend .all-cells;
+	width:75%;
+	@media #{$below-1680} {
+		width:100%;
+	}
+}
+
+.cell-5 {
+	@extend .all-cells;
+	width:100%;
+}
+
+.under-1680 {
+	display:none;
+	visibility: hidden;
+}
+
+@media #{$below-1680} {
+	.over-1680 {
+		display:none;
+		visibility: hidden;	
+	 }
+	 
+	 .under-1680 {
+		 display:block;
+		 visibility: visible;
+	 }
+}
+
+
+
+.inner-cell {
+  background-color: rgba(58, 58, 58, 0.95);
+}
+
+
+

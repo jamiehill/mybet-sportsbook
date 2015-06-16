@@ -1,0 +1,80 @@
+
+.table {
+	display: table;
+	width: 100%;
+}
+
+.table-row {
+	display: table-row;
+}
+
+.table-cell {
+	display:table-cell;
+}
+
+
+
+// base table styles
+.regular-table {
+	
+	.header {
+		.table-cell, & .table-cell:first-child {
+		  font-size: 12px;
+		  color: #8D8D8D;
+		  font-weight: 500;
+		  border-right: none;
+		  border-left: none;
+		}
+	}
+	
+	.align-center {
+		text-align:center;	
+	}
+	.align-right {
+		text-align:right;	
+	}
+	.align-left {
+		text-align:left;	
+	}
+
+	.table-row:nth-child(even) {
+		background-color: #2D2D2D;
+	}
+	
+	.table-cell:first-child {
+	   border-left: 1px solid #383838;
+	}
+	
+	.table-cell {
+	   display: table-cell;
+	   font-weight: 300;
+	   font-size: 16px;
+	   padding: 4px 12px;
+	   vertical-align: middle;
+	   border-right: 1px solid #383838;
+	}
+	
+	span.date, span.time {
+	  display: block;
+	  text-align: center;
+	  color: #CCC;
+	  font-weight: 700;
+	  font-size: 12px;
+	  padding: 2px;
+  
+	}
+	
+	span.date {
+		 color: #B0B0B0;
+		 font-size: 11px;
+		  font-weight: 500;
+	}
+	
+	.price {
+	  color: #30BCBB;
+	  font-size: 90%;
+	  font-weight: 600;
+	  font-family: 'Source Code Pro';
+	}
+	
+}

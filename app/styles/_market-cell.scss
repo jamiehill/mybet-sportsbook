@@ -1,0 +1,54 @@
+
+
+.table.highlighted-markets {
+	
+	  margin: 5px;
+	  width: auto;
+	  min-width: 100%;
+	  margin-top: 7px;
+	  
+	  .table-cell {
+		   width: 33%;
+		   padding-bottom: 10px;
+	  }
+	  
+	  .table-row:last-child .table-cell{
+			 padding-bottom:0;
+		   
+	  }
+	  
+	  em, span {
+		  font-size: 11px;
+		  color: #D2D2D2;
+		  font-weight: 400;
+		  display: block;
+	  }
+	  
+	  span {
+		  font-size: 14px;
+		  color: #30B9B8;
+		  margin-top: 1px;
+		  font-family: 'Source Code Pro';
+		  font-weight: 600;
+	  }
+	  
+	  a {
+		   display: block;
+		  text-align: center;
+		  margin-right: 10px;
+		  border: 1px solid #515151;
+		  border-radius: 1px;
+		  padding: 2px;
+		  padding-top: 4px;
+		  padding-bottom: 4px;
+		  background-color: rgba(45, 45, 45, 0.15);
+		  
+		  &:hover {
+		  	 border: 1px solid #646464;
+			 background-color: rgba(61, 61, 61, 0.63);
+			 color:#fff;
+			  
+		  }
+	  }
+	
+}

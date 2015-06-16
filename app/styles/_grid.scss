@@ -1,0 +1,60 @@
+
+
+
+
+
+.container {
+	
+	@extend .clearfix;
+	max-width:100%;
+	width:1500px;
+	margin:auto;
+	position: relative;
+	
+	
+	@media #{$below-1680} {
+
+		width:1200px;
+		
+	}
+	
+}
+
+
+.row {
+	&:after {
+		content:'';
+		clear:both;
+		display: table;
+	}
+}
+
+
+
+
+#main-content {
+	float:left;
+	width: 80%;
+	// background-color: $grey-light;
+	@media #{$below-1680} {
+		width: 75%;
+	}
+		
+}
+
+#right-sidebar {
+	float:left;
+	width: 20%;
+	// background-color: $grey-light;
+	@media #{$below-1680} {
+		width: 25%;
+	}
+}
+
+
+
+
+
+
+
+

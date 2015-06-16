@@ -1,0 +1,50 @@
+
+
+ul.game-list {
+	
+ 	  margin-top: 13px;
+	  
+	li {
+		
+		  margin-bottom: 19px;
+		  line-height: 18px;
+		  
+		a {
+			  display: block;
+			  font-size: 11px;
+			  font-weight: 500;
+			  color: #A4A4A4;
+		}
+		
+		
+		.disc {
+			  float: left;
+			  height: 34px;
+			  padding: 7px 7px;
+			  text-align: center;
+			   margin-right: 15px;
+			  border-radius: 100%;
+			  margin-left: 10px;
+			  width: 34px;
+			  font-weight: 600;
+			  margin-top: 1px;
+			  
+			  &.red {
+				    background-color: #C5442A;
+			  }
+			  &.blue {
+				    background-color: #2FB1B0;
+			  }
+			  &.green {
+				    background-color: #2FB14E;
+			  }
+
+		}
+		a.game {
+			  font-size: 16px;
+			color:#fff;
+			font-weight: 400;
+		}
+		
+	}
+}

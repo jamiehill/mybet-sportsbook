@@ -1,0 +1,63 @@
+@import url('http://weloveiconfonts.com/api/?family=entypo');
+@import url('http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700|Source+Code+Pro:200,300,400,600,700');
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Ubuntu', sans-serif;
+	
+	&.align-center {
+		text-align: center;
+	}
+	
+	&.align-right {
+		text-align: right;
+	}
+}
+
+
+div, p, span, li, .table-cell, a {
+	font-family: 'Ubuntu', sans-serif;
+	color: #FFF;
+	font-weight: 300;
+	text-decoration: none;
+	
+	&.align-center {
+		text-align: center;
+	}
+	
+	&.align-right {
+		text-align: right;
+	}
+}
+
+h1 {
+  color: #FFF;
+  font-size: 63px;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 35px;
+  color: #DDD;
+}
+
+h3 {
+  display: block;
+  color: #8D8D8D;
+  font-size: 18px;
+  font-weight: 100;
+  padding: 5px 0px;
+}
+
+h4 {
+  color: #A7A7A7;
+  font-weight: 300;
+  padding: 5px;
+  font-size: 22px;
+}
+
