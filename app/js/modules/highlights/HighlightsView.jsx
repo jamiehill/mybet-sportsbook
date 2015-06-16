@@ -9,13 +9,12 @@ export default React.createFactory(React.createClass({
 
 
 	render: function() {
-		var rows = _.times(12, function() {
-			return <Highlight></Highlight>;
-		})
 		return (
 			<div className="cell cell-4 highlights">
 				<HighlightsPanel>
-					{rows}
+					{_.times(12, function() {
+						return <Highlight></Highlight>;
+					})}
 				</HighlightsPanel>
 			</div>
 		)
