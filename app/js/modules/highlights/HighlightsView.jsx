@@ -3,7 +3,6 @@ import mixin from '../../common/react/BackboneModelMixin';
 import HighlightsPanel from './HighlightsPanel.jsx!';
 import Highlight from './Highlight.jsx!';
 
-
 export default React.createFactory(React.createClass({
 	mixins: [mixin],
 
