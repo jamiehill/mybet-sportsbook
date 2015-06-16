@@ -17,9 +17,9 @@ var Application = Marionette.Application.extend({
 		return [
 			'app/AppConfig',
 			'common/bootstrap/DomainResolver',
-			'common/bootstrap/TranslatorConfig',
-			'common/bootstrap/RootLadder',
-			'common/bootstrap/GetRegionalSports'
+			//'common/bootstrap/TranslatorConfig',
+			//'common/bootstrap/RootLadder',
+			//'common/bootstrap/GetRegionalSports'
 		]
 	},
 
