@@ -8,3 +8,10 @@ charset=utf-8
 insert_final_newline=true
 end_of_line=lf
 trim_trailing_whitespace=true
+
+[system.config.js]
+tab_width = 2
+
+[package.json]
+tab_width = 2
+

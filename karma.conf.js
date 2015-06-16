@@ -3,8 +3,9 @@ module.exports = function(config) {
 
 
 		basePath: '.',
-		logLevel: config.LOG_INFO,
+		logLevel: config.LOG_DEBUG,
 		frameworks: ['systemjs', 'mocha', 'chai', 'chai-as-promised', 'sinon-chai'],
+
 		plugins: [
 			'karma-mocha',
 			'karma-chai',
@@ -21,11 +22,11 @@ module.exports = function(config) {
 			configFile: 'system.config.js',
 			testFileSuffix: 'Spec.js',
 			files: [
-				'marionette.shim.js',
-				//'test/setup/**.js',
+				'app/js/common/shims/marionette.shim.js',
 				'vendor/**/**',
+				'test/lib/**/*',
 				'test/spec/**/*Spec.js',
-				'src/**/*.*'
+				'app/**/*.*'
 			],
 			config: {
 				paths: {

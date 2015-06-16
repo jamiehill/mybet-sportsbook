@@ -1,5 +1,5 @@
 System.config({
-  "baseURL": "./",
+  "baseURL": "./js",
   "transpiler": "babel",
   "babelOptions": {
     "optional": [
@@ -8,8 +8,8 @@ System.config({
   },
   "paths": {
     "*": "*.js",
-    "github:*": "vendor/github/*.js",
-    "npm:*": "vendor/npm/*.js"
+    "github:*": "../../vendor/github/*.js",
+    "npm:*": "../../vendor/npm/*.js"
   }
 });
 
@@ -20,9 +20,24 @@ System.config({
     },
     "github:marionettejs/backbone.marionette@2.4.1/lib/core/backbone.marionette": {
       "deps": [
-        "marionette.shim"
+        "common/shims/marionette.shim"
       ],
       "format": "amd"
+    },
+    "github:carhartl/jquery-cookie@1.4.1": {
+      "deps": [
+        "jquery"
+      ]
+    },
+    "npm:underscore.string@^3.1.1": {
+      "deps": [
+        "underscore"
+      ]
+    },
+    "di-lite": {
+      "format": [
+        "global"
+      ]
     }
   }
 });
@@ -38,21 +53,19 @@ System.config({
     "backbone.wreqr": "github:marionettejs/backbone.wreqr@1.3.2",
     "core-js": "npm:core-js@0.9.15",
     "css": "github:systemjs/plugin-css@0.1.12",
+    "di-lite": "npm:di-lite@0.3.3",
     "handlebars": "github:components/handlebars.js@3.0.3",
-    "hbs": "github:davis/plugin-hbs@master",
     "image": "github:systemjs/plugin-image@0.1.0",
     "jquery": "github:components/jquery@2.1.4",
+    "jquery-cookie": "github:carhartl/jquery-cookie@1.4.1",
+    "jquery.nicescroll": "github:carhartl/jquery-cookie@1.4.1",
     "json": "github:systemjs/plugin-json@0.1.0",
     "marionettejs/backbone.marionette": "github:marionettejs/backbone.marionette@2.4.1",
     "process": "npm:process@0.11.1",
-    "q": "npm:q@2.0.3",
     "rivets": "npm:rivets@^0.8.1",
-    "systemjs/plugin-text": "github:systemjs/plugin-text@0.0.2",
     "text": "github:systemjs/plugin-text@0.0.2",
-    "underscore": "npm:underscore@1.8.3",
-    "github:davis/plugin-hbs@master": {
-      "handlebars": "github:components/handlebars.js@3.0.3"
-    },
+    "underscore": "npm:lodash@3.9.3",
+    "underscore.string": "npm:underscore.string@3.1.1",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -155,6 +168,9 @@ System.config({
     "npm:core-util-is@1.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
     },
+    "npm:di-lite@0.3.3": {
+      "util": "github:jspm/nodelibs-util@0.1.0"
+    },
     "npm:domain-browser@1.1.4": {
       "events": "github:jspm/nodelibs-events@0.1.1"
     },
@@ -163,6 +179,9 @@ System.config({
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:lodash@3.9.3": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:os-browserify@0.1.2": {
       "os": "github:jspm/nodelibs-os@0.1.0"
@@ -175,12 +194,6 @@ System.config({
     },
     "npm:punycode@1.3.2": {
       "process": "github:jspm/nodelibs-process@0.1.1"
-    },
-    "npm:q@2.0.3": {
-      "asap": "npm:asap@2.0.3",
-      "pop-iterate": "npm:pop-iterate@1.0.1",
-      "process": "github:jspm/nodelibs-process@0.1.1",
-      "weak-map": "npm:weak-map@1.0.5"
     },
     "npm:readable-stream@1.1.13": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -212,6 +225,9 @@ System.config({
     },
     "npm:string_decoder@0.10.31": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
+    },
+    "npm:underscore.string@3.1.1": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:url@0.10.3": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
