@@ -6,7 +6,6 @@ import Highlight from './Highlight.jsx!';
 export default React.createFactory(React.createClass({
 	mixins: [mixin],
 
-
 	render: function() {
 		return (
 			<div className="cell cell-4 highlights">
