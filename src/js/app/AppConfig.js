@@ -30,7 +30,6 @@ export default class AppConfig extends Deferred {
 	initialize() {
 		// src
 		ctx.register('vent').object(App.channel);
-		ctx.register('commands').object(App.command);
 		// models
 		ctx.register('sportsBookModel', SportsBookModel);
 		//ctx.register('bonusEntitlementModel', BonusEntitlement);

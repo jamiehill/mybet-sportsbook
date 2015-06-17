@@ -22,7 +22,7 @@ module.exports = function(config) {
 			configFile: 'config.js',
 			testFileSuffix: 'Spec.js',
 			files: [
-				'src/js/common/shims/marionette-shim.js',
+				//'src/js/common/shims/marionette-shim.js',
 				'vendor/**/**',
 				'vendor/github/*',
 				'vendor/npm/*',
@@ -43,6 +43,7 @@ module.exports = function(config) {
 			config: {
 				baseURL: "/",
 				paths: {
+					//'src/js/common/shims/marionette-shim': 'src/js/common/shims/marionette-shim.js',
 					'es6-module-loader': 'vendor/es6-module-loader.js',
 					'systemjs': 'vendor/system.js',
 					"github:*": "vendor/github/*.js",
@@ -50,6 +51,21 @@ module.exports = function(config) {
 					'app/*': 'src/js/app/*',
 					'common/*': 'src/js/common/*',
 					'modules/*': 'src/js/modules/*'
+				},
+				"meta": {
+					"github:marionettejs/backbone.marionette@2.4.1/lib/core/backbone.marionette": {
+						"format": "amd",
+						"deps": [ "common/shims/marionette-shim.js" ]
+					},
+					"github:carhartl/jquery-cookie@1.4.1": {
+						"deps": [ "jquery" ]
+					},
+					"npm:underscore.string@^3.1.1": {
+						"deps": [ "underscore" ]
+					},
+					"di-lite": {
+						"format": [ "global" ]
+					}
 				}
 			}
 		},

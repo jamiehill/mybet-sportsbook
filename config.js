@@ -18,7 +18,7 @@ System.config({
     "github:marionettejs/backbone.marionette@2.4.1/lib/core/backbone.marionette": {
       "format": "amd",
       "deps": [
-        "common/shims/marionette-shim.js"
+        "common/shims/marionette-shim"
       ]
     },
     "github:carhartl/jquery-cookie@1.4.1": {
