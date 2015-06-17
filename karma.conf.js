@@ -29,9 +29,10 @@ module.exports = function(config) {
 				'app/js/**/*.*'
 			],
 			config: {
+				baseURL: "./",
 				paths: {
-					'es6-module-loader': '../../vendor/es6-module-loader.js',
-					'systemjs': '../../vendor/system.js'
+					'es6-module-loader': 'vendor/es6-module-loader.js',
+					'systemjs': 'vendor/system.js'
 				}
 			}
 		},
@@ -39,7 +40,7 @@ module.exports = function(config) {
 
 		preprocessors: {
 			'test/**/*.js': ['babel'],
-			'app/**/*.js': ['babel']
+			'app/js/**/*.js': ['babel']
 		},
 
 
