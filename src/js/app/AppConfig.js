@@ -28,7 +28,7 @@ export default class AppConfig extends Deferred {
 	 * Add all item to register in the context here
 	 */
 	initialize() {
-		// app
+		// src
 		ctx.register('vent').object(App.channel);
 		ctx.register('commands').object(App.command);
 		// models

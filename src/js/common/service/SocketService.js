@@ -2,11 +2,11 @@ define(function(require) {
     var ATSWebSocket = require('common/framework/service/ATSWebSocket'),
         ContextFactory = require('common/factory/ContextFactory');
     return ATSWebSocket.extend({
-        
+
         PUBLIC_LOGIN_REQ_ID: 0,
         KEEP_ALIVE_REQ_ID: 1,
         USER_LOGIN_REQ_ID: 2,
-        
+
         defaults: {
             sessionToken: function() {
                 return this.session.getSessionToken();
@@ -20,7 +20,7 @@ define(function(require) {
             ContextFactory.satisfy(this, this.dependencies);
             ATSWebSocket.prototype.initialize.call(this);
         },
-        
+
         start: function() {
         	this.connect();
         },
@@ -28,7 +28,7 @@ define(function(require) {
         keepAlive: function() {
             this.sendKeepAlive();
         },
-        
+
         loginUser: function(obj) {
             obj.UpgradePublicLoginRequest.reqId = this.USER_LOGIN_REQ_ID;
             this.send(JSON.stringify(obj));
@@ -39,13 +39,13 @@ define(function(require) {
             obj.PublicLoginRequest.reqId = this.PUBLIC_LOGIN_REQ_ID;
             this.send(JSON.stringify(obj));
         },
-        
+
         subscribe: function(data) {
         	this.send(data);
         },
-        
+
         parseMessage: function(data) {
-            //this.vent.trigger('app:log', 'WS DATA RECEIVED ' + JSON.stringify(data));
+            //this.vent.trigger('src:log', 'WS DATA RECEIVED ' + JSON.stringify(data));
             if (_.has(data, 'Response')) {
                 var status = data.Response.status;
                 var lowerError = status.toLowerCase();
@@ -62,11 +62,11 @@ define(function(require) {
                     return;
                 }
             }
-            
+
             this.trigger("streaming:message", data);
-            
+
         },
-        
+
     });
 });
 

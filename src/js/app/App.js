@@ -1,4 +1,3 @@
-import Radio from 'backbone.radio';
 import AppLayout from './AppLayout';
 import Header from './module/view/HeaderModule';
 import SubNav from './module/view/SubNavModule';
@@ -27,13 +26,9 @@ var Application = Marionette.Application.extend({
 		this.$body  = $(document.body);
 		this.ctx = di.createContext();
 
-		// initialize app layout
+		// initialize src layout
 		this.layout = new AppLayout();
 		this.layout.render();
-
-		// commands channel
-		var channel  = Radio.channel('commands');
-		this.command = _.wrap(channel.command, function(f) {f()});
 
 		// initialize context before views get initialized
 		this.listenTo(this.vent, BOOT_COMPLETE, this.onStart);

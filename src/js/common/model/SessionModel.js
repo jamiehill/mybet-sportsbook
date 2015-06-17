@@ -25,7 +25,7 @@ export default Backbone.Model.extend({
 	 *
 	 */
 	initialize: function() {
-		// if this is the embedded app, use localStorage
+		// if this is the embedded src, use localStorage
 		var store = 'sessionStorage';
 
 		// In some environment (like Android webviews) localStorage is not available

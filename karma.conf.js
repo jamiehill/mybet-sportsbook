@@ -3,44 +3,48 @@ module.exports = function(config) {
 
 
 		basePath: '.',
-		logLevel: config.LOG_DEBUG,
-		frameworks: ['systemjs', 'mocha', 'chai', 'chai-as-promised', 'sinon-chai'],
+		logLevel: config.LOG_INFO,
+		frameworks: ['systemjs', 'mocha', 'chai', 'chai-as-promised', 'sinon-chai', 'fixture'],
 
 		plugins: [
 			'karma-mocha',
 			'karma-chai',
 			'karma-chai-plugins',
 			'karma-systemjs',
+			'karma-fixture',
+			'karma-html2js-preprocessor',
 			'karma-chrome-launcher',
 			'karma-phantomjs-launcher',
-			'karma-spec-reporter',
-			'karma-mocha-reporter',
-			'karma-babel-preprocessor'
+			'karma-spec-reporter'
 		],
 
 		systemjs: {
-			configFile: 'system.config.js',
+			configFile: 'config.js',
 			testFileSuffix: 'Spec.js',
 			files: [
-				'app/js/common/shims/marionette.shim.js',
+				'src/js/common/shims/marionette-shim.js',
 				'vendor/**/**',
-				'test/lib/**/*',
-				'test/spec/**/*Spec.js',
-				'app/js/**/*.*'
+				'test/**/*',
+				'test/**/*Spec.js',
+				'src/js/**/*.*'
 			],
 			config: {
-				baseURL: "./",
+				baseURL: "/",
 				paths: {
 					'es6-module-loader': 'vendor/es6-module-loader.js',
-					'systemjs': 'vendor/system.js'
+					'systemjs': 'vendor/system.js',
+					"github:*": "vendor/github/*.js",
+					"npm:*": "vendor/npm/*.js",
+					'app/*': 'src/js/app/*',
+					'common/*': 'src/js/common/*',
+					'modules/*': 'src/js/modules/*'
 				}
 			}
 		},
 
 
 		preprocessors: {
-			'test/**/*.js': ['babel'],
-			'app/js/**/*.js': ['babel']
+			'test/fixtures/**/*.html': ['html2js']
 		},
 
 

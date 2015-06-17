@@ -3,36 +3,36 @@ import React from 'react';
 
 export default React.createClass({
 	render: function() {
+		var attribs = this.props.model.attributes;
 		return (
 			<div className="table-row">
 				<div className="table-cell">
-					<span className="date">Today</span>
-					<span className="time">10:30</span>
+					<span className="date">{attribs.date}</span>
+					<span className="time">{attribs.time}</span>
 				</div>
 				<div className="table-cell align-right">
-					Middlesbrough
+					{attribs.homeTeam}
 				</div>
 				<div className="table-cell align-center price">
-					1.3
+					{attribs.homePrice}
 				</div>
 				<div className="table-cell align-center price">
-					1.4
+					{attribs.drawPrice}
 				</div>
 				<div className="table-cell align-center price">
-					1.1
+					{attribs.awayPrice}
 				</div>
 				<div className="table-cell align-left">
-					Manchester United
+					{attribs.awayTeam}
 				</div>
 				<div className="table-cell align-center">
 					<i className="entypo-chart-bar"></i>
 				</div>
 				<div className="table-cell align-center price">
-					+12
+					{attribs.numMarkets}
 				</div>
 			</div>
 		)
 	}
-
 });
 

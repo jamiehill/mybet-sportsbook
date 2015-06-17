@@ -1,22 +1,23 @@
 import React from 'react';
-import mixin from '../../common/react/BackboneModelMixin';
+import mixin from '../../common/react/BackboneMixin';
 import HighlightsPanel from './HighlightsPanel.jsx!';
 import Highlight from './Highlight.jsx!';
 
-export default React.createFactory(React.createClass({
+export default React.createClass({
 	mixins: [mixin],
 
 	render: function() {
+		var collection = this.props.collection,
+			highlights = collection.map(function(model) {
+				return <Highlight key={model.get('id')} model={model}/>;
+			});
 		return (
 			<div className="cell cell-4 highlights">
 				<HighlightsPanel>
-					{_.times(12, function() {
-						return <Highlight></Highlight>;
-					})}
+					{highlights}
 				</HighlightsPanel>
 			</div>
 		)
 	}
-
-}));
+});
 
