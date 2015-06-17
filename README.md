@@ -17,3 +17,4 @@ Migration notes
 
 * `Marionette`, `Backbone`, `ctx`, `$` and `_` added as globals, so no need to explicitly import anymore
 * syntax for importing html is now `'app/view/myview.tpl.html!text'` NOT `'text!app/view/myview.tpl.html'`
+* can natively import json `'configuration.json!'`, css `'styles/main.css!'`, and react components `'myComponent.js!'`
