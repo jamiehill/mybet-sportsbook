@@ -26,12 +26,12 @@ module.exports = function(config) {
 				'vendor/**/**',
 				'test/lib/**/*',
 				'test/spec/**/*Spec.js',
-				'app/**/*.*'
+				'app/js/**/*.*'
 			],
 			config: {
 				paths: {
-					'es6-module-loader': '/vendor/es6-module-loader.js',
-					'systemjs': '/vendor/system.js'
+					'es6-module-loader': '../../vendor/es6-module-loader.js',
+					'systemjs': '../../vendor/system.js'
 				}
 			}
 		},
@@ -39,7 +39,7 @@ module.exports = function(config) {
 
 		preprocessors: {
 			'test/**/*.js': ['babel'],
-			'src/**/*.js': ['babel']
+			'app/**/*.js': ['babel']
 		},
 
 

@@ -15,17 +15,11 @@ System.config({
 
 System.config({
   "meta": {
-    "**/*.html": {
-      "loader": "text"
-    },
-    "**/*.jsx": {
-      "loader": "jsx"
-    },
     "github:marionettejs/backbone.marionette@2.4.1/lib/core/backbone.marionette": {
+      "format": "amd",
       "deps": [
         "common/shims/marionette.shim"
-      ],
-      "format": "amd"
+      ]
     },
     "github:carhartl/jquery-cookie@1.4.1": {
       "deps": [
@@ -54,10 +48,10 @@ System.config({
     "backbone.marionette": "github:marionettejs/backbone.marionette@2.4.1",
     "backbone.radio": "npm:backbone.radio@0.9.0",
     "backbone.wreqr": "github:marionettejs/backbone.wreqr@1.3.2",
+    "carhartl/jquery-cookie": "github:carhartl/jquery-cookie@1.4.1",
     "core-js": "npm:core-js@0.9.15",
     "css": "github:systemjs/plugin-css@0.1.12",
     "di-lite": "npm:di-lite@0.3.3",
-    "handlebars": "github:components/handlebars.js@3.0.3",
     "image": "github:systemjs/plugin-image@0.1.0",
     "jquery": "github:components/jquery@2.1.4",
     "jquery-cookie": "github:carhartl/jquery-cookie@1.4.1",
@@ -67,7 +61,7 @@ System.config({
     "marionettejs/backbone.marionette": "github:marionettejs/backbone.marionette@2.4.1",
     "process": "npm:process@0.11.1",
     "react": "npm:react@0.14.0-alpha3",
-    "rivets": "npm:rivets@^0.8.1",
+    "systemjs/plugin-text": "github:systemjs/plugin-text@0.0.2",
     "text": "github:systemjs/plugin-text@0.0.2",
     "underscore": "npm:lodash@3.9.3",
     "underscore.string": "npm:underscore.string@3.1.1",
