@@ -24,6 +24,18 @@ module.exports = function(config) {
 			files: [
 				'src/js/common/shims/marionette-shim.js',
 				'vendor/**/**',
+				'vendor/github/*',
+				'vendor/npm/*',
+				//'vendor/github/components/jquery@2.1.4/*',
+				//'vendor/github/floatdrop/plugin-jsx@1.1.0/*',
+				//'vendor/github/marionettejs/backbone.marionette@2.4.1/lib/*',
+				//'vendor/github/systemjs/plugin-json@0.1.0/*',
+				//'vendor/github/systemjs/plugin-text@0.0.2/*',
+				//'vendor/npm/babel-core@5.5.6/*',
+				//'vendor/npm/backbone@1.1.2/*',
+				//'vendor/npm/di-lite@0.3.3/*',
+				//'vendor/npm/lodash@3.9.3/*',
+				//'vendor/npm/react@0.14.0-alpha3/*',
 				'test/**/*',
 				'test/**/*Spec.js',
 				'src/js/**/*.*'
