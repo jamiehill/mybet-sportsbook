@@ -2,7 +2,8 @@
   "name": "mybet-sportsbook",
   "version": "0.0.0",
   "scripts": {
-    "install": "sudo npm cache clean && sudo npm install jspm -g && sudo npm install && jspm clean && jspm install",
+    "prepare": "sudo npm cache clean && sudo npm install jspm -g",
+    "install": "sudo npm install && jspm install",
     "tests": "karma start"
   },
   "jspm": {
