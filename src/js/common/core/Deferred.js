@@ -1,6 +1,6 @@
 export default class Deferred {
 	constructor(name = 'Deferred') {
-		_.bind(this.initialize, this);
+		_.bindAll(this, 'initialize', 'success', 'failure');
 		this.name = name;
 	}
 
@@ -11,17 +11,12 @@ export default class Deferred {
 	 */
 	init() {
 		var that = this;
-		return new Promise(function(resolve, reject) {
-			that.success = _.wrap(resolve, function(f) {
-				console.log('Bootstrap: '+that.name+' - Success');
-				f();
-			});
-			that.failure = _.wrap(reject, function(f) {
-				console.log('Bootstrap: '+this.name+' - Failure');
-				f();
-			});
-			that.initialize();
+		var promise = new Promise(function(resolve, reject) {
+			that.resolve = resolve;
+			that.reject = reject;
 		});
+		this.initialize();
+		return promise;
 	}
 
 
@@ -30,5 +25,22 @@ export default class Deferred {
 	 */
 	initialize() {
 
+	}
+
+
+	/**
+	 *
+	 */
+	success() {
+		console.log('Bootstrap: '+this.name+' - Success');
+		this.resolve();
+	}
+
+	/**
+	 *
+	 */
+	failure(e) {
+		console.log('Bootstrap: '+this.name+' - Failure : '+e);
+		this.reject(e);
 	}
 }

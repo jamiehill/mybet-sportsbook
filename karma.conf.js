@@ -48,14 +48,14 @@ module.exports = function(config) {
 					'systemjs': 'vendor/system.js',
 					"github:*": "vendor/github/*.js",
 					"npm:*": "vendor/npm/*.js",
-					'app/*': 'src/js/app/*',
-					'common/*': 'src/js/common/*',
-					'modules/*': 'src/js/modules/*'
+					'app*': 'src/js/app*',
+					'common*': 'src/js/common*',
+					'modules*': 'src/js/modules*'
 				},
 				"meta": {
 					"github:marionettejs/backbone.marionette@2.4.1/lib/core/backbone.marionette": {
 						"format": "amd",
-						"deps": [ "common/shims/marionette-shim.js" ]
+						"deps": [ "src/js/common/shims/marionette-shim" ]
 					},
 					"github:carhartl/jquery-cookie@1.4.1": {
 						"deps": [ "jquery" ]

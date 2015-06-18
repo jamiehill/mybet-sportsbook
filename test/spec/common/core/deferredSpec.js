@@ -1,0 +1,41 @@
+import Deferred from '../../../../src/js/common/core/Deferred';
+
+
+describe('common/core/Deferred', function() {
+	var deferred, sb;
+	// mocha timeout delay
+	this.timeout(15000);
+
+	beforeEach(function() {
+		sb = sinon.sandbox.create();
+		deferred = new Deferred();
+	})
+
+	afterEach(function() {
+		sb.restore();
+	})
+
+	it("should return a Promise when init'ed", function() {
+		var promise = deferred.init();
+		expect(promise instanceof Promise).to.be.true;
+	})
+
+	it("should store 'resolve' and 'reject' methods from Promise", function() {
+		deferred.init();
+		expect(_.isFunction(deferred.resolve)).to.be.true;
+		expect(_.isFunction(deferred.reject)).to.be.true;
+	})
+
+	it("should invoke 'resolve' when calling 'success'", function(){
+		deferred.init();
+		var spy = sb.spy(deferred, 'resolve');
+		deferred.success();
+		expect(spy).to.have.been.called.once;
+	})
+	xit("should invoke 'reject' when calling 'failure'", function(){
+		deferred.init();
+		var spy = sb.spy(deferred, 'reject');
+		deferred.failure();
+		expect(spy).to.have.been.called.once;
+	})
+})
