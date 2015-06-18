@@ -1,5 +1,5 @@
-import Event from 'common/model/Event';
-import eventModel from 'common/model/domain/EventModel';
+import Event from './Event';
+import eventModel from './domain/EventModel';
 
 
 var Model = Backbone.Model.extend({

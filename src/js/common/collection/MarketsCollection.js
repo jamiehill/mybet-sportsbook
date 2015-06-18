@@ -1,6 +1,6 @@
 import keyMarketsModel from '../model/KeyMarketsModel';
-import Market from 'common/model/Market';
-import collection from 'common/utils/CollectionUtil';
+import Market from '../model/Market';
+import collection from '../utils/CollectionUtil';
 
 
 export default Backbone.Collection.extend({

@@ -1,4 +1,4 @@
-import Event from 'common/model/Event';
+import Event from './Event';
 
 export default Backbone.Model.extend({
 

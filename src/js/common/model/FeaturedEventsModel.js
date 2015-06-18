@@ -2,8 +2,8 @@
  * Created by jamie on 3/6/15.
  */
 define([
-    'common/model/Event',
-    'common/collection/EventsCollection'
+    './Event',
+    '../collection/EventsCollection'
 ],
 function(Event, EventsCollection) {
     return Backbone.Model.extend({

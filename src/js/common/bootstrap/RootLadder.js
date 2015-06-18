@@ -1,4 +1,4 @@
-import DeferredBase from '../core/Deferred';
+import DeferredBase from '../defer/Deferred';
 
 export default class RootLadder extends DeferredBase {
 	constructor(name) {

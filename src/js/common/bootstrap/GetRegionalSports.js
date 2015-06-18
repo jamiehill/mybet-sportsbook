@@ -1,4 +1,4 @@
-import DeferredBase from '../core/Deferred';
+import DeferredBase from '../defer/Deferred';
 import service from '../service/ApiService';
 
 export default class GetRegionalSports extends DeferredBase {

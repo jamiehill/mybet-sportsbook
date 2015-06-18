@@ -1,5 +1,5 @@
 import SportsBook from './app/App';
-import DeferredQueue from 'common/core/DeferredQueue';
+import DeferredQueue from 'common/defer/DeferredQueue';
 import {trigger} from './app/AppConstants';
 
 console.log('Bootstrap: Start');

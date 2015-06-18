@@ -1,4 +1,4 @@
-define(['backbone', 'common/model/Event'],
+define(['backbone', './Event'],
     function(Backbone, Event) {
         return Backbone.Collection.extend({
 

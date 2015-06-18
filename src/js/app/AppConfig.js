@@ -1,6 +1,6 @@
-import Deferred from '../common/core/Deferred';
+import Deferred from '../common/defer/Deferred';
 import config from '../configuration.json!';
-import globals from '../common/core/Globals';
+import globals from '../common/Globals';
 
 import SportsBookModel from '../common/model/SportsBookModel';
 import BonusEntitlement from '../common/model/BonusEntitlementModel';

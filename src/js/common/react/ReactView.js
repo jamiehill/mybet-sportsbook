@@ -1,4 +1,4 @@
-import Decorator from '../../common/react/ReactDecorator';
+import Decorator from './ReactDecorator';
 
 export default Marionette.View.extend(Decorator).extend({
 	// returns the react component for this view,

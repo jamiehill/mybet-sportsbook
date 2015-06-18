@@ -3,7 +3,7 @@
  */
 define(function (require) {
 	var Marionette = require('backbone.marionette'),
-		HrefUtil = require('../../common/utils/Href');
+		HrefUtil = require('common/utils/Href');
 
 	return Marionette.Object.extend({
 
