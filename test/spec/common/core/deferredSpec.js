@@ -29,14 +29,14 @@ describe('common/core/Deferred', function() {
 
 	it("should invoke 'resolve' when calling 'success'", function(){
 		deferred.init();
-		var spy = sb.spy(deferred, 'resolve');
+		sb.spy(deferred, 'resolve');
 		deferred.success();
-		expect(spy).to.have.been.called.once;
+		expect(deferred.resolve).to.have.been.called.once;
 	})
 	it("should invoke 'reject' when calling 'failure'", function(){
 		deferred.init();
-		var spy = sb.spy(deferred, 'reject');
+		sb.spy(deferred, 'reject');
 		deferred.failure();
-		expect(spy).to.have.been.called.once;
+		expect(deferred.reject).to.have.been.called.once;
 	})
 })
