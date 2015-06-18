@@ -1,7 +1,7 @@
-import Deferred from '../../../../src/js/common/core/Deferred';
+import Deferred from '../../../../src/js/common/defer/Deferred';
 
 
-describe('common/core/Deferred', function() {
+describe('common/defer/Deferred', function() {
 	var deferred, sb;
 	// mocha timeout delay
 	this.timeout(15000);

@@ -1,14 +1,14 @@
-import Queue from '../../../../src/js/common/core/DeferredQueue';
-import dummy from '../../../../src/js/common/core/DummyDeferred';
+import Queue from '../../../../src/js/common/defer/DeferredQueue';
+import dummy from '../../../../src/js/common/defer/DummyDeferred';
 
 
-describe('common/core/DeferredQueue', function() {
+describe('common/defer/DeferredQueue', function() {
 	var queue1, queue2;
 	// mocha timeout delay
 	this.timeout(15000);
 
 	beforeEach(function() {
-		var path = 'src/js/common/core/DummyDeferred';
+		var path = 'src/js/common/defer/DummyDeferred';
 		queue1 = new Queue([path, path]);
 		queue2 = new Queue([dummy, dummy]);
 	})
