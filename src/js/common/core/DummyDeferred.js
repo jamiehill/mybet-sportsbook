@@ -1,10 +1,10 @@
 import Deferred from './Deferred';
 
 export default class DummyDeferred extends Deferred {
-	constructor(name, resolution = 'resolve', delay = '1000') {
+	constructor(name) {
 		super('DummyDeferred');
-		this.resolution = resolution;
-		this.delay = delay;
+		this.resolution = 'resolve';
+		this.delay = 1000;
 	}
 
 	init() {

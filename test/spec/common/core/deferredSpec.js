@@ -8,6 +8,7 @@ describe('common/core/Deferred', function() {
 
 	beforeEach(function() {
 		sb = sinon.sandbox.create();
+		sb.stub(console, 'log');
 		deferred = new Deferred();
 	})
 
@@ -32,7 +33,7 @@ describe('common/core/Deferred', function() {
 		deferred.success();
 		expect(spy).to.have.been.called.once;
 	})
-	xit("should invoke 'reject' when calling 'failure'", function(){
+	it("should invoke 'reject' when calling 'failure'", function(){
 		deferred.init();
 		var spy = sb.spy(deferred, 'reject');
 		deferred.failure();

@@ -23,19 +23,21 @@ describe('common/core/DeferredQueue', function() {
 		expect(queue1.initialize).to.have.been.called;
 	})
 
-	it('should import the deferred object when queue made up of path strings', function(done) {
+	it('should import the deferred object, before executing the queue, when queue made up of path strings', function(done) {
 		sinon.spy(queue1, 'next');
-		sinon.spy(queue1, 'success');
-		queue1.init().then(function() {
-			done();
-		});
+		queue1.init().then(done);
 		expect(queue1.next).to.have.been.called.twice;
-		//expect(queue1.success).to.have.been.called.once;
 	})
 
-	xit("should call 'next' 3 times when running the queue", function(done) {
-		var next = sinon.spy(queue, 'next');
-		queue.init().then(done);
-		expect(next).to.have.been.called.exactly(3);
+	it('should just execute the queue, when queue made up of Deferred Objects', function(done) {
+		sinon.spy(queue2, 'next');
+		queue2.init().then(done);
+		expect(queue2.next).to.have.been.called.twice;
+	})
+
+	it("should call 'next' 2 times when running the queue", function(done) {
+		sinon.spy(queue1, 'next');
+		queue1.init().then(done);
+		expect(queue1.next).to.have.been.called.twice;
 	})
 })
