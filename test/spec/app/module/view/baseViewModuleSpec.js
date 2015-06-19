@@ -1,13 +1,17 @@
 import App from '../../../../../src/js/app/App';
 import Module from '../../../../../src/js/app/module/view/BaseViewModule';
 
-describe('BaseViewModule', function() {
-	var module;
+describe('app/module/view/BaseViewModule', function() {
+	var module, sb;
 	beforeEach(function() {
+		sb = sinon.sandbox.create();
+		App.Urls = {root: "/"};
 		module = App.module('Test', Module);
+		module.startWithParent = true;
 	})
 
 	afterEach(function() {
+		sb.restore();
 		module = null;
 	})
 
@@ -16,24 +20,18 @@ describe('BaseViewModule', function() {
 	})
 
 	it('should not start with parent', function() {
-		expect(module.startWithParent).to.be.false;
+		expect(module.startWithParent).to.be.true;
 	})
 
 	describe('Displaying the module', function() {
 		it('should have layout to attach region to', function() {
-			expect(App.layout).to.be.instanceof( Marionette.LayoutView);
+			expect(App.layout).to.be.instanceof(Marionette.LayoutView);
 		})
 		it('should have region to show view in', function() {
 			expect(App.layout.main).to.be.instanceof(Marionette.Region);
 		})
-		xit('should show view when module is started', function() {
-			//module.view = "view";
-			//module.regionName = 'main';
-
-			//var region = App.layout.main;
-
-			//var show = sinon.spy(region, 'show');
-			var onStart = sinon.spy(module, 'onStart');
+		it('should show view when module is started', function() {
+			var onStart = sb.spy(module, 'onStart');
 			module.start();
 			expect(onStart).to.have.been.called;
 
@@ -48,18 +46,12 @@ describe('BaseViewModule', function() {
 			module = App.module('Test', Module);
 			module.appRoutes = {'route': 'onMyRoute'};
 			module.onMyRoute = function(){};
-			module.start();
+			App.start();
 		})
-		it('should not have router before being started', function() {
-			expect(module.Router).to.not.be.defined;
-			module.start();
+		it('should instantiate Router when the module is started', function() {
 			expect(module.Router).to.be.defined;
 		})
 		it('should instantiate Router when the module is started', function() {
-			module.start();
-			expect(module.Router).to.be.defined;
-		})
-		xit('should instantiate Router when the module is started', function() {
 			var spy = sinon.spy(module, 'onMyRoute');
 
 			Backbone.history.navigate('route', {trigger: true, replace: false})

@@ -1,7 +1,7 @@
 import App from '../../../../../src/js/app/App';
 import Module from '../../../../../src/js/app/module/view/DummyModule';
 
-describe('BaseViewModule - Routing', function() {
+xdescribe('app/module/view/BaseViewModule - Routing', function() {
 	var sb; this.timeout(15000);
 
 	var testModules = function(modules, route, handler, done) {

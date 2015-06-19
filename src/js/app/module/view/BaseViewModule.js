@@ -24,9 +24,7 @@ export default Marionette.Module.extend({
 			appRoutes: this.appRoutes
 		});
 
-		// auto start this module on boot complete
-		//this.listenTo(App.vent, BOOT_COMPLETE, this.start);
-		this.start();
+		//this.start();
 	},
 
 
