@@ -15,11 +15,11 @@ describe('SportsBook', function() {
 	});
 
 	it('should be instance of Marionette.Application', function() {
-		expect(App instanceof Marionette.Application).to.be.ok;
+		expect(App).to.be.instanceof(Marionette.Application);
 	})
 
 	it('layout should be an instance of Marionette.LayoutView', function() {
-		expect(App.layout instanceof Marionette.LayoutView).to.be.true;
+		expect(App.layout).to.be.instanceof(Marionette.LayoutView);
 	});
 
 	xit('should invoke "onStart", when SportsBook started', function() {

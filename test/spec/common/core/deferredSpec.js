@@ -18,7 +18,7 @@ describe('common/defer/Deferred', function() {
 
 	it("should return a Promise when init'ed", function() {
 		var promise = deferred.init();
-		expect(promise instanceof Promise).to.be.true;
+		expect(promise).to.be.instanceof(Promise);
 	})
 
 	it("should store 'resolve' and 'reject' methods from Promise", function() {

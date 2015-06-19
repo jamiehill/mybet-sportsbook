@@ -48,7 +48,7 @@ describe("- AppConfigg.spec.js\n", function() {
 
 	describe("singletons", function() {
 		it("can register object by key", function () {
-			expect(singleton() instanceof Model).to.be.true;
+			expect(singleton()).to.be.instanceof(Model);
 		});
 		it("should give same instance of singleton", function() {
 			expect(singleton()).to.equal(singleton());
@@ -58,7 +58,7 @@ describe("- AppConfigg.spec.js\n", function() {
 
 	describe("newInstances", function() {
 		it("can register object by key", function () {
-			expect(newInstance() instanceof Model).to.be.ok;
+			expect(newInstance()).to.be.instanceof(Model);
 		});
 		it("should give different instance each time", function() {
 			expect(newInstance()).not.to.equal(newInstance());

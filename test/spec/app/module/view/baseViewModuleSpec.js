@@ -21,10 +21,10 @@ describe('BaseViewModule', function() {
 
 	describe('Displaying the module', function() {
 		it('should have layout to attach region to', function() {
-			expect(App.layout instanceof Marionette.LayoutView).to.be.true;
+			expect(App.layout).to.be.instanceof( Marionette.LayoutView);
 		})
 		it('should have region to show view in', function() {
-			expect(App.layout.main instanceof Marionette.Region).to.be.true;
+			expect(App.layout.main).to.be.instanceof(Marionette.Region);
 		})
 		xit('should show view when module is started', function() {
 			//module.view = "view";
