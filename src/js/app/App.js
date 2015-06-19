@@ -8,18 +8,20 @@ import {BOOT_COMPLETE} from './AppConstants';
 
 // setup application instance
 var Application = Marionette.Application.extend({
+	bootstrap: [
+		'app/AppConfig',
+		'common/bootstrap/DomainResolver'
+		//'common/bootstrap/TranslatorConfig',
+		//'common/bootstrap/RootLadder',
+		//'common/bootstrap/GetRegionalSports'
+	],
 
-	/**
-	 * Main boot sequence
-	 */
-	bootstrap() {
-		return [
-			'app/AppConfig',
-			'common/bootstrap/DomainResolver',
-			//'common/bootstrap/TranslatorConfig',
-			//'common/bootstrap/RootLadder',
-			//'common/bootstrap/GetRegionalSports'
-		]
+	modules: {
+		'Views.Header': Header,
+		'Views.SubNav': SubNav,
+		'Views.Main': 	Main,
+		'Views.BetSlip': BetSlip,
+		'Views.Footer': Footer
 	},
 
 	initialize() {
@@ -31,7 +33,7 @@ var Application = Marionette.Application.extend({
 		this.layout.render();
 
 		// initialize context before views get initialized
-		this.listenTo(this.vent, BOOT_COMPLETE, this.onStart);
+		this.listenTo(this.vent, BOOT_COMPLETE, this.start);
 	},
 
 
@@ -39,15 +41,16 @@ var Application = Marionette.Application.extend({
 		console.log('App: Start');
 		this.ctx.initialize();
 
-		// start main views
-		App.module('Views.Header', Header);
-		App.module('Views.SubNav', SubNav);
-		App.module('Views.Main', Main);
-		App.module('Views.BetSlip', BetSlip);
-		App.module('Views.Footer', Footer);
+		console.log("Modules: "+this.modules);
+
+		// initialize and start each required module
+		_.each(this.modules, function(Module, name) {
+			console.log("Module: "+name);
+			App.module(name, Module).start();
+		});
 
 		// then startup the routers
-		Backbone.history.start({pushState: true, root: this.Urls.root});
+		Backbone.history.start({pushState: true, root: this.Urls.root || ''});
 	}
 });
 

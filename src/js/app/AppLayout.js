@@ -2,7 +2,8 @@ import template from './AppTemplate.html!text';
 
 export default Marionette.LayoutView.extend({
 	template: _.template(template),
-	el: '#main',
+	//el: '#main',
+	el: 'body',
 
 	regions: {
 		header: 	'#header-container',

@@ -90,7 +90,7 @@ module.exports = function(config) {
 		},
 
 
-		browsers: ['PhantomJS', 'Chrome'],
+		browsers: ['PhantomJS'],
 		reporters: ['spec'],
 
 
