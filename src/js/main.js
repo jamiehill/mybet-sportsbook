@@ -4,6 +4,6 @@ import {trigger} from './app/AppConstants';
 
 console.log('Bootstrap: Start');
 
-var defer = SportsBook.bootstrap(),
+var defer = SportsBook.bootstrap,
 	queue = new DeferredQueue(defer);
 queue.init().then(trigger);

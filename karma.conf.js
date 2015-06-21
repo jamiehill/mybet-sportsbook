@@ -4,15 +4,13 @@ module.exports = function(config) {
 
 		basePath: '.',
 		logLevel: config.LOG_INFO,
-		frameworks: ['systemjs', 'mocha', 'chai', 'chai-as-promised', 'sinon-chai', 'fixture'],
+		frameworks: ['systemjs', 'mocha', 'chai', 'chai-as-promised', 'sinon-chai'],
 
 		plugins: [
 			'karma-mocha',
 			'karma-chai',
 			'karma-chai-plugins',
 			'karma-systemjs',
-			'karma-fixture',
-			'karma-html2js-preprocessor',
 			'karma-chrome-launcher',
 			'karma-phantomjs-launcher',
 			'karma-spec-reporter'
@@ -71,26 +69,7 @@ module.exports = function(config) {
 		},
 
 
-		preprocessors: {
-			'test/fixtures/**/*.html': ['html2js']
-		},
-
-
-		'babelPreprocessor': {
-			options: {
-				sourceMap: 'inline',
-				modules: 'system'
-			}
-		},
-
-
-		coverageReporter: {
-			type : 'html',
-			dir : 'coverage/'
-		},
-
-
-		browsers: ['PhantomJS', 'Chrome'],
+		browsers: ['PhantomJS'],
 		reporters: ['spec'],
 
 
