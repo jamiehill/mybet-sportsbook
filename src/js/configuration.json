@@ -2,6 +2,8 @@
 	"client": "pokerstars",
 	"application": "web-sportsbook",
 	"title": "Pokerstars Sportsbook",
+	"apiVersion": "2",
+	"channel": "INTERNET",
 	"defaultLotteryDomain": "http://trading-baba.amelco.co.uk",
 	"defaultDomainThers": "https://sports.uat.pyr/",
 	"defaultDomain": "https://sports.uat.pyr/",
@@ -14,5 +16,5 @@
 	"traderEndpoint": "ats-trader/api/",
 	"ctx": "app/local/PokerstarsConfig",
 	"useSecure": "true",
-	"defaultLocale": "en-ie"
+	"defaultLocale": "en-gb"
 }

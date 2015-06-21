@@ -1,0 +1,96 @@
+{
+	"Event" : {
+		"attributes" : {
+			"attrib" : [ {
+				"value" : "7473032",
+				"key" : "betradarId"
+			}, {
+				"value" : "3",
+				"key" : "bestOf"
+			}, {
+				"value" : "true",
+				"key" : "cashoutAvailable"
+			} ]
+		},
+		"markets" : [ {
+			"selection" : [ {
+				"attributes" : {
+					"attrib" : [ {
+						"value" : "178412",
+						"key" : "multipleKeys"
+					} ]
+				},
+				"odds" : {
+					"dec" : "1.5",
+					"frac" : "1/2",
+					"rootIdx" : 33
+				},
+				"pos" : {
+					"row" : 1,
+					"col" : 2
+				},
+				"id" : 96651945,
+				"name" : "Bopanna R / Mergea F",
+				"type" : "playerB",
+				"suspended" : false
+			}, {
+				"attributes" : {
+					"attrib" : [ {
+						"value" : "25011",
+						"key" : "multipleKeys"
+					} ]
+				},
+				"odds" : {
+					"dec" : "2.5",
+					"frac" : "6/4",
+					"rootIdx" : 61
+				},
+				"pos" : {
+					"row" : 1,
+					"col" : 1
+				},
+				"id" : 96651943,
+				"name" : "Butorac E / Lipsky S",
+				"type" : "playerA",
+				"suspended" : false
+			} ],
+			"attributes" : {
+				"attrib" : [ {
+					"value" : "false",
+					"key" : "isBPG"
+				} ]
+			},
+			"id" : 28917290,
+			"name" : "Match Betting",
+			"type" : "AB",
+			"displayOrder" : 0,
+			"columnCount" : 2,
+			"suspended" : false,
+			"displayed" : true
+		} ],
+		"pastForm" : [ ],
+		"participants" : {
+			"participant" : [ {
+				"id" : 2825158,
+				"name" : "Butorac E / Lipsky S",
+				"type" : "HOME"
+			}, {
+				"id" : 2802024,
+				"name" : "Bopanna R / Mergea F",
+				"type" : "AWAY"
+			} ]
+		},
+		"id" : 2667549,
+		"compId" : 2654521,
+		"compName" : "Halle, Germany, Doubles",
+		"compWeighting" : 0.5,
+		"path" : "166662:2091276:2654521:2667549",
+		"name" : "Butorac E / Lipsky S vs Bopanna R / Mergea F",
+		"sport" : "TENNIS",
+		"state" : "ACTIVE",
+		"displayed" : true,
+		"offeredInplay" : false,
+		"eventTime" : 1434813600000,
+		"numMarkets" : 8
+	}
+}

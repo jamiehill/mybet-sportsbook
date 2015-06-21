@@ -51,6 +51,10 @@ var Application = Marionette.Application.extend({
 
 		// then startup the routers
 		Backbone.history.start({pushState: true, root: this.Urls.root || ''});
+	},
+
+	stop() {
+		Backbone.history.stop();
 	}
 });
 

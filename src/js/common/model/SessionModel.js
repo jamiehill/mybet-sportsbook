@@ -1,5 +1,9 @@
 import Store from './Store';
 
+// model constants
+export const LOGGED_IN = 'session:loggedin';
+export const LOGGED_OUT = 'session:loggedout';
+export const NOT_LOGGED_IN_ERROR = 'session:errorNotLoggedIn';
 
 export default Backbone.Model.extend({
 
@@ -82,7 +86,7 @@ export default Backbone.Model.extend({
 	 */
 	storeSession: function(lgn, silent){
 		this.set(lgn, {silent: !!silent});
-		App.vent.trigger('session:loggedin', lgn);
+		App.vent.trigger(LOGGED_IN, lgn);
 	},
 
 
@@ -107,7 +111,7 @@ export default Backbone.Model.extend({
 	 */
 	clearSession: function(){
 		this.Store.clear();
-		App.vent.trigger('session:loggedout');
+		App.vent.trigger(LOGGED_OUT);
 	},
 
 

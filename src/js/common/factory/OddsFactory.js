@@ -57,7 +57,7 @@ export default Backbone.Model.extend({
 				}
 			}
 
-			oddsObj.american = getMoneyLine(decimal);
+			oddsObj.american = this.getMoneyLine(decimal);
 			return oddsObj;
 		}
 	},
@@ -72,7 +72,7 @@ export default Backbone.Model.extend({
 		if (newIndex >= 0) {
 			oddsObj = oddsObj || {decimal: 0};
 			var decimalOdds = oddsObj.decimal;
-			var americanOdds = getMoneyLine(decimalOdds);
+			var americanOdds = this.getMoneyLine(decimalOdds);
 			oddsObj.american = americanOdds;
 			return oddsObj;
 		}

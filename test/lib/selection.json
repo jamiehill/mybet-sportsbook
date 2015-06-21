@@ -1,0 +1,21 @@
+{
+	"attributes" : {
+		"attrib" : [ {
+			"value" : "178412",
+			"key" : "multipleKeys"
+		} ]
+	},
+	"odds" : {
+		"dec" : "1.5",
+		"frac" : "1/2",
+		"rootIdx" : 33
+	},
+	"pos" : {
+		"row" : 1,
+		"col" : 2
+	},
+	"id" : 96651945,
+	"name" : "Bopanna R / Mergea F",
+	"type" : "playerB",
+	"suspended" : false
+}
