@@ -1,0 +1,56 @@
+{
+	"selection" : [ {
+		"attributes" : {
+			"attrib" : [ {
+				"value" : "178412",
+				"key" : "multipleKeys"
+			} ]
+		},
+		"odds" : {
+			"dec" : "1.5",
+			"frac" : "1/2",
+			"rootIdx" : 33
+		},
+		"pos" : {
+			"row" : 1,
+			"col" : 2
+		},
+		"id" : 96651945,
+		"name" : "Bopanna R / Mergea F",
+		"type" : "playerB",
+		"suspended" : false
+	}, {
+		"attributes" : {
+			"attrib" : [ {
+				"value" : "25011",
+				"key" : "multipleKeys"
+			} ]
+		},
+		"odds" : {
+			"dec" : "2.5",
+			"frac" : "6/4",
+			"rootIdx" : 61
+		},
+		"pos" : {
+			"row" : 1,
+			"col" : 1
+		},
+		"id" : 96651943,
+		"name" : "Butorac E / Lipsky S",
+		"type" : "playerA",
+		"suspended" : false
+	} ],
+	"attributes" : {
+		"attrib" : [ {
+			"value" : "false",
+			"key" : "isBPG"
+		} ]
+	},
+	"id" : 28917290,
+	"name" : "Match Betting",
+	"type" : "AB",
+	"displayOrder" : 0,
+	"columnCount" : 2,
+	"suspended" : false,
+	"displayed" : true
+}

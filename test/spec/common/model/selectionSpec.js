@@ -93,4 +93,8 @@ describe("Selection", function() {
 		})
 	})
 
+	xdescribe('Methods work as expected', function() {
+		// TODO
+	})
+
 })
