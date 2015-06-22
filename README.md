@@ -8,8 +8,8 @@ Clone the repository and install the dependencies.
 
     $ git clone https://github.com/jamiehill/mybet-sportsbook.git && cd mybet-sportsbook
     $ cd mybet-sportsbook
-    $ npm run prepare
-    $ npm run install
+    $ sudo npm install
+    $ sudo jspm install
     $ run index.html on localhost
 
 Karma

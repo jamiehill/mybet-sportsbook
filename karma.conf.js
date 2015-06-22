@@ -3,7 +3,7 @@ module.exports = function(config) {
 
 
 		basePath: '.',
-		logLevel: config.LOG_INFO,
+		logLevel: config.LOG_DEBUG,
 		frameworks: ['systemjs', 'mocha', 'chai', 'chai-as-promised', 'sinon-chai'],
 
 		plugins: [
@@ -53,7 +53,7 @@ module.exports = function(config) {
 				"meta": {
 					"github:marionettejs/backbone.marionette@2.4.1/lib/core/backbone.marionette": {
 						"format": "amd",
-						"deps": [ "src/js/common/shims/marionette-shim" ]
+						"deps": [ "src/app/js/common/shims/marionette-shim" ]
 					},
 					"github:carhartl/jquery-cookie@1.4.1": {
 						"deps": [ "jquery" ]

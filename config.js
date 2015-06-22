@@ -1,5 +1,5 @@
 System.config({
-  "baseURL": "./js",
+  "baseURL": "./app/js",
   "transpiler": "babel",
   "babelOptions": {
     "optional": [
@@ -8,8 +8,8 @@ System.config({
   },
   "paths": {
     "*": "*.js",
-    "github:*": "../../vendor/github/*.js",
-    "npm:*": "../../vendor/npm/*.js"
+    "github:*": "vendor/github/*.js",
+    "npm:*": "vendor/npm/*.js"
   }
 });
 

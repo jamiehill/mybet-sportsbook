@@ -1,4 +1,6 @@
 jspm_packages/
+node_modules/
 vendor/
+dist/
 .idea/
 .DS_Store
