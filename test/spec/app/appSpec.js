@@ -1,4 +1,4 @@
-import SportsBook from '../../../src/js/app/App';
+import SportsBook from '../../../src/app/js/app/App';
 
 describe('SportsBook', function() {
 

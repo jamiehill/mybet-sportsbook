@@ -1,5 +1,5 @@
-import App from '../../../../../src/js/app/App';
-import Module from '../../../../../src/js/app/module/view/DummyModule';
+import App from '../../../../../src/app/js/app/App';
+import Module from '../../../../../src/app/js/app/module/view/DummyModule';
 
 describe('app/module/view/BaseViewModule', function() {
 	var sb; this.timeout(15000);

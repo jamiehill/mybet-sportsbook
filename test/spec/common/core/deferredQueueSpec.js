@@ -1,5 +1,5 @@
-import Queue from '../../../../src/js/common/defer/DeferredQueue';
-import dummy from '../../../../src/js/common/defer/DummyDeferred';
+import Queue from '../../../../src/app/js/common/defer/DeferredQueue';
+import dummy from '../../../../src/app/js/common/defer/DummyDeferred';
 
 
 describe('common/defer/DeferredQueue', function() {

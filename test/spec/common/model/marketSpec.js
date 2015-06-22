@@ -1,5 +1,5 @@
 import json from '../../../lib/market.json!';
-import Market from '../../../../src/js/common/model/Market';
+import Market from '../../../../src/app/js/common/model/Market';
 
 describe("Market", function() {
 	var data;

@@ -1,4 +1,4 @@
-import App from '../../../src/js/app/App';
+import App from '../../../src/app/js/app/App';
 
 describe("- AppConfigg.spec.js\n", function() {
 	var ctx, Model = Backbone.Model.extend({

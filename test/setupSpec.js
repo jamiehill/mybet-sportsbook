@@ -1,4 +1,4 @@
-import '../src/js/plugins';
+import '../src/app/js/plugins';
 
 import chai from 'chai';
 import sinon from 'sinon';

@@ -1,4 +1,4 @@
-import Ctrl from '../../../../../src/js/common/control/subscriptions/SubscriptionController';
+import Ctrl from '../../../../../src/app/js/common/control/subscriptions/SubscriptionController';
 
 
 describe("common/control/subscriptions/SubscriptionController\n", function() {

@@ -1,4 +1,4 @@
-import Deferred from '../../../../src/js/common/defer/Deferred';
+import Deferred from '../../../../src/app/js/common/defer/Deferred';
 
 
 describe('common/defer/Deferred', function() {
