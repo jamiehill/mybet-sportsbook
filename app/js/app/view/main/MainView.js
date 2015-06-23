@@ -1,7 +1,7 @@
 import React from 'react';
 import template from './MainTemplate.html!text';
-import View from '../../../common/react/ReactView';
-import Component from '../../../modules/highlights/HighlightsView.jsx!';
+import View from 'core/react/ReactView';
+import Component from 'highlights/HighlightsView.jsx!';
 
 export default Marionette.LayoutView.extend({
 

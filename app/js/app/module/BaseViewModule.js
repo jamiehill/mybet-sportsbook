@@ -32,7 +32,8 @@ export default Marionette.Module.extend({
 	 *
 	 */
 	onStart() {
-		console.log(this.moduleName+': Start');
+		console.log("Module: Views."+this.moduleName+' - started');
+
 		// attach the view
 		if (this.view && this.regionName) {
 			this.app.layout[this.regionName].show(new this.view());

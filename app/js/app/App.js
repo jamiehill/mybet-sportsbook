@@ -1,19 +1,20 @@
 import AppLayout from './AppLayout';
-import Header from './module/view/HeaderModule';
-import SubNav from './module/view/SubNavModule';
-import Main from './module/view/MainModule';
-import Footer from './module/view/FooterModule';
-import BetSlip from './module/view/BetSlipModule';
+import DeferredQueue from 'core/defer/DeferredQueue';
+import Header from './module/HeaderModule';
+import SubNav from './module/SubNavModule';
+import Main from './module/MainModule';
+import Footer from './module/FooterModule';
+import BetSlip from './module/BetSlipModule';
 import {BOOT_COMPLETE} from './AppConstants';
 
 // setup application instance
 var Application = Marionette.Application.extend({
 	bootstrap: [
 		'app/AppConfig',
-		'common/bootstrap/DomainResolver'
-		//'common/bootstrap/TranslatorConfig',
-		//'common/bootstrap/RootLadder',
-		//'common/bootstrap/GetRegionalSports'
+		'core/bootstrap/DomainResolver'
+		//'core/bootstrap/TranslatorConfig',
+		//'core/bootstrap/RootLadder',
+		//'core/bootstrap/GetRegionalSports'
 	],
 
 	modules: {
@@ -33,7 +34,19 @@ var Application = Marionette.Application.extend({
 		this.layout.render();
 
 		// initialize context before views get initialized
-		this.listenTo(this.vent, BOOT_COMPLETE, this.start);
+		//this.listenTo(this.vent, BOOT_COMPLETE, this.start);
+		this.prestart();
+	},
+
+
+	prestart() {
+		console.log('App: Bootstrap - Start');
+		var queue = new DeferredQueue(this.bootstrap),
+			that  = this;
+		queue.init().then(function() {
+			console.log('App: Bootstrap - Complete');
+			that.start();
+		});
 	},
 
 
@@ -41,19 +54,18 @@ var Application = Marionette.Application.extend({
 		console.log('App: Start');
 		this.ctx.initialize();
 
-		console.log("Modules: "+this.modules);
-
 		// initialize and start each required module
 		_.each(this.modules, function(Module, name) {
-			console.log("Module: "+name);
 			App.module(name, Module).start();
 		});
 
 		// then startup the routers
+		console.log("Backbone: history - started");
 		Backbone.history.start({pushState: true, root: this.Urls.root || ''});
 	},
 
 	stop() {
+		console.log("Backbone: history - stopped");
 		Backbone.history.stop();
 	}
 });

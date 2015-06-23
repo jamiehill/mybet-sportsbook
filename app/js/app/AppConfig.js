@@ -1,11 +1,11 @@
-import Deferred from '../common/defer/Deferred';
+import Deferred from 'core/defer/Deferred';
 import config from '../configuration.json!';
-import globals from '../common/Globals';
+import globals from 'core/Globals';
 
-import SportsBookModel from '../common/model/SportsBookModel';
-import EventCache from '../common/model/EventCache';
-import SessionModel from '../common/model/SessionModel';
-import OddsFactory from '../common/factory/OddsFactory';
+import SportsBookModel from 'core/model/SportsBookModel';
+import EventCache from 'core/model/EventCache';
+import SessionModel from 'core/model/SessionModel';
+import OddsFactory from 'core/factory/OddsFactory';
 
 
 export default class AppConfig extends Deferred {
