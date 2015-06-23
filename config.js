@@ -1,5 +1,5 @@
 System.config({
-  "baseURL": "./app/js",
+  "baseURL": "./js",
   "transpiler": "babel",
   "babelOptions": {
     "optional": [
@@ -8,10 +8,10 @@ System.config({
   },
   "paths": {
     "*": "*.js",
-    "github:*": "../../../vendor/github/*.js",
-    "npm:*": "../../../vendor/npm/*.js",
-  	"core*":"../../../src/modules/core-module/src/js/core*.js",
-  	"highlights*":"../../../src/modules/highlights-module/src/js/highlights*"
+    "github:*": "../../vendor/github/*.js",
+    "npm:*": "../../vendor/npm/*.js",
+  	"core*":"../../modules/core-module/src/js/core*.js",
+  	"highlights*":"../../modules/highlights-module/src/js/highlights*"
   }
 });
 
@@ -43,7 +43,7 @@ System.config({
 
 System.config({
   "map": {
-    "marionette-shim": "../../../src/modules/core-module/src/js/core/shims/marionette-shim",
+    "marionette-shim": "../../modules/core-module/src/js/core/shims/marionette-shim",
     "babel": "npm:babel-core@5.5.6",
     "babel-runtime": "npm:babel-runtime@5.5.6",
     "backbone": "npm:backbone@1.1.2",
