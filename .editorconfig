@@ -9,7 +9,7 @@ insert_final_newline=true
 end_of_line=lf
 trim_trailing_whitespace=true
 
-[system.config.js]
+[config.js]
 tab_width = 2
 
 [package.json]

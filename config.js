@@ -9,7 +9,9 @@ System.config({
   "paths": {
     "*": "*.js",
     "github:*": "../../../vendor/github/*.js",
-    "npm:*": "../../../vendor/npm/*.js"
+    "npm:*": "../../../vendor/npm/*.js",
+  	"core*":"../../../src/modules/core-module/src/js/core*.js",
+  	"highlights*":"../../../src/modules/highlights-module/src/js/highlights*"
   }
 });
 
@@ -18,7 +20,7 @@ System.config({
     "github:marionettejs/backbone.marionette@2.4.1/lib/core/backbone.marionette": {
       "format": "amd",
       "deps": [
-        "common/shims/marionette-shim"
+        "marionette-shim"
       ]
     },
     "github:carhartl/jquery-cookie@1.4.1": {
@@ -41,6 +43,7 @@ System.config({
 
 System.config({
   "map": {
+    "marionette-shim": "../../../src/modules/core-module/src/js/core/shims/marionette-shim",
     "babel": "npm:babel-core@5.5.6",
     "babel-runtime": "npm:babel-runtime@5.5.6",
     "backbone": "npm:backbone@1.1.2",
