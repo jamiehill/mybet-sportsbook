@@ -1,9 +1,9 @@
 import json from '../../../lib/event.json!';
 import ladder from '../../../lib/rootLadder.json!';
-import OddsFactory from '../../../../src/app/js/common/factory/OddsFactory';
-import Event from '../../../../src/app/js/common/model/Event';
-import Market from '../../../../src/app/js/common/model/Market';
-import Selection from '../../../../src/app/js/common/model/Selection';
+import OddsFactory from 'core/factory/OddsFactory';
+import Event from 'core/model/Event';
+import Market from 'core/model/Market';
+import Selection from 'core/model/Selection';
 
 describe("Event", function() {
 	var factory = new OddsFactory(ladder, {parse: true});

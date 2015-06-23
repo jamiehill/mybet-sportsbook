@@ -1,5 +1,5 @@
 import json from '../../../lib/selection.json!';
-import Selection from '../../../../src/app/js/common/model/Selection';
+import Selection from 'core/model/Selection';
 
 describe("Selection", function() {
 	var data;

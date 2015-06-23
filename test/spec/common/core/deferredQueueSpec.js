@@ -1,8 +1,8 @@
-import Queue from '../../../../src/app/js/common/defer/DeferredQueue';
-import dummy from '../../../../src/app/js/common/defer/DummyDeferred';
+import Queue from 'core/defer/DeferredQueue';
+import dummy from 'core/defer/DummyDeferred';
 
 
-describe('common/defer/DeferredQueue', function() {
+describe('core/defer/DeferredQueue', function() {
 	var queue1, queue2;
 	// mocha timeout delay
 	this.timeout(15000);

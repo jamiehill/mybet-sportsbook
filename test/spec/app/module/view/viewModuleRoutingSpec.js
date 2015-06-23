@@ -1,5 +1,5 @@
-import App from '../../../../../src/app/js/app/App';
-import Module from '../../../../../src/app/js/app/module/view/DummyModule';
+import App from '../../../../../app/js/app/App';
+import Module from '../../../../../app/js/app/module/MockViewModule';
 
 xdescribe('app/module/view/BaseViewModule - Routing', function() {
 	var sb; this.timeout(15000);

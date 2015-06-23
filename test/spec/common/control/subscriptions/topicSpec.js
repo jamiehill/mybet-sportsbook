@@ -1,4 +1,4 @@
-import Topic from '../../../../../src/app/js/common/control/subscriptions/Topic';
+import Topic from 'core/control/subscriptions/Topic';
 
 describe("common/control/subscriptions/Topic.js\n", function() {
 	var topic;

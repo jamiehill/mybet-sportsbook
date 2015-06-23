@@ -1,5 +1,5 @@
-import SessionModel from '../../../../src/app/js/common/model/SessionModel';
-import App from '../../../../src/app/js/app/App';
+import SessionModel from 'core/model/SessionModel';
+import App from '../../../../app/js/app/App';
 
 describe("- SessionModel.spec.js\n", function() {
 	var model, app, trigger, sb;
