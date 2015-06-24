@@ -1,11 +1,11 @@
-import Module from './BaseViewModule';
-import HeaderView from '../view/header/HeaderView';
+import Module from '../BaseViewModule';
+import View from './SideBarView';
 
 
 export default Module.extend({
 
-	view: HeaderView,
-	regionName: 'header',
+	viewClass: View,
+	regionName: 'sidebar',
 
 	appRoutes: {
 		"contacts(/filter/criterion::criterion)": "listContacts",

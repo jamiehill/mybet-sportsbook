@@ -1,5 +1,5 @@
 import App from '../../../../../app/js/app/App';
-import Module from '../../../../../app/js/app/module/MockViewModule';
+import Module from './MockViewModule';
 
 describe('app/module/view/BaseViewModule', function() {
 	var sb; this.timeout(15000);

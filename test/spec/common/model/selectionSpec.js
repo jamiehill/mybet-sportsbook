@@ -1,4 +1,4 @@
-import json from '../../../lib/selection.json!';
+import json from '../../../lib/data/selection.json!';
 import Selection from 'core/model/Selection';
 
 describe("Selection", function() {

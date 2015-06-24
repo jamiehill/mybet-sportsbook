@@ -4,7 +4,7 @@ import BOOT_COMPLETE from '../AppConstants'
 export default Marionette.Module.extend({
 	startWithParent: false,
 
-	view: null,
+	viewClass: null,
 	regionName: '',
 	appRoutes: {},
 	api: {},
@@ -35,8 +35,9 @@ export default Marionette.Module.extend({
 		console.log("Module: Views."+this.moduleName+' - started');
 
 		// attach the view
-		if (this.view && this.regionName) {
-			this.app.layout[this.regionName].show(new this.view());
+		if (this.viewClass && this.regionName) {
+			this.view = new this.viewClass();
+			this.app.layout[this.regionName].show(this.view);
 		}
 		// start up the module router
 		new this.Router({ controller: this.api });

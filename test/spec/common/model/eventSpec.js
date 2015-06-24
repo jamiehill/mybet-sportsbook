@@ -1,5 +1,5 @@
-import json from '../../../lib/event.json!';
-import ladder from '../../../lib/rootLadder.json!';
+import json from '../../../lib/data/event.json!';
+import ladder from '../../../lib/data/rootLadder.json!';
 import OddsFactory from 'core/factory/OddsFactory';
 import Event from 'core/model/Event';
 import Market from 'core/model/Market';

@@ -6,7 +6,8 @@ export default Marionette.LayoutView.extend({
 	el: 'body',
 
 	regions: {
-		header: 	'#header-container',
+		topNav: 	'#topnav-container',
+		dashboard: 	'#dashboard-container',
 		subNav: 	'#sub-nav-container',
 		sidebar: 	'#content-side-panel-1',
 		rightbar: 	'#content-side-panel-3',

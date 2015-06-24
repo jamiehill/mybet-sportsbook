@@ -1,4 +1,4 @@
-import json from '../../../lib/market.json!';
+import json from '../../../lib/data/market.json!';
 import Market from 'core/model/Market';
 
 describe("Market", function() {

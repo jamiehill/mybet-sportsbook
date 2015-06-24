@@ -1,10 +1,11 @@
-import Module from './BaseViewModule';
-import FooterView from '../view/footer/FooterView'
+import Module from '../BaseViewModule';
+import View from './TopNavView';
+
 
 export default Module.extend({
 
-	view: FooterView,
-	regionName: 'footer',
+	viewClass: View,
+	regionName: 'topNav',
 
 	appRoutes: {
 		"contacts(/filter/criterion::criterion)": "listContacts",

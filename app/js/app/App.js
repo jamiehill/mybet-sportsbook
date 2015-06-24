@@ -1,28 +1,33 @@
 import Radio from 'backbone.radio';
 import timestamp from 'core/system/NiceConsole';
 import AppLayout from './AppLayout';
-import Header from './module/HeaderModule';
-import SubNav from './module/SubNavModule';
-import Main from './module/MainModule';
-import Footer from './module/FooterModule';
-import BetSlip from './module/BetSlipModule';
-import {BOOT_COMPLETE} from './AppConstants';
+import TopNav from './view/topNav/TopNav';
+import Dashboard from './view/dashboard/Dashboard';
+import SubNav from './view/subNav/SubNav';
+import Main from './view/main/Main';
+import Footer from './view/footer/Footer';
+import BetSlip from './view/betSlip/BetSlip';
 
 
 var Application = Marionette.Application.extend({
-	$body: $(document.body),
+
+	// setup our channels
+	session: Radio.channel('session'),
+	socket:  Radio.channel('socket'),
+	bus:  	 Radio.channel('bus'),
 
 
 	bootstrap: [
 		'app/AppConfig',
-		'core/system/bootstrap/DomainResolver',
+		'core/system/bootstrap/DomainResolver'
 		//'core/system/bootstrap/TranslatorConfig',
-		'core/system/bootstrap/RootLadder',
-		'core/system/bootstrap/GetRegionalSports'
+		//'core/system/bootstrap/RootLadder',
+		//'core/system/bootstrap/GetRegionalSports'
 	],
 
 	modules: {
-		'Views.Header': Header,
+		'Views.TopNav': TopNav,
+		'Views.Dashboard': Dashboard,
 		'Views.SubNav': SubNav,
 		'Views.Main': 	Main,
 		'Views.BetSlip': BetSlip,
@@ -38,11 +43,6 @@ var Application = Marionette.Application.extend({
 		window.App = this;
 		window.ctx = this.ctx = di.createContext();
 
-		// setup our channels
-		App.session = Radio.channel('session');
-		App.socket  = Radio.channel('socket');
-		App.bus 	= Radio.channel('bus');
-
 		// initialize src layout
 		this.layout = new AppLayout();
 		this.layout.render();
@@ -56,7 +56,6 @@ var Application = Marionette.Application.extend({
 	 */
 	prestart() {
 		var that = this;
-		// and load/start the boot sequence
 		System.import('core/CoreModule').then(function(inst){
 			var module = App.module('Core', inst.default);
 			module.boot(that.bootstrap).then(that.start);
