@@ -43,7 +43,7 @@ System.config({
 
 System.config({
   "map": {
-    "marionette-shim": "../../modules/core-module/src/js/core/shims/marionette-shim",
+    "marionette-shim": "../../modules/core-module/src/js/core/system/shims/marionette-shim",
     "babel": "npm:babel-core@5.5.6",
     "babel-runtime": "npm:babel-runtime@5.5.6",
     "backbone": "npm:backbone@1.1.2",

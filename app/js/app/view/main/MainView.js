@@ -1,6 +1,6 @@
 import React from 'react';
 import template from './MainTemplate.html!text';
-import View from 'core/react/ReactView';
+import View from 'core/system/react/ReactView';
 import Component from 'highlights/HighlightsView.jsx!';
 
 export default Marionette.LayoutView.extend({
@@ -11,18 +11,6 @@ export default Marionette.LayoutView.extend({
 	},
 
 	onShow() {
-		var model = {
-			date: "Today",
-			time: "10:30",
-			homeTeam: "Middlesbrough",
-			homePrice: "1.3",
-			drawTeam: "Draw",
-			drawPrice: "2.4",
-			awayTeam: "Manchester United",
-			awayPrice: "1.1",
-			numMarkets: "+34"
-		};
-
 		var collection = this.mockCollection(),
 			Comp = React.createFactory(Component);
 
@@ -32,14 +20,7 @@ export default Marionette.LayoutView.extend({
 				collection: collection
 			}
 		}));
-
-		//var that = this;
-		//_.delay(function() {
-		//	console.log("New name Bob!");
-		//	model.set({name: 'Bob'});
-		//}, 10000);
 	},
-
 
 	mockCollection() {
 		var models = _.times(12, function(n) {

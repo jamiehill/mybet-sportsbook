@@ -6,9 +6,9 @@
 	"channel": "INTERNET",
 	"defaultLotteryDomain": "http://trading-baba.amelco.co.uk",
 	"defaultDomainThers": "https://sports.uat.pyr/",
-	"defaultDomain": "https://sports.uat.pyr/",
 	"defaultDomain": "https://sports.pokerstars.com",
 	"defaultDomain": "https://sports-ats1.uat.pyrsoftware.ca",
+	"defaultDomain": "https://sports.qacore.pyr/",
 	"endpoint": "sportsbook/v1/api",
 	"wsendpoint": "/websocket",
 	"lpendpoint": "/longpoll",
@@ -16,5 +16,8 @@
 	"traderEndpoint": "ats-trader/api/",
 	"ctx": "app/local/PokerstarsConfig",
 	"useSecure": "true",
-	"defaultLocale": "en-gb"
+	"defaultLocale": "en-gb",
+	"apiKeepAlive": "10000",
+	"socketKeepAlive": "10000",
+	"socketReconnect": "10000"
 }

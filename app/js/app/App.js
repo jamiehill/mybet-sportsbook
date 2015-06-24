@@ -1,5 +1,6 @@
+import Radio from 'backbone.radio';
+import timestamp from 'core/system/NiceConsole';
 import AppLayout from './AppLayout';
-import DeferredQueue from 'core/defer/DeferredQueue';
 import Header from './module/HeaderModule';
 import SubNav from './module/SubNavModule';
 import Main from './module/MainModule';
@@ -7,14 +8,17 @@ import Footer from './module/FooterModule';
 import BetSlip from './module/BetSlipModule';
 import {BOOT_COMPLETE} from './AppConstants';
 
-// setup application instance
+
 var Application = Marionette.Application.extend({
+	$body: $(document.body),
+
+
 	bootstrap: [
 		'app/AppConfig',
-		'core/bootstrap/DomainResolver'
-		//'core/bootstrap/TranslatorConfig',
-		//'core/bootstrap/RootLadder',
-		//'core/bootstrap/GetRegionalSports'
+		'core/system/bootstrap/DomainResolver',
+		//'core/system/bootstrap/TranslatorConfig',
+		'core/system/bootstrap/RootLadder',
+		'core/system/bootstrap/GetRegionalSports'
 	],
 
 	modules: {
@@ -25,31 +29,43 @@ var Application = Marionette.Application.extend({
 		'Views.Footer': Footer
 	},
 
+	/**
+	 * Initialize the app layout
+	 */
 	initialize() {
-		this.$body  = $(document.body);
-		this.ctx = di.createContext();
+		_.bindAll(this, 'start');
+
+		window.App = this;
+		window.ctx = this.ctx = di.createContext();
+
+		// setup our channels
+		App.session = Radio.channel('session');
+		App.socket  = Radio.channel('socket');
+		App.bus 	= Radio.channel('bus');
 
 		// initialize src layout
 		this.layout = new AppLayout();
 		this.layout.render();
 
-		// initialize context before views get initialized
-		//this.listenTo(this.vent, BOOT_COMPLETE, this.start);
+		timestamp(console);
 		this.prestart();
 	},
 
-
+	/**
+	 * kick the boot sequence off
+	 */
 	prestart() {
-		console.log('App: Bootstrap - Start');
-		var queue = new DeferredQueue(this.bootstrap),
-			that  = this;
-		queue.init().then(function() {
-			console.log('App: Bootstrap - Complete');
-			that.start();
+		var that = this;
+		// and load/start the boot sequence
+		System.import('core/CoreModule').then(function(inst){
+			var module = App.module('Core', inst.default);
+			module.boot(that.bootstrap).then(that.start);
 		});
 	},
 
-
+	/**
+	 * On start kick off the views
+	 */
 	onStart() {
 		console.log('App: Start');
 		this.ctx.initialize();
@@ -64,6 +80,9 @@ var Application = Marionette.Application.extend({
 		Backbone.history.start({pushState: true, root: this.Urls.root || ''});
 	},
 
+	/**
+	 * Shut down applicatiopn
+	 */
 	stop() {
 		console.log("Backbone: history - stopped");
 		Backbone.history.stop();
@@ -72,6 +91,4 @@ var Application = Marionette.Application.extend({
 
 // exports singleton instance
 let inst = new Application();
-window.App = inst;
-window.ctx = inst.ctx;
 export default inst;

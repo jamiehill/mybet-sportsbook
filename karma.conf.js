@@ -36,12 +36,11 @@ module.exports = function(config) {
 				//'vendor/npm/react@0.14.0-alpha3/*',
 				'test/**/*',
 				'test/**/*Spec.js',
-				'src/js/**/*.*'
+				'app/js/**/*.*'
 			],
 			config: {
 				baseURL: "/",
 				paths: {
-					//'src/js/common/shims/marionette-shim': 'src/js/common/shims/marionette-shim.js',
 					'es6-module-loader': 'vendor/es6-module-loader.js',
 					'systemjs': 'vendor/system.js',
 					"github:*": "vendor/github/*.js",
@@ -53,7 +52,7 @@ module.exports = function(config) {
 				"meta": {
 					"github:marionettejs/backbone.marionette@2.4.1/lib/core/backbone.marionette": {
 						"format": "amd",
-						"deps": [ "src/app/js/common/shims/marionette-shim" ]
+						"deps": [ "modules/core-module/src/js/core/system/shims/marionette-shim" ]
 					},
 					"github:carhartl/jquery-cookie@1.4.1": {
 						"deps": [ "jquery" ]
