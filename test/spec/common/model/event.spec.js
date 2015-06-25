@@ -1,17 +1,17 @@
 import json from '../../../lib/data/event.json!';
 import ladder from '../../../lib/data/rootLadder.json!';
-import OddsFactory from 'core/model/factory/OddsFactory';
+import factory from 'core/model/factory/OddsFactory';
 import Event from 'core/model/Event';
 import Market from 'core/model/Market';
 import Selection from 'core/model/Selection';
 
 describe("Event", function() {
-	var factory = new OddsFactory(ladder, {parse: true});
+	var data = factory.parse(ladder);
+	factory.set(data);
+
 	sinon.stub(Market.prototype, 'oddsFactory', function() {
 		return factory;
 	});
-
-	var blah = "blah";
 
 	var event = new Event(json.Event, {parse: true});
 	var market = event.Markets.get('28917290');

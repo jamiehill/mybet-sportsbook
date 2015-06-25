@@ -1,33 +1,32 @@
 import App from '../../../../../app/js/app/App';
-import Module from '../../../../../app/js/app/view/MockViewModule';
 
 xdescribe('app/view/BaseViewModule - Routing', function() {
-	var sb; this.timeout(15000);
-
+	this.timeout(15000);
 	var testModules = function(modules, route, handler, done) {
 		App.modules = modules;
 		App.start();
 
-		var spies = _.map(_.keys(modules), function(Module) {
-			var spy = sb.spy();
-			return spy(App.module(Module).api, handler);
+		var spies = _.map(_.keys(modules), function(Mod) {
+			return spy(App.module(Mod).api, handler);
 		});
 
 		Backbone.history.on('route', function() { done(); });
 		Backbone.history.navigate(route, {trigger: true});
-
 		return spies;
 	};
 
+	var Module = Marionette.Module.extend({
+		appRoutes: { "test": "onTestRoute" },
+		api: {onTestRoute: function(id) {}}
+	});
+
 	beforeEach(function() {
-		sb = sinon.sandbox.create();
 		App.Urls = {root: "/"};
 	})
 
 	afterEach(function() {
 		Backbone.history.navigate('/', {trigger: false, replace: true});
-		Backbone.history.stop();
-		sb.restore();
+		App.stop();
 	})
 
 	describe('Displaying the module', function() {

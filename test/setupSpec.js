@@ -11,6 +11,7 @@ window.Marionette = Marionette;
 
 import di from 'di-lite';
 import _s from 'underscore.string';
+import cookie from 'jquery-cookie';
 
 _.mixin(_s.exports());
 _.includes = _.include;

@@ -8,7 +8,7 @@ describe('core/system/defer/DeferredQueue', function() {
 	this.timeout(15000);
 
 	beforeEach(function() {
-		var path = 'src/js/common/defer/DummyDeferred';
+		var path = 'modules/core-module/src/js/core/system/defer/DummyDeferred';
 		queue1 = new Queue([path, path]);
 		queue2 = new Queue([dummy, dummy]);
 	})

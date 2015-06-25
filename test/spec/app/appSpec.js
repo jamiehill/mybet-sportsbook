@@ -3,11 +3,10 @@ import SportsBook from '../../../app/js/app/App';
 describe('SportsBook', function() {
 
 	before(function() {
-		//fixture.load('/test/fixrures/rootElement.html');
 	});
 
 	after(function() {
-		//fixture.cleanup();
+		App.stop();
 	});
 
 	it('should be defined', function() {
