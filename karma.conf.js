@@ -3,7 +3,7 @@ module.exports = function(config) {
 
 
 		basePath: '.',
-		logLevel: config.LOG_DEBUG,
+		logLevel: config.LOG_INFO,
 		frameworks: ['systemjs', 'mocha'],
 
 		plugins: [
