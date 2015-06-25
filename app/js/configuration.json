@@ -9,6 +9,7 @@
 	"defaultDomain": "https://sports.pokerstars.com",
 	"defaultDomain": "https://sports-ats1.uat.pyrsoftware.ca",
 	"defaultDomain": "https://sports.qacore.pyr/",
+	"defaultDomain": "http://sportsbook-dev.amelco.co.uk",
 	"endpoint": "sportsbook/v1/api",
 	"wsendpoint": "/websocket",
 	"lpendpoint": "/longpoll",

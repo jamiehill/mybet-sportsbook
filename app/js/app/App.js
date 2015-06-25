@@ -19,7 +19,7 @@ var Application = Marionette.Application.extend({
 
 
 	bootstrap: [
-		'app/AppConfig',
+		'app/js/app/AppConfig',
 		'core/system/bootstrap/DomainResolver',
 		'core/system/bootstrap/MarionetteConfig',
 		'core/system/bootstrap/GetSportData'
@@ -75,8 +75,6 @@ var Application = Marionette.Application.extend({
 		_.each(this.modules, function(Module, name) {
 			App.module(name, Module).start();
 		});
-
-
 
 		// then startup the routers
 		console.log("Backbone: history - started");
