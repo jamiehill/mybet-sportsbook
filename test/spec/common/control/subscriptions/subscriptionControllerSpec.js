@@ -1,7 +1,7 @@
-import Ctrl from 'core/control/subscriptions/SubscriptionController';
+import Ctrl from 'core/controller/subscriptions/SubscriptionController';
 
 
-describe("common/control/subscriptions/SubscriptionController\n", function() {
+describe("common/controller/subscriptions/SubscriptionController\n", function() {
 	var controller, sb;
 
 	beforeEach(function() {

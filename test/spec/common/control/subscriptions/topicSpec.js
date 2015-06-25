@@ -1,6 +1,6 @@
-import Topic from 'core/control/subscriptions/Topic';
+import Topic from 'core/controller/subscriptions/Topic';
 
-describe("common/control/subscriptions/Topic.js\n", function() {
+describe("common/controller/subscriptions/Topic.js\n", function() {
 	var topic;
 
 	beforeEach(function() {

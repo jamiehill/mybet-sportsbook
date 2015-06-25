@@ -12,16 +12,13 @@ export default Module.extend({
 		"contacts/:id": "showContact"
 	},
 
+	listContacts: function() {
+		var blah = "blah";
+	},
+	showContact: function(id) {
+		var blah = "blah";
+	},
+	editContact: function() {
 
-	api: {
-		listContacts: function() {
-			var blah = "blah";
-		},
-		showContact: function(id) {
-			var blah = "blah";
-		},
-		editContact: function() {
-
-		}
 	}
 });

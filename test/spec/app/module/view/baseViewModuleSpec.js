@@ -1,7 +1,7 @@
 import App from '../../../../../app/js/app/App';
-import Module from './MockViewModule';
+import Module from '../../../../../app/js/app/view/MockViewModule';
 
-describe('app/module/view/BaseViewModule', function() {
+describe('app/view/BaseViewModule', function() {
 	var sb; this.timeout(15000);
 
 	beforeEach(function() {

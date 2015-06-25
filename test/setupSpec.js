@@ -1,4 +1,19 @@
-import '../app/js/plugins';
+import Backbone from 'backbone';
+import $ from 'jquery';
+import _ from 'underscore';
+Backbone.$ = $;
+
+window._ = _;
+window.$ = $;
+
+import Marionette from 'backbone.marionette';
+window.Marionette = Marionette;
+
+import di from 'di-lite';
+import _s from 'underscore.string';
+
+_.mixin(_s.exports());
+_.includes = _.include;
 
 import chai from 'chai';
 import sinon from 'sinon';
@@ -12,18 +27,14 @@ window.assert = window.chai.assert;
 window.expect = window.chai.expect;
 window.should = window.chai.should();
 
-//fixture.setBase('./test/fixtures');
+beforeEach(function() {
+	this.sandbox = window.sinon.sandbox.create();
+	window.stub = this.sandbox.stub.bind(this.sandbox);
+	window.spy  = this.sandbox.spy.bind(this.sandbox);
+});
 
-export default function() {
-	beforeEach(function() {
-		this.sandbox = window.sinon.sandbox.create();
-		window.stub = this.sandbox.stub.bind(this.sandbox);
-		window.spy  = this.sandbox.spy.bind(this.sandbox);
-	});
-
-	afterEach(function() {
-		delete window.stub;
-		delete window.spy;
-		this.sandbox.restore();
-	});
-}
+afterEach(function() {
+	delete window.stub;
+	delete window.spy;
+	this.sandbox.restore();
+});

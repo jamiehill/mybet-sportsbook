@@ -1,1 +1,0 @@
-exports.type = 'ES6';

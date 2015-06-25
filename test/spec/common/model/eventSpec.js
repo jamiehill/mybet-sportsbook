@@ -1,6 +1,6 @@
 import json from '../../../lib/data/event.json!';
 import ladder from '../../../lib/data/rootLadder.json!';
-import OddsFactory from 'core/factory/OddsFactory';
+import OddsFactory from 'core/model/factory/OddsFactory';
 import Event from 'core/model/Event';
 import Market from 'core/model/Market';
 import Selection from 'core/model/Selection';
@@ -11,15 +11,11 @@ describe("Event", function() {
 		return factory;
 	});
 
+	var blah = "blah";
+
 	var event = new Event(json.Event, {parse: true});
 	var market = event.Markets.get('28917290');
 	var selection = market.Selections.get('96651945');
-
-	beforeEach(function() {
-	})
-
-	afterEach(function() {
-	})
 
 	describe('Instantiate Event, Market and Selection Object', function() {
 		it('should have created an Event', function() {

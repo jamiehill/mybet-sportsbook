@@ -3,14 +3,15 @@ import BetSlipView from './BetSlipView';
 
 
 export default Module.extend({
-
 	viewClass: BetSlipView,
 	regionName: 'betslip',
 
 	appRoutes: {
+		"": "showOpenBets"
 	},
 
 
-	api: {
+	showOpenBets: function() {
+		console.log('ShowOpenBets');
 	}
 });

@@ -1,6 +1,3 @@
-import BOOT_COMPLETE from '../AppConstants'
-
-
 export default Marionette.Module.extend({
 	startWithParent: false,
 
@@ -19,6 +16,9 @@ export default Marionette.Module.extend({
 		this.app = app;
 		this.options = options;
 
+		this.view = new this.viewClass();
+		this.region = this.app.layout[this.regionName];
+
 		// create module specific router
 		this.Router = Marionette.AppRouter.extend({
 			appRoutes: this.appRoutes
@@ -36,11 +36,10 @@ export default Marionette.Module.extend({
 
 		// attach the view
 		if (this.viewClass && this.regionName) {
-			this.view = new this.viewClass();
-			this.app.layout[this.regionName].show(this.view);
+			this.region.show(this.view);
 		}
 		// start up the module router
-		new this.Router({ controller: this.api });
+		new this.Router({ controller: this });
 	},
 
 

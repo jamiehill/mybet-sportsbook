@@ -2,7 +2,7 @@ import Radio from 'backbone.radio';
 import timestamp from 'core/system/NiceConsole';
 import AppLayout from './AppLayout';
 import TopNav from './view/topNav/TopNav';
-import Dashboard from './view/dashboard/Dashboard';
+import Dashboard from './view/header/Header';
 import SubNav from './view/subNav/SubNav';
 import Main from './view/main/Main';
 import Footer from './view/footer/Footer';
@@ -14,14 +14,16 @@ var Application = Marionette.Application.extend({
 	// setup our channels
 	session: Radio.channel('session'),
 	socket:  Radio.channel('socket'),
+	router:  Radio.channel('router'),
 	bus:  	 Radio.channel('bus'),
 
 
 	bootstrap: [
 		'app/AppConfig',
-		'core/system/bootstrap/DomainResolver'
+		'core/system/bootstrap/DomainResolver',
+		'core/system/bootstrap/MarionetteConfig',
+		'core/system/bootstrap/GetSportData'
 		//'core/system/bootstrap/TranslatorConfig',
-		//'core/system/bootstrap/RootLadder',
 		//'core/system/bootstrap/GetRegionalSports'
 	],
 
@@ -74,17 +76,29 @@ var Application = Marionette.Application.extend({
 			App.module(name, Module).start();
 		});
 
+
+
 		// then startup the routers
 		console.log("Backbone: history - started");
+		Backbone.history.on('route', this.onRoute);
 		Backbone.history.start({pushState: true, root: this.Urls.root || ''});
 	},
 
 	/**
 	 * Shut down applicatiopn
 	 */
-	stop() {
+	onStop() {
 		console.log("Backbone: history - stopped");
 		Backbone.history.stop();
+	},
+
+
+	/**
+	 * Broadcast global route changes
+	 */
+	onRoute(router, name, args) {
+		console.log('Router: '+name);
+		App.router.trigger('route:change', name);
 	}
 });
 

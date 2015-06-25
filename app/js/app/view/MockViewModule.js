@@ -1,4 +1,4 @@
-import Module from '../../../../../app/js/app/view/BaseViewModule';
+import Module from './BaseViewModule';
 
 export default Module.extend({
 	appRoutes: {

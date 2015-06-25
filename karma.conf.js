@@ -4,12 +4,10 @@ module.exports = function(config) {
 
 		basePath: '.',
 		logLevel: config.LOG_DEBUG,
-		frameworks: ['systemjs', 'mocha', 'chai', 'chai-as-promised', 'sinon-chai'],
+		frameworks: ['systemjs', 'mocha'],
 
 		plugins: [
 			'karma-mocha',
-			'karma-chai',
-			'karma-chai-plugins',
 			'karma-systemjs',
 			'karma-chrome-launcher',
 			'karma-phantomjs-launcher',
@@ -20,35 +18,27 @@ module.exports = function(config) {
 			configFile: 'config.js',
 			testFileSuffix: 'Spec.js',
 			files: [
-				//'src/js/common/shims/marionette-shim.js',
+				'test/setupSpec.js',
 				'vendor/**/**',
 				'vendor/github/*',
 				'vendor/npm/*',
-				//'vendor/github/components/jquery@2.1.4/*',
-				//'vendor/github/floatdrop/plugin-jsx@1.1.0/*',
-				//'vendor/github/marionettejs/backbone.marionette@2.4.1/lib/*',
-				//'vendor/github/systemjs/plugin-json@0.1.0/*',
-				//'vendor/github/systemjs/plugin-text@0.0.2/*',
-				//'vendor/npm/babel-core@5.5.6/*',
-				//'vendor/npm/backbone@1.1.2/*',
-				//'vendor/npm/di-lite@0.3.3/*',
-				//'vendor/npm/lodash@3.9.3/*',
-				//'vendor/npm/react@0.14.0-alpha3/*',
-				'test/**/*',
-				'test/**/*Spec.js',
-				'app/js/**/*.*'
+				'test/lib/**/*',
+				'test/spec/**/*.js',
+				'app/js/**/*.*',
+				'modules/**/*'
 			],
 			config: {
 				baseURL: "/",
+				defaultJSExtensions: true,
 				paths: {
 					'es6-module-loader': 'vendor/es6-module-loader.js',
 					'systemjs': 'vendor/system.js',
 					"github:*": "vendor/github/*.js",
 					"npm:*": "vendor/npm/*.js",
-					'app*': 'src/js/app*',
-					'common*': 'src/js/common*',
-					'modules*': 'src/js/modules*'
+					'core*': 'modules/core-module/src/js/core*.js',
+					'highlights*': 'modules/highlights-module/src/js/highlights*'
 				},
+
 				"meta": {
 					"github:marionettejs/backbone.marionette@2.4.1/lib/core/backbone.marionette": {
 						"format": "amd",
