@@ -22,7 +22,7 @@ describe('SportsBook', function() {
 	});
 
 	xit('should invoke "onStart", when SportsBook started', function() {
-		var spy = sinon.spy(App, 'onStart');
+		var spy = spy(App, 'onStart');
 		App.start();
 		expect(spy).to.have.been.called;
 	})

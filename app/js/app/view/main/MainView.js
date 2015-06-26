@@ -2,6 +2,7 @@ import React from 'react';
 import template from './MainTemplate.html!text';
 import View from 'core/system/react/ReactView';
 import Component from 'highlights/HighlightsView.jsx!';
+import EventFactory from 'core/model/factory/EventFactory';
 
 export default Marionette.LayoutView.extend({
 
@@ -11,32 +12,13 @@ export default Marionette.LayoutView.extend({
 	},
 
 	onShow() {
-		var collection = this.mockCollection(),
-			Comp = React.createFactory(Component);
-
+		var factory = new EventFactory();
 		this.highlights.show(new View({
-			component: Comp,
+			component: React.createFactory(Component),
 			data: {
-				collection: collection
+				factory: factory,
+				collection: factory.collection
 			}
 		}));
-	},
-
-	mockCollection() {
-		var models = _.times(12, function(n) {
-			return new Backbone.Model({
-				id: n,
-				date: "Today",
-				time: "10:30",
-				homeTeam: "Middlesbrough",
-				homePrice: "1.3",
-				drawTeam: "Draw",
-				drawPrice: "2.4",
-				awayTeam: "Manchester United",
-				awayPrice: "1.1",
-				numMarkets: "+34"
-			});
-		});
-		return new Backbone.Collection(models);
 	}
 });

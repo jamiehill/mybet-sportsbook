@@ -7,20 +7,13 @@ export default Module.extend({
 	viewClass: View,
 	regionName: 'dashboard',
 
-	appRoutes: {
-		"": "showHero",
-		"dashboard": "showDashboard"
-	},
 
-
-	showHero: function() {
+	onHome: function() {
 		console.log('ShowHero');
-		this.region.show(this.view);
 	},
 
-
-	showDashboard: function(id) {
+	onDashboard: function() {
 		console.log('ShowDashboard');
-		//this.region.empty();
 	}
+
 });

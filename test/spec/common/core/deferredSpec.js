@@ -7,13 +7,11 @@ describe('core/system/defer/Deferred', function() {
 	this.timeout(15000);
 
 	beforeEach(function() {
-		sb = sinon.sandbox.create();
-		sb.stub(console, 'log');
+		stub(console, 'log');
 		deferred = new Deferred();
 	})
 
 	afterEach(function() {
-		sb.restore();
 	})
 
 	it("should return a Promise when init'ed", function() {

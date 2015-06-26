@@ -1,3 +1,18 @@
+karma.loaded = function() {
+};
+
+import chai from 'chai';
+import sinon from 'sinon';
+import sinonchai from 'sinon-chai';
+
+window.chai = chai;
+window.sinon = sinon;
+window.chai.use(sinonchai);
+
+window.assert = window.chai.assert;
+window.expect = window.chai.expect;
+window.should = window.chai.should();
+
 import Backbone from 'backbone';
 import $ from 'jquery';
 import _ from 'underscore';
@@ -16,18 +31,6 @@ import cookie from 'jquery-cookie';
 _.mixin(_s.exports());
 _.includes = _.include;
 
-import chai from 'chai';
-import sinon from 'sinon';
-import sinonchai from 'sinon-chai';
-
-window.chai = chai;
-window.sinon = sinon;
-window.chai.use(sinonchai);
-
-window.assert = window.chai.assert;
-window.expect = window.chai.expect;
-window.should = window.chai.should();
-
 beforeEach(function() {
 	this.sandbox = window.sinon.sandbox.create();
 	window.stub = this.sandbox.stub.bind(this.sandbox);
@@ -39,3 +42,5 @@ afterEach(function() {
 	delete window.spy;
 	this.sandbox.restore();
 });
+
+karma.start();

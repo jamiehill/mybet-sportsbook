@@ -10,8 +10,8 @@ System.config({
     "*": "*.js",
     "github:*": "../../vendor/github/*.js",
     "npm:*": "../../vendor/npm/*.js",
-  	"core*":"../../modules/core-module/src/js/core*.js",
-  	"highlights*":"../../modules/highlights-module/src/js/highlights*"
+    "core*": "../../modules/core-module/src/js/core*.js",
+    "highlights*": "../../modules/highlights-module/src/js/highlights*"
   }
 });
 
@@ -37,13 +37,18 @@ System.config({
       "format": [
         "global"
       ]
-    }
+    },
+		"moment": {
+			"format": [
+				"global"
+			]
+		}
+
   }
 });
 
 System.config({
   "map": {
-    "marionette-shim": "../../modules/core-module/src/js/core/system/shims/marionette-shim",
     "babel": "npm:babel-core@5.5.6",
     "babel-runtime": "npm:babel-runtime@5.5.6",
     "backbone": "npm:backbone@1.1.2",
@@ -63,7 +68,9 @@ System.config({
     "jsdom": "npm:jsdom@5.4.3",
     "json": "github:systemjs/plugin-json@0.1.0",
     "jsx": "github:floatdrop/plugin-jsx@1.1.0",
+    "marionette-shim": "../../modules/core-module/src/js/core/system/shims/marionette-shim",
     "marionettejs/backbone.marionette": "github:marionettejs/backbone.marionette@2.4.1",
+    "moment": "github:moment/moment@2.10.3",
     "process": "npm:process@0.11.1",
     "react": "npm:react@0.14.0-alpha3",
     "sinon": "npm:sinon@1.15.3",

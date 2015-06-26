@@ -5,7 +5,7 @@ import Event from 'core/model/Event';
 import Market from 'core/model/Market';
 import Selection from 'core/model/Selection';
 
-describe("Event", function() {
+xdescribe("Event", function() {
 	var data = factory.parse(ladder);
 	factory.set(data);
 

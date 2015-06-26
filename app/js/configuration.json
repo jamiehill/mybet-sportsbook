@@ -19,6 +19,6 @@
 	"useSecure": "true",
 	"defaultLocale": "en-gb",
 	"apiKeepAlive": "10000",
-	"socketKeepAlive": "10000",
-	"socketReconnect": "10000"
+	"socketKeepAlive": "3000",
+	"socketReconnect": "3000"
 }

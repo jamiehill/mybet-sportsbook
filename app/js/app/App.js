@@ -1,4 +1,5 @@
 import Radio from 'backbone.radio';
+import appRouter from './AppRouter';
 import timestamp from 'core/system/NiceConsole';
 import AppLayout from './AppLayout';
 import TopNav from './view/topNav/TopNav';
@@ -7,6 +8,7 @@ import SubNav from './view/subNav/SubNav';
 import Main from './view/main/Main';
 import Footer from './view/footer/Footer';
 import BetSlip from './view/betSlip/BetSlip';
+import login from 'core/command/Login';
 
 
 var Application = Marionette.Application.extend({
@@ -19,10 +21,10 @@ var Application = Marionette.Application.extend({
 
 
 	bootstrap: [
-		'app/js/app/AppConfig',
+		'app/AppConfig',
 		'core/system/bootstrap/DomainResolver',
 		'core/system/bootstrap/MarionetteConfig',
-		'core/system/bootstrap/GetSportData'
+		//'core/system/bootstrap/GetSportData'
 		//'core/system/bootstrap/TranslatorConfig',
 		//'core/system/bootstrap/GetRegionalSports'
 	],
@@ -45,6 +47,9 @@ var Application = Marionette.Application.extend({
 		window.App = this;
 		window.ctx = this.ctx = di.createContext();
 
+		// commands
+		App.command = App.bus.command;
+
 		// initialize src layout
 		this.layout = new AppLayout();
 		this.layout.render();
@@ -53,16 +58,6 @@ var Application = Marionette.Application.extend({
 		this.prestart();
 	},
 
-	/**
-	 * kick the boot sequence off
-	 */
-	prestart() {
-		var that = this;
-		System.import('core/CoreModule').then(function(inst){
-			var module = App.module('Core', inst.default);
-			module.boot(that.bootstrap).then(that.start);
-		});
-	},
 
 	/**
 	 * On start kick off the views
@@ -76,10 +71,7 @@ var Application = Marionette.Application.extend({
 			App.module(name, Module).start();
 		});
 
-		// then startup the routers
-		console.log("Backbone: history - started");
-		Backbone.history.on('route', this.onRoute);
-		Backbone.history.start({pushState: true, root: this.Urls.root || ''});
+		this.postStart();
 	},
 
 	/**
@@ -88,15 +80,40 @@ var Application = Marionette.Application.extend({
 	onStop() {
 		console.log("Backbone: history - stopped");
 		Backbone.history.stop();
+		Radio.reset();
 	},
 
 
 	/**
-	 * Broadcast global route changes
+	 * kick the boot sequence off
 	 */
-	onRoute(router, name, args) {
-		console.log('Router: '+name);
-		App.router.trigger('route:change', name);
+	prestart() {
+		console.log('App: PreStart');
+		var that = this;
+		System.import('core/CoreModule').then(function(inst){
+			var module = App.module('Core', inst.default);
+			module.boot(that.bootstrap).then(that.start);
+		});
+	},
+
+
+	/**
+	 * Startup router and history
+	 */
+	postStart() {
+		console.log('App: PostStart');
+		this.Router = appRouter.start();
+
+		var options = {pushState: true, root: this.Urls.root || ''};
+		Backbone.history.start(options);
+
+		var index = window.location.pathname.indexOf('index.html');
+		if (~index) {
+			window.location.pathname = window.location.pathname.substring(0, index);
+			//Backbone.history.navigate(url, {trigger: false, replace: true});
+		}
+
+		login('test1', 'test1');
 	}
 });
 

@@ -1,6 +1,8 @@
 //import Model from '../../../../modules/core-module/src/js/core/model/SportDataModel';
 import json from '../../../lib/data/sportData.json!';
+import eventData from '../../../lib/data/event.json!';
 import model from 'core/model/SportDataModel';
+import Event from 'core/model/Event';
 import Backbone from 'backbone';
 
 
@@ -36,7 +38,7 @@ describe('core/model/SportDataModel', function() {
 		expect(keyMarkets).to.have.length.of(2);
 	})
 
-	xit("should return market groups node for sport - getGroups", function() {
+	it("should return market groups node for sport - getGroups", function() {
 		var sport = model.getSport('SOCCER'),
 			groups = sport.groups;
 		expect(groups).to.be.defined;
@@ -64,7 +66,9 @@ describe('core/model/SportDataModel', function() {
 		expectMarketObj(keyMarkets[0]);
 	})
 
-	xit("should return relevant groups for specified event", function() {
-		 // TODO
+	it("should return relevant groups for specified event", function() {
+		 var event = new Event(eventData, {parse: true}),
+			 groups = model.getGroupsForEvent(event);
+
 	})
 });

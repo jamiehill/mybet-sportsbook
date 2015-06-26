@@ -22,6 +22,7 @@
       "jquery": "github:components/jquery@2.1.4",
       "jsx": "github:floatdrop/plugin-jsx@1.1.0",
       "marionettejs/backbone.marionette": "github:marionettejs/backbone.marionette@2.4.1",
+      "moment": "github:moment/moment@^2.10.3",
       "process": "npm:process@0.11.1",
       "react": "npm:react@0.14.0-alpha3",
       "sinon": "npm:sinon@1.15.3",
