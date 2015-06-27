@@ -1,4 +1,4 @@
-karma.loaded = function() {
+window.__karma__.loaded = function() {
 };
 
 import chai from 'chai';
@@ -43,4 +43,4 @@ afterEach(function() {
 	this.sandbox.restore();
 });
 
-karma.start();
+window.__karma__.start();

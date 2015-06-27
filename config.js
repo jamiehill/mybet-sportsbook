@@ -65,7 +65,6 @@ System.config({
     "jquery": "github:components/jquery@2.1.4",
     "jquery-cookie": "github:carhartl/jquery-cookie@1.4.1",
     "jquery.nicescroll": "github:carhartl/jquery-cookie@1.4.1",
-    "jsdom": "npm:jsdom@5.4.3",
     "json": "github:systemjs/plugin-json@0.1.0",
     "jsx": "github:floatdrop/plugin-jsx@1.1.0",
     "marionette-shim": "../../modules/core-module/src/js/core/system/shims/marionette-shim",

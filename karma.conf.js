@@ -20,8 +20,6 @@ module.exports = function(config) {
 			files: [
 				'test/setupSpec.js',
 				'vendor/**/**',
-				'vendor/github/*',
-				'vendor/npm/*',
 				'test/lib/**/*',
 				'test/spec/**/*.js',
 				'app/js/**/*.*',
