@@ -8,12 +8,13 @@ export default Module.extend({
 	regionName: 'dashboard',
 
 
-	onHome: function() {
-		console.log('ShowHero');
+	appRoutes: {
+		"": "onHome"
 	},
 
-	onDashboard: function() {
-		console.log('ShowDashboard');
+
+	onHome: function() {
+		this.showView();
 	}
 
 });

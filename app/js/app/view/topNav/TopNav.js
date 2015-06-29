@@ -7,18 +7,13 @@ export default Module.extend({
 	viewClass: View,
 	regionName: 'topNav',
 
+
 	appRoutes: {
-		"contacts(/filter/criterion::criterion)": "listContacts",
-		"contacts/:id": "showContact"
+		"": "onHome"
 	},
 
-	listContacts: function() {
-		var blah = "blah";
-	},
-	showContact: function(id) {
-		var blah = "blah";
-	},
-	editContact: function() {
 
+	onHome: function() {
+		this.showView();
 	}
 });

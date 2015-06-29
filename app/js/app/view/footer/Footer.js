@@ -3,5 +3,15 @@ import FooterView from './FooterView'
 
 export default Module.extend({
 	viewClass: FooterView,
-	regionName: 'footer'
+	regionName: 'footer',
+
+
+	appRoutes: {
+		"": "onHome"
+	},
+
+
+	onHome: function() {
+		this.showView();
+	}
 });

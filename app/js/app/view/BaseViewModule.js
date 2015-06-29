@@ -1,5 +1,7 @@
 import Marionette from 'backbone.marionette';
 import controller from 'app/AppRouter';
+import React from 'react';
+import View from 'core/system/react/ReactView';
 
 export default Marionette.Module.extend({
 
@@ -17,18 +19,32 @@ export default Marionette.Module.extend({
 		this.app = app;
 		this.options = options;
 
-		this.view = new this.viewClass();
 		this.region = this.app.layout[this.regionName];
+		if (this.viewClass) {
+			this.view = new this.viewClass();
+		}
 
 		controller.register(this);
 	},
 
 
 	/**
-	 *
+	 * Shows a React component in the region
 	 */
-	onStart() {
-		console.log("Module: Views."+this.moduleName+' - started');
+	showComponent(component) {
+		this.region.show(new View({
+			component: React.createFactory(component)
+		}));
+	},
+
+
+	/**
+	 * Shows a Marionette View in the region
+	 */
+	showView(view) {
+		// if an alternate view has been specified,
+		// instantiate that, otherwise use the default view
+		this.view = view ? new view() : this.view
 
 		// attach the view
 		if (this.viewClass && this.regionName) {

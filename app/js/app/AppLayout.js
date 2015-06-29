@@ -9,10 +9,9 @@ export default Marionette.LayoutView.extend({
 		topNav: 	'#topnav-container',
 		dashboard: 	'#dashboard-container',
 		subNav: 	'#sub-nav-container',
-		sidebar: 	'#content-side-panel-1',
-		rightbar: 	'#content-side-panel-3',
+		sidebar: 	'#left-sidebar',
+		rightbar: 	'#right-sidebar',
 		footer: 	'#footer-container',
-		main: 		'#main-content',
-		betslip: 	'#right-sidebar'
+		main: 		'#main-content'
 	}
 });

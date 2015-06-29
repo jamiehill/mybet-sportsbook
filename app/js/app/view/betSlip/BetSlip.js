@@ -4,14 +4,14 @@ import BetSlipView from './BetSlipView';
 
 export default Module.extend({
 	viewClass: BetSlipView,
-	regionName: 'betslip',
+	regionName: 'rightbar',
 
 	appRoutes: {
-		"": "showOpenBets"
+		"": "onHome"
 	},
 
 
-	showOpenBets: function() {
-		console.log('ShowOpenBets');
+	onHome: function() {
+		this.showView();
 	}
 });

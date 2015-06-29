@@ -7,8 +7,8 @@
 	"defaultLotteryDomain": "http://trading-baba.amelco.co.uk",
 	"defaultDomainThers": "https://sports.uat.pyr/",
 	"defaultDomain": "https://sports.pokerstars.com",
-	"defaultDomain": "https://sports.qacore.pyr/",
 	"defaultDomain": "https://sports-ats1.uat.pyrsoftware.ca",
+	"defaultDomain": "https://sports.uat.pyr/",
 	"defaultDomain": "http://sportsbook-dev.amelco.co.uk",
 	"endpoint": "sportsbook/v1/api",
 	"wsendpoint": "/websocket",
@@ -19,6 +19,6 @@
 	"useSecure": "true",
 	"defaultLocale": "en-gb",
 	"apiKeepAlive": "10000",
-	"socketKeepAlive": "3000",
-	"socketReconnect": "3000"
+	"socketKeepAlive": "10000",
+	"socketReconnect": "20000"
 }
