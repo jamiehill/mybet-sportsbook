@@ -30,6 +30,11 @@ export default Module.extend({
 
 	onCompetitions: function() {
 		this.showReact(CompetitionsView);
+	},
+
+
+	onNoMatch: function() {
+		this.showReact();
 	}
 
 });

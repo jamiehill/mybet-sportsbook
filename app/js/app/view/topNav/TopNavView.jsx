@@ -6,6 +6,12 @@ export default class TopNavView extends Component {
 		super();
 	}
 
+	/**
+	 * @param route
+	 */
+	navigate(route) {
+		App.navigate(route);
+	}
 
 	/**
 	 * @returns {XML}
@@ -25,9 +31,9 @@ export default class TopNavView extends Component {
 				</div>
 				<div id="top-account-nav">
 					<ul>
-						<li><a href="login.html">Log In</a></li>
-						<li><a href="register.html">Register</a></li>
-						<li><a href="#">English</a></li>
+						<li><a onClick={this.navigate.bind(this, 'login')}>Log In</a></li>
+						<li><a onClick={this.navigate.bind(this, 'register')}>Register</a></li>
+						<li><a href="javascript:void 0">English</a></li>
 					</ul>
 				</div>
 			</div>

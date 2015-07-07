@@ -42,7 +42,11 @@ export default Marionette.Module.extend({
 	 * Renders a React component directly intop this regions element
 	 */
 	showReact(Component) {
-		var node = $(this.region.$el.selector)[0];
+		const node = $(this.region.$el.selector)[0];
+		if (!Component) {
+			React.unmountComponentAtNode(node);
+			return;
+		}
 		React.render(<Component/>, node);
 	},
 
@@ -51,6 +55,10 @@ export default Marionette.Module.extend({
 	 * Shows a Marionette View in the region
 	 */
 	showView(view) {
+		if (!view) {
+			this.region.empty();
+		}
+
 		// if an alternate view has been specified,
 		// instantiate that, otherwise use the default view
 		this.view = view ? new view() : this.view

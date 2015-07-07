@@ -12,8 +12,6 @@ import SideBar from './view/sideBar/SideBar';
 import Main from './view/main/Main';
 import Footer from './view/footer/Footer';
 import BetSlip from './view/betSlip/BetSlip';
-import login from 'core/command/Login';
-
 
 var Application = Marionette.Application.extend({
 
@@ -113,8 +111,6 @@ var Application = Marionette.Application.extend({
 		//	window.location.pathname = window.location.pathname.substring(0, index);
 			//Backbone.history.navigate(url, {trigger: false, replace: true});
 		//}
-
-		login('test1', 'test1');
 	},
 
 

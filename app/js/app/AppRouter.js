@@ -27,6 +27,8 @@ var Controller = RouteController.extend({
 		''                              		: 'onHome',
 		'inplay'                         		: 'onHomeInplay',
 		'dashboard'								: 'onDashboard',
+		'login'									: 'onLogin',
+		'register'								: 'onRegister',
 
 		':sport(/)'                      		: 'onSport',
 		':sport/inplay'                  		: 'onSportInplay',
