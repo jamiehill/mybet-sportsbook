@@ -1,18 +1,35 @@
 import Module from '../BaseViewModule';
-import MainView from './MainView';
+import HighlightsView from './components/HighlightsView.jsx!';
+import EventView from './components/EventView.jsx!';
+import CountryView from './components/CountryView.jsx!';
+import CompetitionView from './components/CompetitionView.jsx!';
 import CompetitionsView from './components/CompetitionsView.jsx!';
 
 export default Module.extend({
-	viewClass: MainView,
 	regionName: 'main',
 
 	onHome: function() {
-		this.showView();
+		this.showReact(HighlightsView);
 	},
 
 
-	onSportCompetitions: function() {
-		this.showComponent(CompetitionsView);
+	onEvent: function() {
+		this.showReact(EventView);
+	},
+
+
+	onCountry: function() {
+		this.showReact(CountryView);
+	},
+
+
+	onCompetition: function() {
+		this.showReact(CompetitionView);
+	},
+
+
+	onCompetitions: function() {
+		this.showReact(CompetitionsView);
 	}
 
 });

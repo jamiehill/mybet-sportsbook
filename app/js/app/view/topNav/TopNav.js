@@ -1,19 +1,11 @@
 import Module from '../BaseViewModule';
-import View from './TopNavView';
+import TopNavView from './TopNavView.jsx!';
 
 
 export default Module.extend({
-
-	viewClass: View,
 	regionName: 'topNav',
 
-
-	appRoutes: {
-		"": "onHome"
-	},
-
-
 	onHome: function() {
-		this.showView();
+		this.showReact(TopNavView);
 	}
 });

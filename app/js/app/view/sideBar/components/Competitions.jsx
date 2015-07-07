@@ -1,31 +1,31 @@
 import React from 'react';
-import moment from 'moment';
-
 import Component from 'core/system/react/BackboneComponent';
 import Collection from 'core/collection/CompetitionsCollection';
-import MyCompetitions from './MyCompetitions.jsx!';
 import factory from 'core/model/factory/CompetitionFactory';
 import userModel from 'core/model/UserPreferencesModel';
 import {TOGGLE_SIDE_BAR} from '../../../AppConstants';
 
 export default class Competitions extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
-		_.bindAll(this, 'renderCountry', 'renderLeague');
+		this.bind('renderSelected', 'renderCountry', 'renderLeague', 'onToggle');
 		var that = this;
 
 		factory.fetch(function(comps) {
 			that.props.collection.reset(comps.models);
 		});
+
+		this.state = {open: false};
+		App.bus.on(TOGGLE_SIDE_BAR, this.onToggle);
 	}
 
 
 	/**
-	 *
+	 * toggle the side bar
 	 */
-	onHideSideBar() {
-		App.bus.trigger(TOGGLE_SIDE_BAR);
+	onToggle() {
+		this.setState({open: !this.state.open});
 	}
 
 
@@ -36,7 +36,6 @@ export default class Competitions extends Component {
 		e.stopPropagation();
 		$(e.currentTarget.parentElement).toggleClass('open');
 	}
-
 
 	/**
 	 * Adds/removes a competition from users selected competitions
@@ -49,23 +48,51 @@ export default class Competitions extends Component {
 		this.forceUpdate();
 	}
 
+	/**
+	 * Adds/removes a competition from users selected competitions
+	 */
+	onRemoveCompetition(e) {
+		var compId = e.currentTarget.id.replace("remove-", ""),
+			comp = factory.All[compId];
+		userModel.Competitions.remove(comp);
+		this.forceUpdate();
+	}
 
 	/**
 	 * Renders compeition container
 	 * @returns {XML}
 	 */
 	render() {
+		if (!this.state.open) {
+			return (<div></div>)
+		}
 		return (
-			<div>
-				<div className="sidebar-title" onClick={this.onHideSideBar.bind(this)}>
-					<a href="#_"><i className="entypo-cancel"></i> <span>Close</span></a>
+			<div className="left-sidebar-container">
+				<div className="sidebar-title" onClick={this.onToggle.bind(this)}>
+					<a href="javascript: void 0"><i className="entypo-cancel"></i> <span>Close</span></a>
 				</div>
-				<MyCompetitions/>
+				<div className="section highlighted open">
+					<h3>My Competitions</h3>
+					<ul>
+						{this.props.selected.map(this.renderSelected)}
+					</ul>
+				</div>
 				{this.props.collection.map(this.renderCountry)}
 			</div>
 		)
 	}
 
+	/**
+	 * Outputs the 'removable' competition in 'My Competitions'
+	 * @param model
+	 * @returns {XML}
+	 */
+	renderSelected(model) {
+		var id = "remove-"+model.id;
+		return (
+			<li key={model.id}><a className="remove" id={id} href="javascript: void 0" onClick={this.onRemoveCompetition.bind(this)}><i className="entypo-cancel"></i> {model.get('name')}</a></li>
+		)
+	}
 
 	/**
 	 * Renders a country group with it's competitions
@@ -77,7 +104,7 @@ export default class Competitions extends Component {
 			leagues = model.Children && model.Children.length ? model.Children.models : [];
 
 		return (
-			<div className="section header open">
+			<div key={model.id} className="section header open">
 				<h3 onClick={this.onExpandCollapse.bind(this)}><span className="flag-icon flag-icon-gb"></span> {attribs.name}</h3>
 				<ul>
 					{_.map(leagues, this.renderLeague)}
@@ -85,7 +112,6 @@ export default class Competitions extends Component {
 			</div>
 		)
 	}
-
 
 	/**
 	 * Outputs each league
@@ -105,4 +131,4 @@ export default class Competitions extends Component {
 };
 
 // set default props
-Competitions.defaultProps = { collection: new Collection() };
+Competitions.defaultProps = {collection: new Collection(), selected: userModel.Competitions};

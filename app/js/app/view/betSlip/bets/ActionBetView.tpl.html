@@ -1,0 +1,24 @@
+
+<div class="bet-actions">
+	
+	<div class="bet-total-bets" id="bet-total-bets">
+	    <p>Total Bets: <em><%= totalBets %></em></p>
+	</div>
+	
+	<div class="bet-total-stake check-amount-length" id="bet-total-stake">
+	    <p><?=TOTAL_STAKE?> <em><%= currencySymbol %> <%= totalStake %></em></p>
+	</div>
+	
+	<div class="bet-total-returns check-amount-length" id="bet-total-returns">
+	    <p>Total Returns: <em></em></p>
+	</div>
+
+    <div class="bet-total-info" id="bet-total-info" style="display:none">
+        <ul class='bet-selections dialog-messages'>
+            <li class='dialog warning'>
+                <p><?=ASK_EXCEED_MAX_STAKE?></p>
+            </li>
+        </ul>
+    </div>
+
+</div>

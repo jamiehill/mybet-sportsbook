@@ -1,0 +1,147 @@
+
+<li class="receipt-logo"><img src="images/logo_black.jpg"/></li>
+<ul class="bet-selections dialog-messages">
+
+    <li class="dialog success" style="<%=(hasOverAsk == false) ? '' : 'display:none' %>">
+        <div>
+            <h3><%= bets.length %> <?=BET?><%= ( bets.length != 1) ? 's' : '' %> <?=PLACED?></h3>
+            <p><?=REF?> <%= bets[0].betSlipId %><p>
+        </div>
+    </li>
+
+	<li class="dialog warning" style="<%=(hasOverAsk == true) ? '' : 'display:none' %>">
+		<div>
+			<h3><?=OVERASK_PENDING?></h3>
+			<p><?=OVERASK_PENDING_INFO?><br /><?=REF?> <%= bets[0].betPlacedRef %></p>
+		</div>
+	</li>
+</ul>
+
+<div id="printBarcode"></div>
+
+
+<% if(bets.length != 0) { %>
+
+	<%
+		var singles = _.where(bets, {type: "SINGLE"});
+		var multiples = _.where(bets, {type: "MULTIPLE"});
+	%>
+	
+	<% if(singles != 0) { %>
+		<div class="title"><?=SINGLES?></div>
+		<ul class="bet-selections grouped">
+		    <%_.each(singles, function(allBets){ %>
+	        	<li class="open open-bet">
+	
+	                <% _.each(allBets.betParts, function(bet){%>
+
+	                    <div class="row open-bet__overview">
+		                      <h2 class="type"><%=moment().calendar()%></h2>
+							<p class="confirmation-betId"><%=allBets.betId%></p>
+	                    </div>
+	                    <div class="row">
+	                        <div class="selection betPart">
+
+								<%
+									var oddsValue = bet.betPart.selection.decimalOdds;
+
+									if (priceFormat == 'FRACTION') {
+										oddsValue = bet.betPart.selection.fractionalOdds;
+									}
+									else if (priceFormat == 'AMERICAN') {
+										oddsValue = bet.betPart.selection.americanOdds;
+									}
+								%>
+
+	                            <p class="selection__market-odds"> <%= bet.betPart.selection.selectionName %> @ <%= oddsValue %></p>
+	                            <p class="selection__fixture">
+	                                <%= bet.betPart.selection.marketName %>
+	                                <br/>
+	                                <%= bet.betPart.selection.eventName %>
+	                                <br/>
+	                            </p>
+	                        </div>
+	                    </div>
+	                    <div class="row overview">
+	                        <p>
+	                            <?=STAKE?>: <%= currencySymbol %><%= allBets.stake %>
+	                            <span class="potential-returns"><?=POTENTIAL_RETURNS?>: <%= currencySymbol %> <%= allBets.potentialPayout %></span>
+	                        </p>
+	                    </div>
+	
+	                <% }) %>
+	            </li>
+		    <% }) %>
+	    </ul>
+	<% } %>
+	
+	<% if(multiples != 0) { %>
+		<div class="title"><?=MULTIPLE_BET_OPTIONS?></div>
+		<ul class="bet-selections grouped">
+		    <%_.each(multiples, function(allBets){ %>
+	        	<li class="open open-bet">
+	        	
+	                <% _.each(allBets.betParts, function(bet, index){%>
+
+						<% if(index == 0){ %>
+		                        <div class="row open-bet__overview">
+		                      <h2 class="type"><%=moment().calendar()%></h2>
+							<p class="confirmation-betId"><%=allBets.betId%></p>
+	                    </div>
+	                    <% } %>
+	                    
+	                    <div class="row">
+	                        <div class="selection betPart">
+
+								<%
+									var multipleOddsValue = bet.betPart.selection.decimalOdds;
+
+									if (priceFormat == 'FRACTION') {
+										multipleOddsValue = bet.betPart.selection.fractionalOdds;
+									}
+									else if (priceFormat == 'AMERICAN') {
+										multipleOddsValue = bet.betPart.selection.americanOdds;
+									}
+								%>
+
+	                             <p class="selection__market-odds"><%= bet.betPart.selection.selectionName %> @ <%= multipleOddsValue %></p>
+	                             <p class="selection__fixture">
+	                                <%= bet.betPart.selection.marketName %>
+	                                <br/>
+	                                <%= bet.betPart.selection.eventName %>
+	                                <br/>
+	                            </p>
+	                        </div>
+	                    </div>
+	                    
+	                    <% if(index == allBets.betParts.length-1){ %>
+		                    <div class="row overview">
+		                        <p>
+		                            <?=STAKE?>: <%= currencySymbol %><%= allBets.stake %>
+		                            <span class="potential-returns"><?=POTENTIAL_RETURNS?>: <%= currencySymbol %> <%= allBets.potentialPayout %></span>
+		                        </p>
+		                    </div>
+	                    <% } %>
+	                <% }); %>
+	                
+	            </li>  
+		    <% }) %>
+	    </ul>
+	<% } %>
+
+<% } else { %>
+
+	<div><p class="noBets"><?=YOU_HAVE_NO_OPEN_BETS?></p></div>
+
+<% } %>
+
+<% if ( hasOverAsk == false ) { %>
+    <!-- clear and continue buttons here -->
+    <div class="prompt">
+        <button id="confirmation-reset" class="prompt__btn -continue"><?=BET_AGAIN?></button>
+        <a href="javascript:window.print()" class="prompt__btn print-btn">Print Receipt</a>
+               
+    </div>
+<% } %>
+
+

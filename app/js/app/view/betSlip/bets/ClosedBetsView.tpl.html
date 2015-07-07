@@ -1,0 +1,68 @@
+<div class="title">
+    <a class="bet-history__link bet-title-anchor" href="/accounts.html#account">View your betting history</a>
+</div>
+
+<ul class="bet-slip-head">
+    <li>
+        <div class="selection"><?=CLOSED_BETS?></div>
+        <div class="odds"></div>
+        <div class="stake"></div>
+    </li>
+</ul>
+
+
+<ul class="bet-selections closed">
+    <% if (bets.length > 0) { var singleHeader = 0; var MultiHeader = 0; %>
+
+    <% _.each(bets, function(bet) {  %>
+
+    <% if ( bet.type == 'SINGLE' ) { %>
+
+    <% if(singleHeader == 0){%>
+    <li class="type-header">
+        <div class="game-header">
+            <p>SINGLE<span>&#160; </span></p>
+        </div>
+    </li>
+    <% singleHeader ++; }}; %>
+            <% _.each(bet.parts, function(betPart) {  %>
+            <% _.each(betPart, function(eachPart) {  %>
+            <li class="<%= eachPart.resultType %>">
+                <div class="row">
+                    <div class="selection open">
+                        <h3><%= eachPart.market.name %></h3>
+                        <p><%= eachPart.event.name %></p>
+                        <div class="bet-returns"><span><%= eachPart.selection.name %> @ <%= eachPart.odds.decimal || eachPart.odds.fractional %></span></div>
+                    </div>
+                    
+                </div>
+
+            </li>
+
+            <% }); %>  
+            <% }); %> 
+
+
+            <li>
+                <div class="row2 openRow">
+                    <p><?=STAKE?>: <span name="bet-currencySymbol"><%= currencySymbol %></span><span> <%= bet.stake.amount.toFixed(2) %></span> </p>
+                    <% if (bet.winnings && bet.winnings != 0) { %> 
+                        <span class="returns">Returns: <span name="bet-currencySymbol"> <%= currencySymbol %></span>
+                        <span><%= parseFloat(bet.winnings + bet.stake.amount).toFixed(2) %> &#160;&#160;</span>
+                    <% } else { %>
+                        <span class="returns">Returns: <%= currencySymbol %> 0.00</span>
+                    <% } %>  
+                    
+                    <span class="date">&#160;<%= moment(bet.betTime).calendar() %></span>
+                </div>
+            </li>
+
+
+    <% }); %>  
+
+    <% } else { %>
+
+    <li><p class="noBets"><?=YOU_HAVE_NO_CLOSED_BETS?></p></li>
+
+    <% } %>
+</ul>

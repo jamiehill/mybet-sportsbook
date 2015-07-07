@@ -39,6 +39,15 @@ export default Marionette.Module.extend({
 
 
 	/**
+	 * Renders a React component directly intop this regions element
+	 */
+	showReact(Component) {
+		var node = $(this.region.$el.selector)[0];
+		React.render(<Component/>, node);
+	},
+
+
+	/**
 	 * Shows a Marionette View in the region
 	 */
 	showView(view) {

@@ -1,10 +1,12 @@
 System.config({
   "baseURL": "./js",
+	"defaultJSExtensions": true,
   "transpiler": "babel",
   "babelOptions": {
     "optional": [
       "runtime"
-    ]
+    ],
+		"blacklist": []
   },
   "paths": {
     "*": "*.js",
@@ -23,6 +25,9 @@ System.config({
         "marionette-shim"
       ]
     },
+		"app/App": {
+
+		},
     "github:carhartl/jquery-cookie@1.4.1": {
       "deps": [
         "jquery"
@@ -38,12 +43,11 @@ System.config({
         "global"
       ]
     },
-		"moment": {
-			"format": [
-				"global"
-			]
-		}
-
+    "moment": {
+      "format": [
+        "global"
+      ]
+    }
   }
 });
 

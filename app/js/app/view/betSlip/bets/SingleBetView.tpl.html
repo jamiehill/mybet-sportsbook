@@ -1,0 +1,85 @@
+
+<div class="title"><?=SINGLES_BET_OPTIONS?><a href="#_" class="remove-all bet-title-anchor"><?=CLEAR?></a></div>
+		
+	<ul class="bet-selections">
+			
+	    <% if (bets.length > 0 ) { %>
+	
+	    <%	
+	    	var groupedBets = _.values( _.groupBy(bets, function(obj) {
+				return obj.betId();
+			}));
+	    %>
+	
+	    <%_.each(groupedBets, function(group){ %>
+
+	            <%_.each(group, function(bet, i){ %>
+
+	            <li id="single-bet-li-<%= bet.betId() %>" betId="<%= bet.betId() %>" class="<%= _.first(group).eventId() %> active <%= bet.getState() == 'SUSPENDED' ? 'suspended' : ''%>">
+	               
+	                <p class="suspendedText"
+	                   id="suspended-tag-<%=bet.betId()%>"><em><?=SUSPENDED?></em>
+	                </p>
+
+	                <input id="checkbox-<%= bet.betId() %>" type="checkbox" name="include" class="toggle-include" checked="checked"/>
+
+	                <div class="row paddingLeft">
+	                    <div class="selection">
+
+		                     <p class="selection__market-name"><%= bet.eventName() %></p>
+		                     <a class="selection__fixture" href="#<%=bet.sport()%>/event/<%=bet.eventId()%>"><%= bet.marketName() %></a>
+
+	                        <p class="selection__market-odds">   <%= bet.selectionName() %> @ <span id="single-bet-price-<%=bet.betId()%>" ><%= bet.getOdds(format) %></strong></p>
+	                    </div>
+	                    <a class="remove" title="<?=REMOVE_SELECTION?>"><i class="icon-delete"></i></a>
+	                </div>
+	                <div class="row stakeBox">
+		                <label class="stake">
+	                        <input <%= bet.getState() == 'SUSPENDED' ? 'disabled' : ''%> type="number" value="<%= (bet.totalStake() == 0) ? '' : bet.totalStake().toFixed(2) %>" min="0"/>
+                            <span class="labelInner" <%= isUserLoggedIn ? '' : 'style="display: none;"' %>>
+                            &#160;or <a class="maxStakeLink" ><?=MAX_STAKE?></a>
+                            </span>
+
+	                    </label>
+	                 </div>
+	                 <div class="returnsRow">
+
+	                     <div class="returnsText"><?=RETURNS?>: <span name="bet-currencySymbol"> <%= currencySymbol %></span></div>
+	                     <div class="returns <%= bet.estimatedReturnsDisplayVal() %>"><span><%= bet.estimatedReturnsDisplayVal() %></span></div>
+
+					</div>
+					<div class="selectionError" style="display: none" id="price-changed-tag-<%=bet.betId()%>">
+						<p></p>
+
+						<!-- Accept Odds -->
+						<div id="price-changed-checkbox-tag-<%=bet.betId()%>" class="squaredThree <%=bet.betId()%>" style="display: none">
+							<input type="checkbox" value="None" id="checkbox-accept-odds-<%=bet.betId()%>" name="check" />
+							<label for="checkbox-accept-odds-<%=bet.betId()%>"></label>
+						</div>
+					</div>
+					<div class="freebet" style="display: <%= bet.isFreeBet == true ? 'block' : 'none'%>" >
+					    <p><%= bet.freeBetDescription %></p>
+					    <!-- Squared  -->
+						<div class="squaredThree <%=bet.betId()%>">
+							<input type="checkbox" value="None" id="freebet-checkbox-<%=bet.betId()%>" name="check" />
+							<label for="freebet-checkbox-<%=bet.betId()%>"></label>
+						</div>
+
+
+					</div>
+
+	            </li>
+
+	         <%})%>
+
+	    <% }); %>
+	
+	    
+	    <% } else { %>
+	
+	    <p class="noBets"><?=YOU_CAN_ADD_BETS_TO_YOUR_BET_SLIP_BY_SELECTING_THEIR_ODDS_BUTTON?></p>
+	
+	    <% } %>
+	
+	</ul>
+

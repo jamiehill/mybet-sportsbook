@@ -5,3 +5,5 @@ vendor/
 dist/
 .idea/
 .DS_Store
+.tmp
+_tmp

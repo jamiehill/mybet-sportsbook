@@ -1,20 +1,15 @@
 import Module from '../BaseViewModule';
-import View from './HeaderView';
-
+import HeaderView from './HeroView.jsx!';
+import DashboardView from './DashboardView.jsx!';
 
 export default Module.extend({
-
-	viewClass: View,
-	regionName: 'dashboard',
-
-
-	appRoutes: {
-		"": "onHome"
-	},
-
+	regionName: 'hero',
 
 	onHome: function() {
-		this.showView();
-	}
+		this.showReact(HeaderView);
+	},
 
+	onDashboard: function() {
+		this.showReact(DashboardView);
+	}
 });

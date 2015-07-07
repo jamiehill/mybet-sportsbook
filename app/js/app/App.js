@@ -1,8 +1,11 @@
+import '../plugins';
+
 import Radio from 'backbone.radio';
 import appRouter from './AppRouter';
 import timestamp from 'core/system/NiceConsole';
 import AppLayout from './AppLayout';
 import TopNav from './view/topNav/TopNav';
+import Account from './view/account/Account';
 import Dashboard from './view/header/Header';
 import SubNav from './view/subNav/SubNav';
 import SideBar from './view/sideBar/SideBar';
@@ -20,18 +23,17 @@ var Application = Marionette.Application.extend({
 	router:  Radio.channel('router'),
 	bus:  	 Radio.channel('bus'),
 
-
 	bootstrap: [
 		'app/AppConfig',
 		'core/system/bootstrap/DomainResolver',
 		'core/system/bootstrap/MarionetteConfig',
-		//'core/system/bootstrap/GetSportData'
+		'core/system/bootstrap/GetSportData'
 		//'core/system/bootstrap/TranslatorConfig',
-		//'core/system/bootstrap/GetRegionalSports'
 	],
 
 	modules: {
 		'Views.TopNav': TopNav,
+		'Views.Account': Account,
 		'Views.Dashboard': Dashboard,
 		'Views.SubNav': SubNav,
 		'Views.SideBar': SideBar,
@@ -48,9 +50,6 @@ var Application = Marionette.Application.extend({
 
 		window.App = this;
 		window.ctx = this.ctx = di.createContext();
-
-		// commands
-		App.command = App.bus.command;
 
 		// initialize src layout
 		this.layout = new AppLayout();

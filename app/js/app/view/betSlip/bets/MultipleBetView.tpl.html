@@ -1,0 +1,47 @@
+<%  if (bets != null && bets.length > 0) { %>
+
+<div class="title"><?=MULTIPLE_BET_OPTIONS?></div>
+    
+
+    <ul class="bet-selections add-to-list">
+
+        <% _.each(bets, function(bet) { %>
+
+        <li id="<%= bet.betId() %>" betId="<%= bet.betId() %>">
+            <div class="row toggle">
+                <div class="selection">
+                    <h3><?= bet.displayName ?></h3>
+                    <p><%= bet.bets.length %> <?=BET_S?></p>
+                     <i class="<%= bet.defaultChevron %>"></i>
+                </div>
+               
+            </div>
+
+            <div class="row <%= bet.defaultRendering %>">
+                <label class="stake">
+                     x<%= bet.bets.length %>
+                    <input type="number" value="<%= (bet.totalStake() == 0) ? '' : bet.totalStake().toFixed(2) %>" min="0"/>
+                    <span class="labelInner" <%= isUserLoggedIn ? '' : 'style="display: none;"' %>>
+                    or <a class="maxStakeLink" ><?=MAX_STAKE?></a>
+                    </span>
+                    &#160;<%= (bet && typeof bet.getOdds == 'function') ? '@ '+ bet.getOdds(format) : '' %>
+                </label>
+                <div class="returnsRow">
+                    <div class="returnsText"><?=RETURNS?>: <span name="bet-currencySymbol"> <%= currencySymbol %></span></div>
+                    <div class="returns"><span><%= bet.estimatedReturnsDisplayVal() %></span></div>
+                </div>
+             </div>
+
+            <div class="selectionError" style="display: none" id="multiple-selection-error-<%=bet.betId()%>">
+                <p></p>
+            </div>
+
+        </li>
+
+        <% }); %>
+
+    </ul>
+
+<% } %>
+
+    <div class="title title-center"><a class="showMoreMultiples bet-title-anchor more" id="multiple-show-all-btn">Show All Multiples</a></div>

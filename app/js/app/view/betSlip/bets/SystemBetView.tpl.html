@@ -1,0 +1,55 @@
+<div class="title">MultiWay/System bets</div>
+
+    <% if (singles.length > 0 ) { %>
+        <%
+            var groupedBets = _.values( _.groupBy(singles, function(obj) {
+            return obj.betId();
+            }));
+        %>
+
+        <%_.each(groupedBets, function(group){ %>
+            <%_.each(group, function(bet, i){ %>
+                <li id="single-bet-li-<%= bet.betId() %>" betId="<%= bet.betId() %>" >
+                    <div class="row paddingLeft">
+                        <div class="selection">
+                            <p class="selection__market-name no-margin-left"><%= bet.eventName() %></p>
+                            <a class="selection__fixture  no-margin-left" href="#<%=bet.sport()%>/event/<%=bet.eventId()%>"><%= bet.marketName() %></a>
+                            <div class="selection__banker" style="display: <%= bet.displayBankerBetOption == true ? 'block' : 'none'%>" >
+                                <label for="banker-bet-check-<%= bet.betId() %>">Bank</label>
+                                <input type="checkbox" value="None" <%= bet.isBankerBet ? 'checked="checked"' : '' %> name="banker-bet-check-<%= bet.betId() %>" betId="<%= bet.betId() %>"/>
+	                        </div>
+                            <p class="selection__market-odds clear no-margin-left">   <%= bet.selectionName() %> @ <span id="single-bet-price-<%=bet.betId()%>" ><%= bet.getOdds(format) %></strong></p>
+                        </div>
+                        <a class="remove" title="<?=REMOVE_SELECTION?>"><i class="icon-delete"></i></a>
+                    </div>
+                </li>
+            <%})%>
+        <% }); %>
+
+    <% } %>
+
+    <div class="actions">
+        <input type="checkbox" value="None" id="showBankerCB" name="check" />
+        <label for="showBankerCB">Show bankers</label>
+    </div>
+
+    <form class="actions bet-choice">
+	    <div>
+        <%  if (combi != null) { %>
+            <input type="radio" betId="<%=combi.name %>" name="systems" id="system-bet-radio-all-combi" value="bet.name"><label><%= combi.description %></label>
+        <% } %>
+        </div>
+         <div>
+            <input type="radio" betId="SINGLES" id="system-bet-radio-all-singles" name="systems" value="singles"><label><%= selectAllSingles.description %></label>
+         </div>
+         
+        <% _.each(bets, function(bet) { %>
+        <div>
+            <input type="radio" name="systems" betId="<%= bet.name %>" id="system-bet-radio-<%= bet.name %>" value="bet.name"><label><%= bet.description %></label>
+        </div>
+			
+        <% }); %>
+         
+    </form>
+
+<!--</ul>-->

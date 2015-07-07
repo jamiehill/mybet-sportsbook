@@ -1,3 +1,5 @@
+import 'core/system/shims/marionette-shim';
+
 import Backbone from 'backbone';
 import $ from 'jquery';
 import _ from 'underscore';

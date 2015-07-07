@@ -3,7 +3,7 @@ import Component from 'core/system/react/BackboneComponent';
 import factory from 'core/model/factory/CompetitionFactory';
 import userModel from 'core/model/UserPreferencesModel';
 
-export default class MyComeptitions extends Component {
+export default class MyCompetitions extends Component {
 	constructor() {
 		super();
 		_.bindAll(this, 'renderItem');
@@ -43,10 +43,10 @@ export default class MyComeptitions extends Component {
 	renderItem(model) {
 		var id = "remove-"+model.id;
 		return (
-			<li><a className="remove" id={id} href="" onClick={this.onRemoveCompetition.bind(this)}><i className="entypo-cancel"></i> {model.get('name')}</a></li>
+			<li key={model.id}><a className="remove" id={id} href="javascript: void 0" onClick={this.onRemoveCompetition.bind(this)}><i className="entypo-cancel"></i> {model.get('name')}</a></li>
 		)
 	}
 };
 
 // set default props
-MyComeptitions.defaultProps = { collection: userModel.Competitions };
+MyCompetitions.defaultProps = { collection: userModel.Competitions };

@@ -5,16 +5,24 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<!-- build:css -->
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <script src="../vendor/system.js"></script>
-    <script src="../config.js"></script>
+	<!-- endbuild -->
+	<!-- build:sfx -->
+	<!-- endbuild -->
 </head>
 <body>
-    <div id="main"></div>
-    <script>
-		System.import('plugins').then(function() {
-			System.import('app/App');
-		});
-    </script>
+<section id="body-content"></section>
+<!-- build:js -->
+<!-- endbuild -->
+<!-- build:remove -->
+<script src="../vendor/system.js"></script>
+<script src="../config.js"></script>
+<!-- endbuild -->
+<script>
+	System.import('plugins').then(function() {
+		System.import('app/App');
+	}).catch(console.error.bind(console));
+</script>
 </body>
 </html>

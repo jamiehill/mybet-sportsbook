@@ -1,0 +1,78 @@
+<div class="title">Combi bets</div>
+
+<ul class="bet-selections">
+
+    <% if (singles.length > 1 ) { %>
+
+    <%
+        var groupedBets = _.values( _.groupBy(singles, function(obj) {
+            return obj.betId();
+        }));
+    %>
+
+    <%_.each(groupedBets, function(group){ %>
+
+        <%_.each(group, function(single, i){ %>
+
+            <li id="single-bet-li-<%= single.betId() %>" betId="<%= single.betId() %>" class="<%= _.first(group).eventId() %> active <%= single.getState() == 'SUSPENDED' ? 'suspended' : ''%>">
+                <div class="row paddingLeft">
+                    <div class="selection">
+                        <p class="selection__market-name no-margin-left"><%= single.eventName() %></p>
+                        <a class="selection__fixture no-margin-left" href="#<%=single.sport()%>/event/<%=single.eventId()%>"><%= single.marketName() %></a>
+                        <p class="selection__market-odds clear no-margin-left">   <%= single.selectionName() %> @ <span id="single-bet-price-<%=single.betId()%>" ><%= single.getOdds(format) %></strong></p>
+                    </div>
+                    <a class="remove" title="<?=REMOVE_SELECTION?>"><i class="icon-delete"></i></a>
+                </div>
+            </li>
+
+        <%})%>
+
+    <% }); %>
+
+    <% } %>
+</ul>
+
+
+
+
+<%  if (bets != null && bets.length > 0) { %>
+
+<ul class="bet-selections add-to-list">
+
+    <% _.each(bets, function(bet) { %>
+
+    <li id="<%= bet.betId() %>" betId="<%= bet.betId() %>">
+        <div class="row toggle">
+            <div class="selection">
+                <h3><?= bet.displayName ?></h3>
+                <p><%= bet.bets.length %> <?=BET_S?></p>
+                <i class="<%= bet.defaultChevron %>"></i>
+            </div>
+
+        </div>
+
+        <div class="row <%= bet.defaultRendering %> actions">
+            <label class="stake">
+                x<%= bet.bets.length %>
+                <input type="number" value="<%= (bet.totalStake() == 0) ? '' : bet.totalStake().toFixed(2) %>" min="0"/>
+                <span class="labelInner" <%= isUserLoggedIn ? '' : 'style="display: none;"' %>>
+                or <a class="maxStakeLink" ><?=MAX_STAKE?></a>
+                </span>
+                &#160;<%= (bet && typeof bet.getOdds == 'function') ? '@ '+ bet.getOdds(format) : '' %>
+            </label>
+            <div class="returnsRow no-pad-left">
+                <div class="returnsText"><?=RETURNS?>: <span name="bet-currencySymbol"> <%= currencySymbol %></span></div>
+                <div class="returns"><span><%= bet.estimatedReturnsDisplayVal() %></span></div>
+            </div>
+        </div>
+
+        <div class="selectionError" style="display: none" id="multiple-selection-error-<%=bet.betId()%>">
+            <p></p>
+        </div>
+
+    </li>
+
+    <% }); %>
+</ul>
+
+<% } %>

@@ -1,0 +1,30 @@
+
+<div class="title"><?=BONUS_BETS?></div>
+
+<ul class="bet-selections">
+
+    <%_.each(entitlements, function(obj){ console.log(obj)%>
+    
+        <li>
+            <div class="row">
+                <div class="selection">
+	                
+	                <span class="status <%= obj.bonus.status %>"><%= obj.bonus.status %></span>
+	                
+                    <h3><%= obj.bonus.name %></h3>
+                    <%_.each(obj.bonus.freebet.pathNames, function(path){ %>
+                        <% if(path.length != -1){ %>
+                        	<p><%= path %><p>
+	                    <% } %>
+                    <% }); %>
+                    
+                    <p class="footer"><%=moment(obj.bonus.expires).format("ddd h:mm a")%></p>
+                    
+                </div>
+            </div>
+        </li>
+        
+
+    <% }); %>
+
+</ul>

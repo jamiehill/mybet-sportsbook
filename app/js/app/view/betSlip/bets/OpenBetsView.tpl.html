@@ -1,0 +1,128 @@
+<div class="title">
+    <a class="bet-history__link bet-title-anchor" href="#account">View your betting history</a>
+</div>
+
+<ul class="bet-selections">
+    <% if (bets.length > 0) { var singleHeader = 0; var MultiHeader = 0; %>
+
+ <% _.each(bets, function(openBet) {
+    var bet = openBet.bet;
+
+
+    var multipleNamesAliases = {
+        'SYSTEM_2': 'DOUBLE',
+        'SYSTEM_3': 'TREBLE',
+        'SYSTEM_4': 'FOURFOLD',
+        'SYSTEM_5': 'FIVEFOLD',
+        'SYSTEM_6': 'SIXFOLD',
+        'SYSTEM_7': 'SEVENFOLD',
+        'SYSTEM_8': 'EIGHTFOLD',
+        'SYSTEM_9': 'NINEFOLD',
+    };
+
+    var typeName = bet.type;
+    if (_.has(multipleNamesAliases, bet.type)) {
+        typeName = multipleNamesAliases[bet.type];
+    }
+
+
+    if ( bet.type == 'SINGLE' ) { %>
+
+    <% if(singleHeader == 0){%>
+
+    <% singleHeader ++; }}; %>
+
+		<li class="open open-bet">
+	         
+	          <p class="multipleType"><%= typeName %> <span class="date"><%= moment(bet.betTime).format('D MMM, HH:mm') %> <% // App.globals.zone %></span></p>
+	            
+            <% _.each(bet.parts, function(betPart) {  %>
+            
+			     <div class="row">	
+		              
+		              <% _.each(betPart, function(eachPart, val) {
+			              
+                            var oddsValue = eachPart.odds.decimal;
+
+                            if (priceFormat == 'FRACTION') {
+                                oddsValue = eachPart.odds.fractional;
+                            }
+                            else if (priceFormat == 'AMERICAN') {
+                                oddsValue = eachPart.odds.american;
+                            }
+                       %>
+
+	                    <div class="betPart selection">
+		                    
+			                  <p class="selection__market-name"> 
+		                          <%= eachPart.event.name %>
+		                     </p>
+							 <a class="selection__fixture">   <%= eachPart.market.name %> </a>
+		                    
+							<p class="selection__market-odds"><%= eachPart.selection.name %> @ <%= oddsValue %></p>
+							
+							
+							<span class="id">ID: <%= bet.id %></span>
+							
+<!--
+	                        <p class="stake">
+								<%= eachPart.stake %>
+							</p>
+-->
+	                       
+	                    </div>
+                     <% }); %>
+	             
+	              </div>
+	             
+               <% }); %>
+
+
+                <div class="row overview">
+                    <p>
+                        <?=STAKE?>: <%= currencySymbol %><%= bet.stake.amount.toFixed(2) %>
+                        <span class="potential-returns">Returns: <%= currencySymbol %> <%= bet.potentialReturns %></span>
+                    </p>
+                    <!-- Cash out status classes -status -->
+                    <!-- Cash out success cashout -loading -fail -success-->
+                    
+                    <div class="cashout -fail" id="cashout-fail-<%=bet.id%>" style="display: none;">
+                        <div class="cashout__status">
+                            <p class="cashout__status__title">
+	                            <?=CASHOUT_EXPIRED?>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="cashout -success" id="cashout-success-<%=bet.id%>" style="display: none;">
+                        <div class="cashout__status">
+                            <p class="cashout__status__title">
+                                <?=CASHOUT_SUCCESS?> <%= currencySymbol %><span id="cashout-confirm-value-<%=bet.id%>"><%= parseFloat(openBet.cashoutValue).toFixed(2) %></span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <%
+                        var cashoutVisible = openBet.cashoutEnabled == true && openBet.state != 'SUSPENDED';
+                    %>
+
+                    <div class="cashout" id="cashout-<%=bet.id%>" style="<%= cashoutVisible ? '' : 'display:none' %>">
+                        <button class="cashout__btn" betId="cashout-button-<%=bet.id%>" type="button">
+                            <span class="cashout__btn__text">
+                                <?=CASHOUT?> <%= currencySymbol %><span id="cashout-value-<%=bet.id%>"><%= parseFloat(openBet.cashoutValue).toFixed(2) %></span>
+                            </span>
+                        </button>
+                    </div>
+
+                </div>
+            </li>
+
+    <% }); %>  
+
+    <% } else { %>
+
+    <li><p class="noBets"><?=YOU_HAVE_NO_OPEN_BETS?></p></li>
+
+    <% } %>
+</ul>
+

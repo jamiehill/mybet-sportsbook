@@ -1,0 +1,3169 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>myBet Sportsbook</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<section id="body-content">
+	<div id="header">
+		<div class="container">
+			<a href="#_" class="logo">myBet</a><!-- logo -->
+			<div id="top-nav">
+				<ul>
+					<li><a href="#">Sports Bets</a></li>
+					<li><a href="#">Casino</a></li>
+					<li><a href="#">Live Casino</a></li>
+					<li><a href="#">Poker</a></li>
+					<li><a href="#">Games</a></li>
+					<li>
+						<a class="extra-to-delete" href="index.html">
+							Index
+						</a>
+					</li>
+					<li>
+						<a class="extra-to-delete" href="markets.html">
+							Markets
+						</a>
+					</li>
+					<li>
+						<a class="extra-to-delete" href="single-game.html">
+							Single Game
+						</a>
+					</li>
+				</ul>
+			</div><!-- nav -->
+			<div id="top-account-nav">
+				<ul>
+					<li><a href="login.html">Log In</a></li>
+					<li><a href="register.html">Register</a></li>
+					<li><a href="#">English</a></li>
+				</ul>
+			</div><!-- nav -->
+		</div><!-- container -->
+
+	</div><!-- header -->
+	<div id="account-content">
+		<div id="account-nav">
+			<div class="container">
+				<ul>
+					<li><a>My Cockpit</a></li>
+					<li><a id="openMyBetsPage">My Bets</a></li>
+					<li><a id="openAccountMenu">Max Usermann <i class="entypo-down-open"></i></a></li>
+					<li class="account-deposit-box"><a id="openDepositPage"> <span>$210.00</span> Deposit <i class="entypo-down-open"></i></a></li>
+				</ul>
+			</div>
+			<div id="content-container"></div>
+		</div>
+		<div id="myBets-page">
+			<div class="container">
+				<div class="row top-bar">
+					<div class="cell cell-3 flatten">
+						<div class="inline-element">
+							<h2 class="title">My Bets</h2>
+						</div>
+						<div class="inline-element date-picker">
+
+							01.07.2014 - 17.04.2015 <a href=""><i class="entypo-calendar"></i></a>
+
+
+						</div>
+						<div class="inline-element right-float">
+							<form class="form-wrapper search">
+								<input type="text" placeholder="Search here..." required>
+								<button type="submit">Search</button>
+							</form>
+						</div>
+					</div>
+					<div class="cell cell-2 flatten account-page-controls">
+						<div class="inline-element right-float">
+							<a class="btn small outline" href="">Reset </a>
+							<a class="btn small outline close-accounts" href="">Close</a>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell cell-3">
+						<div class="inner-cell account-table-container">
+							<div class="sort-table-row">
+								<div class="inline-element">
+									<p>Sort Ascending <i class="entypo-down-open"></i></p>
+								</div>
+								<div class="inline-element">
+									<p>Results Per Page <span>8</span> <i class="entypo-down-open"></i></p>
+								</div>
+							</div>
+							<div class="row">
+								<h5>Open Bets</h5>
+								<div class="table accounts-table">
+									<div class="table-row">
+										<div class="table primary-table">
+											<div class="table-cell expand align-center open">
+												<i class="entypo-right-open"></i>
+												<div>1</div>
+											</div>
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row">
+														<div class="table-cell">
+															04.07.2014 12:00
+														</div>
+														<div class="table-cell">
+															Kombiwette
+														</div>
+														<div class="table-cell">
+															Einsatz 10,00$
+														</div>
+														<div class="table-cell">
+															Gewinn
+														</div>
+														<div class="table-cell price">
+															$35.50
+														</div>
+													</div>
+												</div>
+												<div class="table">
+													<div class="table-row detail">
+														<div class="table-cell">
+															Borussia Dortmund : FC Bayern Munich, Orlando City, 1.
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="table secondary-table">
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row header">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Game
+														</div>
+														<div class="table-cell">
+															Bet
+														</div>
+														<div class="table-cell">
+															My Tip
+														</div>
+														<div class="table-cell">
+															Quote
+														</div>
+														<div class="table-cell">
+															Bank
+														</div>
+														<div class="table-cell">
+															Match Day
+														</div>
+														<div class="table-cell">
+															Result
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund vs FC Bayern Munich
+														</div>
+														<div class="table-cell">
+															1 x 2
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell price">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															08.04.2015
+														</div>
+														<div class="table-cell">
+															3:0 (1:1)
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Tax on Bet, 0.35
+														</div>
+														<div class="table-cell">
+															Total Bet 10
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															35.50
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="table-row">
+										<div class="table primary-table">
+											<div class="table-cell expand align-center expand live">
+												<i class="entypo-right-open"></i>
+												<div>1</div>
+											</div>
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row">
+														<div class="table-cell">
+															04.07.2014 12:00
+														</div>
+														<div class="table-cell">
+															Kombiwette
+														</div>
+														<div class="table-cell">
+															Einsatz 10,00$
+														</div>
+														<div class="table-cell">
+															Gewinn
+														</div>
+														<div class="table-cell price">
+															$35.50
+														</div>
+													</div>
+												</div>
+												<div class="table">
+													<div class="table-row detail">
+														<div class="table-cell">
+															Borussia Dortmund : FC Bayern Munich, Orlando City, 1.
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="table secondary-table">
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row header">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Game
+														</div>
+														<div class="table-cell">
+															Bet
+														</div>
+														<div class="table-cell">
+															My Tip
+														</div>
+														<div class="table-cell">
+															Quote
+														</div>
+														<div class="table-cell">
+															Bank
+														</div>
+														<div class="table-cell">
+															Match Day
+														</div>
+														<div class="table-cell">
+															Result
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund vs FC Bayern Munich
+														</div>
+														<div class="table-cell">
+															1 x 2
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell price">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															08.04.2015
+														</div>
+														<div class="table-cell">
+															3:0 (1:1)
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Tax on Bet, 0.35
+														</div>
+														<div class="table-cell">
+															Total Bet 10
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															35.50
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="table-row">
+										<div class="table primary-table">
+											<div class="table-cell expand align-center expand open">
+												<i class="entypo-right-open"></i>
+												<div>1</div>
+											</div>
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row">
+														<div class="table-cell">
+															04.07.2014 12:00
+														</div>
+														<div class="table-cell">
+															Kombiwette
+														</div>
+														<div class="table-cell">
+															Einsatz 10,00$
+														</div>
+														<div class="table-cell">
+															Gewinn
+														</div>
+														<div class="table-cell price">
+															$35.50
+														</div>
+													</div>
+												</div>
+												<div class="table">
+													<div class="table-row detail">
+														<div class="table-cell">
+															Borussia Dortmund : FC Bayern Munich, Orlando City, 1.
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="table secondary-table">
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row header">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Game
+														</div>
+														<div class="table-cell">
+															Bet
+														</div>
+														<div class="table-cell">
+															My Tip
+														</div>
+														<div class="table-cell">
+															Quote
+														</div>
+														<div class="table-cell">
+															Bank
+														</div>
+														<div class="table-cell">
+															Match Day
+														</div>
+														<div class="table-cell">
+															Result
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund vs FC Bayern Munich
+														</div>
+														<div class="table-cell">
+															1 x 2
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell price">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															08.04.2015
+														</div>
+														<div class="table-cell">
+															3:0 (1:1)
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Tax on Bet, 0.35
+														</div>
+														<div class="table-cell">
+															Total Bet 10
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															35.50
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="table-row">
+										<div class="table primary-table">
+											<div class="table-cell expand align-center expand open">
+												<i class="entypo-right-open"></i>
+												<div>1</div>
+											</div>
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row">
+														<div class="table-cell">
+															04.07.2014 12:00
+														</div>
+														<div class="table-cell">
+															Kombiwette
+														</div>
+														<div class="table-cell">
+															Einsatz 10,00$
+														</div>
+														<div class="table-cell">
+															Gewinn
+														</div>
+														<div class="table-cell price">
+															$35.50
+														</div>
+													</div>
+												</div>
+												<div class="table">
+													<div class="table-row detail">
+														<div class="table-cell">
+															Borussia Dortmund : FC Bayern Munich, Orlando City, 1.
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="table secondary-table">
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row header">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Game
+														</div>
+														<div class="table-cell">
+															Bet
+														</div>
+														<div class="table-cell">
+															My Tip
+														</div>
+														<div class="table-cell">
+															Quote
+														</div>
+														<div class="table-cell">
+															Bank
+														</div>
+														<div class="table-cell">
+															Match Day
+														</div>
+														<div class="table-cell">
+															Result
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund vs FC Bayern Munich
+														</div>
+														<div class="table-cell">
+															1 x 2
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell price">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															08.04.2015
+														</div>
+														<div class="table-cell">
+															3:0 (1:1)
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Tax on Bet, 0.35
+														</div>
+														<div class="table-cell">
+															Total Bet 10
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															35.50
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<h5>Closed Bets</h5>
+								<div class="table accounts-table">
+									<div class="table-row">
+										<div class="table primary-table">
+											<div class="table-cell expand align-center expand live">
+												<i class="entypo-right-open"></i>
+												<div>1</div>
+											</div>
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row">
+														<div class="table-cell">
+															04.07.2014 12:00
+														</div>
+														<div class="table-cell">
+															Kombiwette
+														</div>
+														<div class="table-cell">
+															Einsatz 10,00$
+														</div>
+														<div class="table-cell">
+															Gewinn
+														</div>
+														<div class="table-cell price">
+															$35.50
+														</div>
+													</div>
+												</div>
+												<div class="table">
+													<div class="table-row detail">
+														<div class="table-cell">
+															Borussia Dortmund : FC Bayern Munich, Orlando City, 1.
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="table secondary-table">
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row header">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Game
+														</div>
+														<div class="table-cell">
+															Bet
+														</div>
+														<div class="table-cell">
+															My Tip
+														</div>
+														<div class="table-cell">
+															Quote
+														</div>
+														<div class="table-cell">
+															Bank
+														</div>
+														<div class="table-cell">
+															Match Day
+														</div>
+														<div class="table-cell">
+															Result
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund vs FC Bayern Munich
+														</div>
+														<div class="table-cell">
+															1 x 2
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell price">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															08.04.2015
+														</div>
+														<div class="table-cell">
+															3:0 (1:1)
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Tax on Bet, 0.35
+														</div>
+														<div class="table-cell">
+															Total Bet 10
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															35.50
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="table-row">
+										<div class="table primary-table">
+											<div class="table-cell expand align-center expand lost">
+												<i class="entypo-right-open"></i>
+												<div>1</div>
+											</div>
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row">
+														<div class="table-cell">
+															04.07.2014 12:00
+														</div>
+														<div class="table-cell">
+															Kombiwette
+														</div>
+														<div class="table-cell">
+															Einsatz 10,00$
+														</div>
+														<div class="table-cell">
+															Gewinn
+														</div>
+														<div class="table-cell price">
+															$35.50
+														</div>
+													</div>
+												</div>
+												<div class="table">
+													<div class="table-row detail">
+														<div class="table-cell">
+															Borussia Dortmund : FC Bayern Munich, Orlando City, 1.
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="table secondary-table">
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row header">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Game
+														</div>
+														<div class="table-cell">
+															Bet
+														</div>
+														<div class="table-cell">
+															My Tip
+														</div>
+														<div class="table-cell">
+															Quote
+														</div>
+														<div class="table-cell">
+															Bank
+														</div>
+														<div class="table-cell">
+															Match Day
+														</div>
+														<div class="table-cell">
+															Result
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund vs FC Bayern Munich
+														</div>
+														<div class="table-cell">
+															1 x 2
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell price">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															08.04.2015
+														</div>
+														<div class="table-cell">
+															3:0 (1:1)
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Tax on Bet, 0.35
+														</div>
+														<div class="table-cell">
+															Total Bet 10
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															35.50
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="table-row">
+										<div class="table primary-table">
+											<div class="table-cell expand align-center expand won">
+												<i class="entypo-right-open"></i>
+												<div>1</div>
+											</div>
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row">
+														<div class="table-cell">
+															04.07.2014 12:00
+														</div>
+														<div class="table-cell">
+															Kombiwette
+														</div>
+														<div class="table-cell">
+															Einsatz 10,00$
+														</div>
+														<div class="table-cell">
+															Gewinn
+														</div>
+														<div class="table-cell price">
+															$35.50
+														</div>
+													</div>
+												</div>
+												<div class="table">
+													<div class="table-row detail">
+														<div class="table-cell">
+															Borussia Dortmund : FC Bayern Munich, Orlando City, 1.
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="table secondary-table">
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row header">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Game
+														</div>
+														<div class="table-cell">
+															Bet
+														</div>
+														<div class="table-cell">
+															My Tip
+														</div>
+														<div class="table-cell">
+															Quote
+														</div>
+														<div class="table-cell">
+															Bank
+														</div>
+														<div class="table-cell">
+															Match Day
+														</div>
+														<div class="table-cell">
+															Result
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund vs FC Bayern Munich
+														</div>
+														<div class="table-cell">
+															1 x 2
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell price">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															08.04.2015
+														</div>
+														<div class="table-cell">
+															3:0 (1:1)
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Tax on Bet, 0.35
+														</div>
+														<div class="table-cell">
+															Total Bet 10
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															35.50
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="table-row">
+										<div class="table primary-table">
+											<div class="table-cell expand align-center expand lost">
+												<i class="entypo-right-open"></i>
+												<div>1</div>
+											</div>
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row">
+														<div class="table-cell">
+															04.07.2014 12:00
+														</div>
+														<div class="table-cell">
+															Kombiwette
+														</div>
+														<div class="table-cell">
+															Einsatz 10,00$
+														</div>
+														<div class="table-cell">
+															Gewinn
+														</div>
+														<div class="table-cell price">
+															$35.50
+														</div>
+													</div>
+												</div>
+												<div class="table">
+													<div class="table-row detail">
+														<div class="table-cell">
+															Borussia Dortmund : FC Bayern Munich, Orlando City, 1.
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="table secondary-table">
+											<div class="table-cell">
+												<div class="table">
+													<div class="table-row header">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Game
+														</div>
+														<div class="table-cell">
+															Bet
+														</div>
+														<div class="table-cell">
+															My Tip
+														</div>
+														<div class="table-cell">
+															Quote
+														</div>
+														<div class="table-cell">
+															Bank
+														</div>
+														<div class="table-cell">
+															Match Day
+														</div>
+														<div class="table-cell">
+															Result
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund vs FC Bayern Munich
+														</div>
+														<div class="table-cell">
+															1 x 2
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell price">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															08.04.2015
+														</div>
+														<div class="table-cell">
+															3:0 (1:1)
+														</div>
+													</div>
+													<div class="table-row">
+														<div class="table-cell expand-cell">
+
+														</div>
+														<div class="table-cell">
+															Tax on Bet, 0.35
+														</div>
+														<div class="table-cell">
+															Total Bet 10
+														</div>
+														<div class="table-cell">
+															Borussia Dortmund
+														</div>
+														<div class="table-cell">
+															3.55
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+
+														</div>
+														<div class="table-cell">
+															35.50
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="row table-guide">
+
+								<div class="inline-element">
+									<div class="table-key inline-element">
+									       <span class="key-color open">
+
+									       </span>
+									       <span class="key-description">
+									       		Open
+									       </span>
+									</div>
+									<div class="table-key inline-element">
+									       <span class="key-color live">
+
+									       </span>
+									       <span class="key-description">
+									       		Live
+									       </span>
+									</div>
+									<div class="table-key inline-element">
+									       <span class="key-color lost">
+
+									       </span>
+									       <span class="key-description">
+									       		Lost
+									       </span>
+									</div>
+									<div class="table-key inline-element">
+									       <span class="key-color won">
+
+									       </span>
+									       <span class="key-description">
+									       		Won
+									       </span>
+									</div>
+								</div>
+								<div class="inline-element right-float pagination">
+									<span class="active">1</span>
+									<span>2</span>
+									<span>3</span>
+									<span>4</span>
+									<span>5</span>
+									<span>6</span>
+									<span>Next</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cell cell-2">
+						<div class="inner-cell">
+							<ul class="account-inner-nav">
+								<ul class="account-inner-nav">
+									<li class="active">
+										<a>Deposit</a>
+									</li>
+									<li>
+										<a>My Cockpit</a>
+									</li>
+									<li>
+										<a>My Bets</a>
+									</li>
+
+								</ul>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+		<div id="deposit-page">
+			<div class="container">
+				<div class="row top-bar">
+					<div class="cell cell-3 flatten">
+						<div class="inline-element">
+							<h2 class="title">Deposit</h2>
+						</div>
+					</div>
+					<div class="cell cell-2 flatten account-page-controls">
+						<div class="inline-element right-float">
+							<a class="btn small outline" href="">Reset</a>
+							<a class="btn small outline close-accounts" href="">Close</a>
+						</div>
+					</div>
+
+
+				</div>
+				<div class="row">
+					<div class="cell cell-4 flatten">
+						<ul class="step-nav">
+							<li class="inline-element active"><a href="">Select amount<i class="entypo-right-open"></i></a></li>
+							<li class="inline-element"><a href="">Payment<i class="entypo-right-open"></i></a></li>
+							<li class="inline-element"><a href="">Confirm</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell cell-3">
+
+						<div class="deposit-box inner-cell">
+							<div class="row align-top">
+								<div class="cell cell-4 flatten">
+									<div class="inline-element">
+										<h3>Select your desired amount:</h3>
+										<div class="inline-element lozenge active">
+											20$
+										</div>
+										<div class="inline-element lozenge">
+											50$
+										</div>
+										<div class="inline-element lozenge">
+											100$
+										</div>
+										<div class="inline-element lozenge">
+											200$
+										</div>
+										<div class="inline-element deposit-choice">
+											<form class="form-wrapper">
+												<div class="form-section">
+													<div class="label-col">
+														<label class="right">Or enter amount</label>
+													</div>
+													<div class="form-col">
+														<input class="short dark" type="number" placeholder="in E" required>
+													</div>
+
+												</div>
+											</form>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="row info">
+								<div class="cell cell-4 flatten">
+									<div class="inline-element">
+										<div class="deposit-actions">
+											<h5>Your new credit would be calculated as follows:</h5>
+											<div class="calc">
+												<span>Account <span class="price">19$</span></span>
+												<span class="operator">+</span>
+												<span>Deposit <span class="price">20$</span></span>
+												<span class="operator">=</span>
+												<span>Credit <span class="price">39$</span></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell cell-4 flatten">
+									<a class="btn solid blue">Continue</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cell cell-2">
+						<div class="inner-cell">
+							<ul class="account-inner-nav">
+								<li class="active">
+									<a>Deposit</a>
+								</li>
+								<li>
+									<a>My Cockpit</a>
+								</li>
+								<li>
+									<a>My Bets</a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!--   DASHBOARD AT THE TOP - abandoned for now...
+     <div class="faded-back-container">
+        <div class="container">
+
+            <h1>Main Dashboard</h1>
+
+            <div class="row">
+
+                 <div class="cell cell-0">
+                     <div class="inner-cell">
+                         <h4 class="align-center">Pie Chart</h4>
+                     </div>
+                 </div>
+                 <div class="cell cell-0">
+                     <div class="inner-cell">
+                        <h4 class="align-center">Inplay Summary</h4>
+                     </div>
+                 </div>
+                 <div class="cell cell-0 over-1680">
+                     <div class="inner-cell">
+                         <h4>Something New</h4>
+                     </div>
+                 </div>
+                  <div class="cell cell-0 over-1680">
+                     <div class="inner-cell">
+                         <h4>Something New</h4>
+                     </div>
+                 </div>
+                  <div class="cell cell-0 over-1680">
+                     <div class="inner-cell">
+                         <h4>Something New Two</h4>
+                     </div>
+                 </div>
+                   <div class="cell cell-1 under-1680">
+                     <div class="inner-cell">
+                         <h4>Lists</h4>
+                     </div>
+                 </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+    -->
+	<div class="headerImg"></div>
+	<div class="hero-area">
+		<div class="container">
+			<h1>Knowledge. Power. <br/>Betting.</h1>
+		</div>
+	</div>
+
+	<div class="container-wrapper">
+
+		<div id="sub-nav-container">
+			<div class="container">
+				<div id="sub-nav">
+
+					<ul class="menu-links">
+						<li>
+							<a href="#_">
+								<i class="entypo-menu"></i>	Select Events
+							</a>
+						</li>
+					</ul>
+
+					<ul class="icon-links">
+						<li class="float-left">
+							<a class="btn " href="#_">
+								Statistics
+								<i class="entypo-chart-bar"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#_" class="icon">
+								<i class="entypo-search"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#_" class="icon">
+								<i class="entypo-star-empty"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#_" class="icon">
+								<i class="entypo-layout"></i>
+							</a>
+						</li>
+
+
+					</ul>
+
+					<ul class="text-links">
+						<li>
+							<a href="#_">
+								Last Visits <i class="entypo-down-open"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#_">
+								Football
+							</a>
+						</li>
+						<li>
+							<a href="#_">
+								Tennis
+							</a>
+						</li>
+						<li>
+							<a href="#_">
+								Basketball
+							</a>
+						</li>
+						<li>
+							<a href="#_">
+								More <i class="entypo-down-open"></i>
+							</a>
+						</li>
+					</ul>
+
+
+				</div><!-- nav -->
+			</div>
+		</div>
+
+		<div class="container">
+			<div id="left-sidebar">
+				<div class="left-sidebar-container">
+					<div class="sidebar-title">
+						<a href="#_"><i class="entypo-cancel"></i> <span>Close</span></a>
+					</div>
+					<div class="section highlighted open">
+						<h3>My Competitions</h3>
+					</div>
+
+					<div class="section open">
+						<h3><span class="flag-icon flag-icon-gb"></span> England</h3>
+						<ul>
+							<li>
+								<a href="#_"><label for="Premier League"><input id="Premier League" class="add" name="Premier-League" type="checkbox" value="yes"/> Premier League</label></a>
+							</li>
+							<li>
+								<a href="#_"><label for="FA CUP"><input id="FA CUP" class="add" name="FA-CUP" type="checkbox" value="yes"/> FA CUP</label></a>
+							</li>
+							<li>
+								<a href="#_"><label for="Championship"><input id="Championship" class="add" name="Championship" type="checkbox" value="yes"/> Championship</label></a>
+							</li>
+						</ul>
+					</div>
+					<div class="section open">
+						<h3><span class="flag-icon flag-icon-de"></span> Germany</h3>
+						<ul>
+							<li>
+								<a href="#_"><label for="German Cup"><input id="German Cup" class="add" name="German-Cup" type="checkbox" value="yes"/> German Cup</label></a>
+							</li>
+							<li>
+								<a href="#_"><label for="Bundesliga"><input id="Bundesliga" class="add" name="Bundesliga" type="checkbox" value="yes"/> Bundesliga</label></a>
+							</li>
+							<li>
+								<a href="#_"><label for="Bundesliga 2"><input id="Bundesliga 2" class="add" name="Bundesliga-2" type="checkbox" value="yes"/> Bundesliga 2</label></a>
+							</li>
+							<li>
+								<a href="#_"><label for="Nationaligua"><input id="Nationaligua" class="add" name="Nationaligua" type="checkbox" value="yes"/> Nationaligua</label></a>
+							</li>
+						</ul>
+					</div>
+					<div class="section">
+						<h3><span class="flag-icon flag-icon-es"></span> Spain</h3>
+						<ul>
+							<li>
+								<a href="#_"><label for="Spanish Cup"><input id="Spanish Cup" class="add" name="Spanish-Cup" type="checkbox" value="yes"/> Spanish Cup</label></a>
+							</li>
+							<li>
+								<a href="#_"><label for="Spanish Liga 1"><input id="Spanish Liga 1" class="add" name="Spanish-Liga-1" type="checkbox" value="yes"/> Spanish Liga 1</label></a>
+							</li>
+							<li>
+								<a href="#_"><label for="Spanish Liga 2"><input id="Spanish Liga 2" class="add" name="Spanish-Liga-2" type="checkbox" value="yes"/> Spanish Liga 2</label></a>
+							</li>
+						</ul>
+					</div>
+					<div class="section">
+						<h3><span class="flag-icon flag-icon-it"></span> Italy</h3>
+						<ul>
+							<li>
+								<a href="#_"><label for="Italian Cup"><input id="Italian Cup" class="add" name="Italian-Cup" type="checkbox" value="yes"/> Italian Cup</label></a>
+							</li>
+							<li>
+								<a href="#_"><label for="Leago 1"><input id="Leago 1" class="add" name="Leago-1" type="checkbox" value="yes"/> Leago 1</label></a>
+							</li>
+						</ul>
+					</div>
+					<div class="section">
+						<h3><span class="flag-icon flag-icon-fr"></span> France</h3>
+						<ul>
+							<li>
+								<a href="#_"><label for="French Cup"><input id="French Cup" class="add" name="French-Cup" type="checkbox" value="yes"/> French Cup</label></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div id="main-content">
+
+				<div class="row">
+					<div class="cell cell-4 highlights">
+						<div class="inner-cell">
+
+							<h4>Highlights</h4>
+
+							<div class="table regular-table">
+								<div class="table-row header">
+									<div class="table-cell">
+
+									</div>
+									<div class="table-cell align-right">
+
+									</div>
+									<div class="table-cell align-center">
+										Home
+									</div>
+									<div class="table-cell align-center">
+										Score
+									</div>
+									<div class="table-cell align-center">
+										Away
+									</div>
+									<div class="table-cell align-left">
+
+									</div>
+									<div class="table-cell align-center">
+										Match Stats
+									</div>
+									<div class="table-cell">
+
+									</div>
+								</div>
+								<div class="table-row">
+									<div class="table-cell">
+										<span class="date">Today</span>
+										<span class="time">10:30</span>
+									</div>
+									<div class="table-cell align-right">
+										Middlesbrough
+									</div>
+									<div class="table-cell align-center price">
+										1.3
+									</div>
+									<div class="table-cell align-center price">
+										1.4
+									</div>
+									<div class="table-cell align-center price">
+										1.1
+									</div>
+									<div class="table-cell align-left">
+										Manchester United
+									</div>
+									<div class="table-cell align-center">
+										<i class="entypo-chart-bar"></i>
+									</div>
+									<div class="table-cell align-center price">
+										+12
+									</div>
+								</div> <!-- row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<span class="date">Today</span>
+										<span class="time">10:30</span>
+									</div>
+									<div class="table-cell align-right">
+										Arsenal
+									</div>
+									<div class="table-cell align-center price">
+										1.1
+									</div>
+									<div class="table-cell align-center price">
+										0.3
+									</div>
+									<div class="table-cell align-center price">
+										0.9
+									</div>
+									<div class="table-cell align-left">
+										Chelsea
+									</div>
+									<div class="table-cell align-center">
+										<i class="entypo-chart-bar"></i>
+									</div>
+									<div class="table-cell align-center price">
+										+10
+									</div>
+								</div> <!-- row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<span class="date">Today</span>
+										<span class="time">10:30</span>
+									</div>
+									<div class="table-cell align-right">
+										Middlesbrough
+									</div>
+									<div class="table-cell align-center price">
+										2.1
+									</div>
+									<div class="table-cell align-center price">
+										0.3
+									</div>
+									<div class="table-cell align-center price">
+										0.2
+									</div>
+									<div class="table-cell align-left">
+										Manchester United
+									</div>
+									<div class="table-cell align-center">
+										<i class="entypo-chart-bar"></i>
+									</div>
+									<div class="table-cell align-center price">
+										+12
+									</div>
+								</div> <!-- row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<span class="date">Today</span>
+										<span class="time">10:30</span>
+									</div>
+									<div class="table-cell align-right">
+										Arsenal
+									</div>
+									<div class="table-cell align-center price">
+										2.3
+									</div>
+									<div class="table-cell align-center price">
+										2.3
+									</div>
+									<div class="table-cell align-center price">
+										1.1
+									</div>
+									<div class="table-cell align-left">
+										Chelsea
+									</div>
+									<div class="table-cell align-center">
+										<i class="entypo-chart-bar"></i>
+									</div>
+									<div class="table-cell align-center price">
+										+10
+									</div>
+								</div> <!-- row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<span class="date">Today</span>
+										<span class="time">10:30</span>
+									</div>
+									<div class="table-cell align-right">
+										Middlesbrough
+									</div>
+									<div class="table-cell align-center price">
+										2.1
+									</div>
+									<div class="table-cell align-center price">
+										1.0
+									</div>
+									<div class="table-cell align-center price">
+										0.1
+									</div>
+									<div class="table-cell align-left">
+										Manchester United
+									</div>
+									<div class="table-cell align-center">
+										<i class="entypo-chart-bar"></i>
+									</div>
+									<div class="table-cell align-center price">
+										+12
+									</div>
+								</div> <!-- row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<span class="date">Today</span>
+										<span class="time">10:30</span>
+									</div>
+									<div class="table-cell align-right">
+										Middlesbrough
+									</div>
+									<div class="table-cell align-center price">
+										1.3
+									</div>
+									<div class="table-cell align-center price">
+										1.4
+									</div>
+									<div class="table-cell align-center price">
+										1.1
+									</div>
+									<div class="table-cell align-left">
+										Manchester United
+									</div>
+									<div class="table-cell align-center">
+										<i class="entypo-chart-bar"></i>
+									</div>
+									<div class="table-cell align-center price">
+										+12
+									</div>
+								</div> <!-- row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<span class="date">Today</span>
+										<span class="time">10:30</span>
+									</div>
+									<div class="table-cell align-right">
+										Arsenal
+									</div>
+									<div class="table-cell align-center price">
+										1.1
+									</div>
+									<div class="table-cell align-center price">
+										0.3
+									</div>
+									<div class="table-cell align-center price">
+										0.9
+									</div>
+									<div class="table-cell align-left">
+										Chelsea
+									</div>
+									<div class="table-cell align-center">
+										<i class="entypo-chart-bar"></i>
+									</div>
+									<div class="table-cell align-center price">
+										+10
+									</div>
+								</div> <!-- row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<span class="date">Today</span>
+										<span class="time">10:30</span>
+									</div>
+									<div class="table-cell align-right">
+										Middlesbrough
+									</div>
+									<div class="table-cell align-center price">
+										2.1
+									</div>
+									<div class="table-cell align-center price">
+										0.3
+									</div>
+									<div class="table-cell align-center price">
+										0.2
+									</div>
+									<div class="table-cell align-left">
+										Manchester United
+									</div>
+									<div class="table-cell align-center">
+										<i class="entypo-chart-bar"></i>
+									</div>
+									<div class="table-cell align-center price">
+										+12
+									</div>
+								</div> <!-- row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<span class="date">Today</span>
+										<span class="time">10:30</span>
+									</div>
+									<div class="table-cell align-right">
+										Arsenal
+									</div>
+									<div class="table-cell align-center price">
+										2.3
+									</div>
+									<div class="table-cell align-center price">
+										2.3
+									</div>
+									<div class="table-cell align-center price">
+										1.1
+									</div>
+									<div class="table-cell align-left">
+										Chelsea
+									</div>
+									<div class="table-cell align-center">
+										<i class="entypo-chart-bar"></i>
+									</div>
+									<div class="table-cell align-center price">
+										+10
+									</div>
+								</div> <!-- row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<span class="date">Today</span>
+										<span class="time">10:30</span>
+									</div>
+									<div class="table-cell align-right">
+										Middlesbrough
+									</div>
+									<div class="table-cell align-center price">
+										2.1
+									</div>
+									<div class="table-cell align-center price">
+										1.0
+									</div>
+									<div class="table-cell align-center price">
+										0.1
+									</div>
+									<div class="table-cell align-left">
+										Manchester United
+									</div>
+									<div class="table-cell align-center">
+										<i class="entypo-chart-bar"></i>
+									</div>
+									<div class="table-cell align-center price">
+										+12
+									</div>
+								</div> <!-- row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<span class="date">Today</span>
+										<span class="time">10:30</span>
+									</div>
+									<div class="table-cell align-right">
+										Middlesbrough
+									</div>
+									<div class="table-cell align-center price">
+										2.1
+									</div>
+									<div class="table-cell align-center price">
+										1.0
+									</div>
+									<div class="table-cell align-center price">
+										0.1
+									</div>
+									<div class="table-cell align-left">
+										Manchester United
+									</div>
+									<div class="table-cell align-center">
+										<i class="entypo-chart-bar"></i>
+									</div>
+									<div class="table-cell align-center price">
+										+12
+									</div>
+								</div> <!-- row -->
+							</div><!-- table -->
+
+						</div>
+
+					</div>
+
+					<div class="cell cell-2 over-1680">
+						<div class="inner-cell">
+							<h4 class="align-center">Spanish Liga 1</h4>
+
+							<div class="table highlighted-markets">
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Barcelona</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Real Madrid</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Barcelona</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Real Madrid</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Barcelona</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Real Madrid</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Barcelona</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Real Madrid</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Barcelona</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Real Madrid</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+							</div>
+
+						</div>
+					</div>
+
+				</div><!-- row -->
+
+				<div class="row">
+					<div class="cell cell-2">
+						<div class="inner-cell">
+							<h4 class="align-center">Possession</h4>
+							<a href=""><i class="entypo-star favourite-icon active"></i></a>
+
+							<div id="ct-chart-1" class="possession-chart"></div>
+
+							<p class="align-center">Middlesbrough v Arsenal</p>
+						</div>
+					</div>
+					<div class="cell cell-2">
+						<div class="inner-cell">
+							<h4 class="align-center">Coming Up</h4>
+							<a href=""><i class="entypo-star favourite-icon"></i></a>
+							<ul class="game-list">
+								<li>
+									<div class="disc red">S</div>
+									<a href="#_" class="date">12/03/2015</a>
+									<a href="#_" class="game">
+										Middlesbrough vs Arsenal
+									</a>
+								</li>
+								<li>
+									<div class="disc green">D</div>
+									<a href="#_" class="date">10/02/2015</a>
+									<a href="#_" class="game">
+										Man United vs Chelsea
+									</a>
+								</li>
+								<li>
+									<div class="disc red">S</div>
+									<a href="#_" class="date">24/10/2015</a>
+									<a href="#_" class="game">
+										Norwich vs West Ham
+									</a>
+								</li>
+								<li>
+									<div class="disc blue">B</div>
+									<a href="#_" class="date">10/02/2015</a>
+									<a href="#_" class="game">
+										Man United vs Chelsea
+									</a>
+								</li>
+							</ul>
+
+						</div>
+					</div>
+					<div class="cell cell-2">
+						<div class="inner-cell">
+							<h4 class="align-center">Bundesliga</h4>
+							<a href=""><i class="entypo-star favourite-icon"></i></a>
+
+							<div class="table highlighted-markets">
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+							</div>
+
+						</div>
+					</div>
+
+					<div class="cell cell-2 over-1680">
+						<div class="inner-cell">
+							<h4 class="align-center">Coming Up</h4>
+							<ul class="game-list">
+								<li>
+									<div class="disc red">S</div>
+									<a href="#_" class="date">12/03/2015</a>
+									<a href="#_" class="game">
+										Middlesbrough vs Arsenal
+									</a>
+								</li>
+								<li>
+									<div class="disc green">D</div>
+									<a href="#_" class="date">10/02/2015</a>
+									<a href="#_" class="game">
+										Man United vs Chelsea
+									</a>
+								</li>
+								<li>
+									<div class="disc red">S</div>
+									<a href="#_" class="date">24/10/2015</a>
+									<a href="#_" class="game">
+										Norwich vs West Ham
+									</a>
+								</li>
+								<li>
+									<div class="disc blue">B</div>
+									<a href="#_" class="date">10/02/2015</a>
+									<a href="#_" class="game">
+										Man United vs Chelsea
+									</a>
+								</li>
+							</ul>
+
+						</div>
+					</div>
+
+				</div><!-- row -->
+
+
+				<div class="row">
+
+					<div class="cell cell-2">
+						<div class="inner-cell">
+							<h4 class="align-center">Coming Up</h4>
+							<a href=""><i class="entypo-star favourite-icon"></i></a>
+							<ul class="game-list">
+								<li>
+									<div class="disc red">S</div>
+									<a href="#_" class="date">12/03/2015</a>
+									<a href="#_" class="game">
+										Middlesbrough vs Arsenal
+									</a>
+								</li>
+								<li>
+									<div class="disc green">D</div>
+									<a href="#_" class="date">10/02/2015</a>
+									<a href="#_" class="game">
+										Man United vs Chelsea
+									</a>
+								</li>
+								<li>
+									<div class="disc red">S</div>
+									<a href="#_" class="date">24/10/2015</a>
+									<a href="#_" class="game">
+										Norwich vs West Ham
+									</a>
+								</li>
+								<li>
+									<div class="disc blue">B</div>
+									<a href="#_" class="date">10/02/2015</a>
+									<a href="#_" class="game">
+										Man United vs Chelsea
+									</a>
+								</li>
+							</ul>
+
+						</div>
+					</div>
+
+
+					<div class="cell cell-2 inplay-cell">
+						<div class="inner-cell">
+
+							<h4 class="align-center">Man City vs Norwich</h4>
+							<a href=""><i class="entypo-star favourite-icon"></i></a>
+							<div id="ct-chart-3" class="inplay-chart"></div>
+
+							<div class="inplay-data">
+									 	<span class="liveTag">
+									 		Live
+									 	</span>
+									 	<span class="score">
+									 		3-2
+									 	</span>
+									 	<span class="time">
+									 		55:26
+									 	</span>
+
+							</div>
+
+
+						</div>
+					</div>
+
+
+					<div class="cell cell-2">
+						<div class="inner-cell">
+							<h4 class="align-center">Bundesliga</h4>
+							<a href=""><i class="entypo-star favourite-icon active"></i></a>
+
+							<div class="table highlighted-markets">
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+							</div>
+
+						</div>
+					</div>
+
+
+
+					<div class="cell cell-2 over-1680">
+						<div class="inner-cell">
+							<h4 class="align-center">Spanish Liga 1</h4>
+							<a href=""><i class="entypo-star favourite-icon"></i></a>
+
+							<div class="table highlighted-markets">
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Barcelona</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Real Madrid</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+							</div>
+
+						</div>
+					</div>
+
+
+
+
+
+
+
+				</div><!-- row -->
+
+
+
+			</div><!-- main-content -->
+			<div id="right-sidebar">
+				<div class="row">
+					<div class="cell cell-5" id="betslip">
+						<div class="inner-slip">
+
+							<ul class="tabs">
+								<li class="active">
+									<a href="#tab-1">
+										Active
+									</a>
+								</li>
+								<li>
+									<a href="#tab-2">
+										Open
+									</a>
+								</li>
+								<li>
+									<a href="#tab-3">
+										Settled
+									</a>
+								</li>
+							</ul>
+
+							<div class="tab-pane">
+								<div id="tab-1" class="tab open">
+
+									<div class="row bet-row">
+										<div class="left">
+											<i class="entypo-cancel"></i>
+										</div>
+										<div class="right">
+											Middlesbrough vs Arsenal <br/>
+											<ul>
+												<li class="market-odds">
+													<span class="left">Match Result</span>
+													<span class="right">@ 1.52</span>
+												</li>
+												<li class="sel-stake">
+													<span class="left">Middlesbrough to Win</span>
+													<span class="right">£5.00</span>
+												</li>
+											</ul>
+										</div>
+									</div><!-- row -->
+
+									<div class="row bet-row">
+										<div class="left">
+											<i class="entypo-cancel"></i>
+										</div>
+										<div class="right">
+											Manchester United vs Chelsea <br/>
+											<ul>
+												<li class="market-odds">
+													<span class="left">Match Result</span>
+													<span class="right">@ 2.02</span>
+												</li>
+												<li class="sel-stake">
+													<span class="left">Draw</span>
+													<span class="right">£1.50</span>
+												</li>
+											</ul>
+										</div>
+									</div><!-- row -->
+
+									<div class="row bet-row">
+										<div class="left">
+											<i class="entypo-cancel"></i>
+										</div>
+										<div class="right">
+											Middlesbrough vs Arsenal <br/>
+											<ul>
+												<li class="market-odds">
+													<span class="left">Match Result</span>
+													<span class="right">@ 1.52</span>
+												</li>
+												<li class="sel-stake">
+													<span class="left">Middlesbrough to Win</span>
+													<span class="right">£5.00</span>
+												</li>
+											</ul>
+										</div>
+									</div><!-- row -->
+
+									<div class="row">
+										<div class="left">
+
+											<ul>
+												<li>
+									         	<span class="small">
+									         		My Account
+									         	</span>
+									         	<span class="large">
+									         		£23.00
+									         	</span>
+												</li>
+												<li>
+									         	<span class="small">
+									         		Active Bets Total
+									         	</span>
+									         	<span class="large">
+									         		£20.00
+									         	</span>
+												</li>
+												<li>
+									         	<span class="small">
+									         		Possible Winnings
+									         	</span>
+									         	<span class="large">
+									         		£123.00
+									         	</span>
+												</li>
+											</ul>
+
+										</div>
+										<div class="right">
+											<div id="ct-chart-2" class="bet-chart"></div>
+										</div>
+									</div><!-- row -->
+
+									<div class="row">
+
+										<a href="#_" id="place-bet">Place Bet</a>
+
+									</div>
+
+								</div><!-- tab 1 -->
+								<div id="tab-2" class="tab">
+
+									<div class="row bet-row">
+										<div class="left">
+											<i class="entypo-cancel"></i>
+										</div>
+										<div class="right">
+											Chelsea vs Tottenham <br/>
+											<ul>
+												<li class="market-odds">
+													<span class="left">Match Result</span>
+													<span class="right">@ 1.52</span>
+												</li>
+												<li class="sel-stake">
+													<span class="left">Tottenham to Win</span>
+													<span class="right">£5.00</span>
+												</li>
+											</ul>
+										</div>
+									</div><!-- row -->
+
+									<div class="row bet-row">
+										<div class="left">
+											<i class="entypo-cancel"></i>
+										</div>
+										<div class="right">
+											Chelsea vs Tottenham <br/>
+											<ul>
+												<li class="market-odds">
+													<span class="left">Match Result</span>
+													<span class="right">@ 1.52</span>
+												</li>
+												<li class="sel-stake">
+													<span class="left">Tottenham to Win</span>
+													<span class="right">£5.00</span>
+												</li>
+											</ul>
+										</div>
+									</div><!-- row -->
+
+									<div class="row bet-row">
+										<div class="left">
+											<i class="entypo-cancel"></i>
+										</div>
+										<div class="right">
+											Manchester United vs Chelsea <br/>
+											<ul>
+												<li class="market-odds">
+													<span class="left">Match Result</span>
+													<span class="right">@ 2.02</span>
+												</li>
+												<li class="sel-stake">
+													<span class="left">Draw</span>
+													<span class="right">£1.50</span>
+												</li>
+											</ul>
+										</div>
+									</div><!-- row -->
+
+									<div class="row bet-row">
+										<div class="left">
+											<i class="entypo-cancel"></i>
+										</div>
+										<div class="right">
+											Middlesbrough vs Arsenal <br/>
+											<ul>
+												<li class="market-odds">
+													<span class="left">Match Result</span>
+													<span class="right">@ 1.52</span>
+												</li>
+												<li class="sel-stake">
+													<span class="left">Middlesbrough to Win</span>
+													<span class="right">£5.00</span>
+												</li>
+											</ul>
+										</div>
+									</div><!-- row -->
+
+									<div class="row bet-row">
+										<div class="left">
+											<i class="entypo-cancel"></i>
+										</div>
+										<div class="right">
+											Manchester United vs Chelsea <br/>
+											<ul>
+												<li class="market-odds">
+													<span class="left">Match Result</span>
+													<span class="right">@ 2.02</span>
+												</li>
+												<li class="sel-stake">
+													<span class="left">Draw</span>
+													<span class="right">£1.50</span>
+												</li>
+											</ul>
+										</div>
+									</div><!-- row -->
+
+									<div class="row bet-row">
+										<div class="left">
+											<i class="entypo-cancel"></i>
+										</div>
+										<div class="right">
+											Middlesbrough vs Arsenal <br/>
+											<ul>
+												<li class="market-odds">
+													<span class="left">Match Result</span>
+													<span class="right">@ 1.52</span>
+												</li>
+												<li class="sel-stake">
+													<span class="left">Middlesbrough to Win</span>
+													<span class="right">£5.00</span>
+												</li>
+											</ul>
+										</div>
+									</div><!-- row -->
+
+
+
+
+								</div><!-- tab 2-->
+								<div id="tab-3" class="tab">
+									<div class="row bet-row">
+										<div class="left">
+											<i class="entypo-cancel"></i>
+										</div>
+										<div class="right">
+											Chelsea vs Tottenham <br/>
+											<ul>
+												<li class="market-odds">
+													<span class="left">Match Result</span>
+													<span class="right">@ 1.52</span>
+												</li>
+												<li class="sel-stake">
+													<span class="left">Tottenham to Win</span>
+													<span class="right">£5.00</span>
+												</li>
+											</ul>
+										</div>
+									</div><!-- row -->
+									<div class="row bet-row">
+										<div class="left">
+											<i class="entypo-cancel"></i>
+										</div>
+										<div class="right">
+											Middlesbrough vs Arsenal <br/>
+											<ul>
+												<li class="market-odds">
+													<span class="left">Match Result</span>
+													<span class="right">@ 1.52</span>
+												</li>
+												<li class="sel-stake">
+													<span class="left">Middlesbrough to Win</span>
+													<span class="right">£5.00</span>
+												</li>
+											</ul>
+										</div>
+									</div><!-- row -->
+
+									<div class="row bet-row">
+										<div class="left">
+											<i class="entypo-cancel"></i>
+										</div>
+										<div class="right">
+											Middlesbrough vs Arsenal <br/>
+											<ul>
+												<li class="market-odds">
+													<span class="left">Match Result</span>
+													<span class="right">@ 1.52</span>
+												</li>
+												<li class="sel-stake">
+													<span class="left">Middlesbrough to Win</span>
+													<span class="right">£5.00</span>
+												</li>
+											</ul>
+										</div>
+									</div><!-- row -->
+
+
+									<div class="row bet-row">
+										<div class="left">
+											<i class="entypo-cancel"></i>
+										</div>
+										<div class="right">
+											Chelsea vs Tottenham <br/>
+											<ul>
+												<li class="market-odds">
+													<span class="left">Match Result</span>
+													<span class="right">@ 1.52</span>
+												</li>
+												<li class="sel-stake">
+													<span class="left">Tottenham to Win</span>
+													<span class="right">£5.00</span>
+												</li>
+											</ul>
+										</div>
+									</div><!-- row -->
+								</div><!-- tab 3 -->
+							</div><!-- tab pane -->
+
+						</div>
+
+					</div> <!-- betslip -->
+
+
+
+				</div>
+				<div class="row">
+					<div class="cell cell-5">
+						<div class="inner-cell">
+							<h4 class="align-center">Spanish Liga 1</h4>
+							<a href=""><i class="entypo-star favourite-icon"></i></a>
+							<div class="table highlighted-markets">
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Barcelona</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Real Madrid</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Bayern</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Frankfurt</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Barcelona</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Real Madrid</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Barcelona</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Real Madrid</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Barcelona</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Real Madrid</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Barcelona</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Real Madrid</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Barcelona</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Real Madrid</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+								<div class="table-row">
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Barcelona</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Draw</em>
+											<span>1.45</span>
+										</a>
+									</div>
+									<div class="table-cell">
+										<a href="#_" class="pill">
+											<em>Real Madrid</em>
+											<span>1.45</span>
+										</a>
+									</div>
+								</div><!-- table row -->
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div><!-- right-sidebar -->
+
+		</div> <!-- container -->
+
+	</div><!-- container-wrapper -->
+
+
+</section>
+<footer>
+	<div class="container">
+		<div class="col-container">
+			<div class="footer-col">
+				<h3>Sports</h3>
+				<ul>
+					<li>Highlights</li>
+					<li>Betting Program</li>
+					<li>Live Games</li>
+					<li>Mobile Betting</li>
+					<li>Actions</li>
+					<li>Statistics</li>
+					<li>Live Scores</li>
+					<li>Premier League</li>
+					<li>Primera Division</li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h3>Casino</h3>
+				<ul>
+					<li>Lobby</li>
+					<li>Live Casino</li>
+					<li>Actions</li>
+					<li>VIP Programme</li>
+					<li>Casino FAQ</li>
+				</ul>
+			</div>
+
+			<div class="footer-col">
+				<h3>Poker</h3>
+				<ul>
+					<li>Lobby</li>
+					<li>First Steps</li>
+					<li>Poker Schedule</li>
+					<li>myPoker</li>
+					<li>Tournament</li>
+					<li>Actions</li>
+					<li>Information</li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h3>My Account</h3>
+				<ul>
+					<li>New Account</li>
+					<li>Partner Program</li>
+					<li>About us</li>
+					<li>Security</li>
+					<li>AGB</li>
+					<li>Privacy</li>
+					<li>Bonus</li>
+					<li>News</li>
+					<li>Help</li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h3>Language</h3>
+				<ul>
+					<li>English</li>
+					<li>Deutsch</li>
+					<li>Francais</li>
+					<li>Espanol</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+	</div>
+	<div class="detail-row row">
+		<div class="container">
+			<div class="detail-container">
+				<p>© Personal Exchange International Ltd. 2001 - 2015</p>
+			</div>
+
+			<div class="logo-container right-float">
+				<p>Security and Responsibility</p>
+				<img src="images/logos/gamcare-certified-white.png"/>
+				<img src="images/logos/gambling-support-white.png"/>
+				<img src="images/logos/gambling-commission-white.png"/>
+				<img src="images/logos/mga-white.png"/>
+			</div>
+		</div>
+	</div>
+
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')</script>
+
+<script src="js/chartist.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

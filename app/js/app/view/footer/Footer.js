@@ -1,17 +1,11 @@
 import Module from '../BaseViewModule';
-import FooterView from './FooterView'
+import FooterView from './FooterView.jsx!'
 
 export default Module.extend({
-	viewClass: FooterView,
 	regionName: 'footer',
 
 
-	appRoutes: {
-		"": "onHome"
-	},
-
-
 	onHome: function() {
-		this.showView();
+		this.showReact(FooterView);
 	}
 });

@@ -1,0 +1,58 @@
+<aside id="content-side-panel-bets">
+		
+	<div class="tab-bar-betslip">
+        <ul>
+            <li class="active"><a id="tab-nav-betslip">Singles<span id="betCount" class="zero">0</span> </a></li>
+            <li><a id="tab-nav-combi-betslip">Combi</a></li>
+            <li><a id="tab-nav-system-betslip">System</a></li>
+            <li><a id="tab-nav-mybets"><?=OPEN_BETS?></a></li>
+        </ul>
+       
+    </div>
+     <div class="mobile-close">
+    	<i class="icon-delete"></i>
+    </div>
+    <div id="bet-slip" class="include">
+
+        <div class="bet-slip-content">
+	        
+            <div id="tab-single">
+	            <div class="loadingOverlay">
+                    <div class="loadingOverlay__inner">
+                        <div class="loadingOverlay__indicator loader"></div>
+                        <p class="loadingOverlay__msg">Your bet is being processed - please wait.</p>
+                    </div>
+                </div>
+                <section class="bet-placed" id="bets-bonus"></section>
+                <section class="bet-placed" id="bets-confirmation"></section>
+                <section class="singles" id="bets-singles"></section>
+                <section class="bet-placed" id="bets-rejection"></section>
+            </div>
+            <div id="tab-combi">
+                <section class="multiples" id="bets-combi"></section>
+            </div>
+            <div id="tab-system">
+                <section class="multiples" id="bets-system"></section>
+            </div>
+            <div id="tab-open">
+                <section class="bet-placed" id="bets-open"></section>
+            </div>
+            <div id="tab-settled">
+                <section class="bet-placed" id="bets-closed"></section>
+            </div>
+
+            <!--PLACE BET AND INFO CONTAINER-->
+            <div>
+                <section class="actions" id="bets-enter-stake"></section>
+                <section class="actions" id="bets-action"></section>
+                <section class="actions" id="bets-place-bets"></section>
+            </div>
+
+        </div>
+    </div>
+    
+     <div class="betslip-promo-content">
+        <div id="betslip-promos"></div>
+    </div>
+
+</aside>
