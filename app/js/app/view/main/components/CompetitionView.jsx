@@ -85,7 +85,8 @@ export default class CompetitionView extends Component {
 	 * @returns {XML}
 	 */
 	renderEvent(model) {
-		var markets = model.Markets.byTypes(this.keyMarkets),
+		var keyMarkets = dataModel.getKeyMarkets(),
+			markets = model.Markets.byTypes(keyMarkets),
 			attribs = model.attributes;
 
 		var sport = model.get('code').toLowerCase(),

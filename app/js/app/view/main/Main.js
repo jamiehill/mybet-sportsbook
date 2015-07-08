@@ -1,4 +1,5 @@
 import Module from '../BaseViewModule';
+import MainView from './MainView.jsx!';
 import HighlightsView from './components/HighlightsView.jsx!';
 import EventView from './components/EventView.jsx!';
 import CountryView from './components/CountryView.jsx!';
@@ -9,9 +10,8 @@ export default Module.extend({
 	regionName: 'main',
 
 	onHome: function() {
-		this.showReact(HighlightsView);
+		this.showReact(MainView);
 	},
-
 
 	onEvent: function() {
 		this.showReact(EventView);

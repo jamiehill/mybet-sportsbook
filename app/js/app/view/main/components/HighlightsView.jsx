@@ -8,7 +8,8 @@ export default class HighlightsView extends Component {
 	constructor() {
 		super();
 
-		factory.fetch('', 'SOCCER', '0,1,2,3,4,5,6,7,8,9');
+		//factory.fetch('', 'SOCCER', '0,1,2,3,4,5,6,7,8,9');
+		factory.fetchFrontLinks('SOCCER', 'MRES', 999);
 		this.bind('renderEvent', 'renderPrice');
 	}
 
@@ -58,13 +59,11 @@ export default class HighlightsView extends Component {
 	 */
 	render() {
 		return (
-			<div className="row">
-				<div className="cell cell-4 highlights">
-					<div className="inner-cell">
-						<h4>Highlights</h4>
-						<div className="table regular-table">
-							{this.props.collection.map(this.renderEvent)}
-						</div>
+			<div className="cell cell-4 highlights">
+				<div className="inner-cell">
+					<h4>Highlights</h4>
+					<div className="table regular-table">
+						{this.props.collection.map(this.renderEvent)}
 					</div>
 				</div>
 			</div>

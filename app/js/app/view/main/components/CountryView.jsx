@@ -62,7 +62,7 @@ export default class CompetitionsView extends Component {
 		var sport = App.Globals.sport,
 			eventIds = collection.pluck('id'),
 			markets = dataModel.getKeyMarket(sport);
-		App.bus.request('add:eventSummaryAndSchedule', sport, eventIds, markets);
+		App.bus.request('add:eventSummaryAndSchedule', sport, eventIds, ['MRES']);
 	}
 
 
@@ -110,7 +110,7 @@ export default class CompetitionsView extends Component {
 	 * @returns {XML}
 	 */
 	renderEvent(model) {
-		var markets = model.Markets.byTypes(this.keyMarkets),
+		var markets = model.Markets.byTypes(['MRES']),
 			attribs = model.attributes;
 
 		var sport = model.get('code').toLowerCase(),

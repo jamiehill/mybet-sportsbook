@@ -14,7 +14,7 @@ import Marionette from 'backbone.marionette';
 window.Marionette = Marionette;
 
 //import radioshim from 'common/shims/radio.shim';
-import script from './static/script';
+//import script from './static/script';
 import di from 'di-lite';
 import _s from 'underscore.string';
 //import mixins from 'app/core/framework/mixins';

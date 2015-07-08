@@ -29,6 +29,7 @@ var Controller = RouteController.extend({
 		'dashboard'								: 'onDashboard',
 		'login'									: 'onLogin',
 		'register'								: 'onRegister',
+		'deposit'								: 'onDeposit',
 
 		':sport(/)'                      		: 'onSport',
 		':sport/inplay'                  		: 'onSportInplay',
@@ -40,7 +41,10 @@ var Controller = RouteController.extend({
 		':sport/country/*countryname?*id'		: 'onCountry',
 
 		'*splat'                        		: 'onNotFound'
-	}
+	},
+
+	// static routes aren't added to history
+	staticRoutes: ['login', 'register', 'deposit']
 });
 
 let inst = new Controller();

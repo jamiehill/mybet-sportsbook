@@ -1,5 +1,5 @@
 import Module from '../BaseViewModule';
-import BetSlipView from './BetSlipView';
+import BetSlipView from './BetSlipView.jsx!';
 import {getComponent} from 'core/utils/Href';
 
 
@@ -11,10 +11,11 @@ export default Module.extend({
 		switch(route) {
 			case 'register':
 			case 'login':
+			case 'deposit':
 				this.showReact();
 				break;
 			default:
-				this.showView(BetSlipView);
+				this.showReact(BetSlipView);
 				break;
 		}
 	}

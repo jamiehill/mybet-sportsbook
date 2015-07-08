@@ -10,6 +10,7 @@ export default Module.extend({
 		switch(route) {
 			case 'register':
 			case 'login':
+			case 'deposit':
 				this.showReact();
 				break;
 			default:
