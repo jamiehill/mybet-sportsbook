@@ -25,9 +25,6 @@ System.config({
         "marionette-shim"
       ]
     },
-		"app/App": {
-
-		},
     "github:carhartl/jquery-cookie@1.4.1": {
       "deps": [
         "jquery"
