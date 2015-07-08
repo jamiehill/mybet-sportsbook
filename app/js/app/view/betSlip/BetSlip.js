@@ -6,17 +6,19 @@ import {getComponent} from 'core/utils/Href';
 export default Module.extend({
 	regionName: 'rightbar',
 
-	onRouteChange: function() {
-		var route = getComponent(0);
-		switch(route) {
-			case 'register':
-			case 'login':
-			case 'deposit':
-				this.showReact();
-				break;
-			default:
-				this.showReact(BetSlipView);
-				break;
-		}
+	/**
+	 * Hide the view for static routes
+	 */
+	onStaticRoute: function() {
+		this.showReact();
+	},
+
+	/**
+	 * All others show the view
+	 */
+	onNoMatch: function() {
+		this.showReact(BetSlipView);
 	}
+
+
 });

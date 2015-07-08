@@ -9,7 +9,7 @@ export default Module.extend({
 	/**
 	 * Show the competitions sidebar panel
 	 */
-	onHome() {
+	onNoMatch() {
 		this.showReact(Competitions);
 	}
 });

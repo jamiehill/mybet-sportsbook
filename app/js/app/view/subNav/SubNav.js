@@ -5,18 +5,18 @@ import {getComponent} from 'core/utils/Href';
 export default Module.extend({
 	regionName: 'subNav',
 
-	onRouteChange: function() {
-		var route = getComponent(0);
-		switch(route) {
-			case 'register':
-			case 'login':
-			case 'deposit':
-				this.showReact();
-				break;
-			default:
-				this.showReact(SubNavView);
-				break;
-		}
+	/**
+	 * Hide nav for all static routes
+	 */
+	onStaticRoute() {
+		this.showReact();
+	},
+
+	/**
+	 * All other routes show the nav
+	 */
+	onNoMatch() {
+		this.showReact(SubNavView);
 	}
 
 });

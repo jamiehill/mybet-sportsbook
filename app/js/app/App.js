@@ -57,7 +57,6 @@ var Application = Marionette.Application.extend({
 		this.prestart();
 	},
 
-
 	/**
 	 * On start kick off the views
 	 */
@@ -82,7 +81,6 @@ var Application = Marionette.Application.extend({
 		Radio.reset();
 	},
 
-
 	/**
 	 * kick the boot sequence off
 	 */
@@ -95,7 +93,6 @@ var Application = Marionette.Application.extend({
 		});
 	},
 
-
 	/**
 	 * Startup router and history
 	 */
@@ -105,20 +102,23 @@ var Application = Marionette.Application.extend({
 
 		var options = {pushState: true, root: this.Urls.root || ''};
 		Backbone.history.start(options);
-
-		//var index = window.location.pathname.indexOf('index.html');
-		//if (~index) {
-		//	window.location.pathname = window.location.pathname.substring(0, index);
-			//Backbone.history.navigate(url, {trigger: false, replace: true});
-		//}
 	},
-
 
 	/**
 	 * Shortcut for navigating to specified route
 	 */
 	navigate(route = '', trigger = true, replace = true) {
-		Backbone.history.navigate(route, {trigger: trigger, replace: replace});
+		var options = {trigger: trigger, replace: replace};
+		Backbone.history.navigate(route, options);
+	},
+
+	/**
+	 * Shortcut for navigating to the previous route
+	 */
+	navigatePrevious(trigger = true, replace = true) {
+		var previous = appRouter.getPrevious(),
+			options  = {trigger: trigger, replace: replace};
+		Backbone.history.navigate(previous.fragment, options);
 	}
 });
 

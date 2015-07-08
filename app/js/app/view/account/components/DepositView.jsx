@@ -1,9 +1,17 @@
 import React from 'react';
 import Component from 'core/system/react/BackboneComponent';
+import appRouter from '../../../AppRouter';
 
 export default class DepositView extends Component {
 	constructor() {
 		super();
+	}
+
+	/**
+	 * Goto the previously opened route
+	 */
+	onClose() {
+		App.navigatePrevious();
 	}
 
 
@@ -24,7 +32,7 @@ export default class DepositView extends Component {
 						<div className="cell cell-2 flatten account-page-controls">
 							<div className="inline-element right-float">
 								<a className="btn small outline" href="">Reset</a>
-								<a className="btn small outline close-accounts" href="">Close</a>
+								<a className="btn small outline close-accounts" onClick={this.onClose.bind(this)}>Close</a>
 							</div>
 						</div>
 					</div>

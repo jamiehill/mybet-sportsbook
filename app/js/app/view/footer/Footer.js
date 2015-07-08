@@ -3,9 +3,7 @@ import FooterView from './FooterView.jsx!'
 
 export default Module.extend({
 	regionName: 'footer',
-
-
-	onHome: function() {
+	onNoMatch: function() {
 		this.showReact(FooterView);
 	}
 });

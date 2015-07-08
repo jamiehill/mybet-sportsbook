@@ -19,6 +19,11 @@ import RouteController from 'core/controller/RouteController';
  * 	}
  * }
  *
+ * Can also use wildcard handlers.  If you add a 'onNoMatch' to any registered controller,
+ * it will be trigger if a handler for the current route isn't present.  Similarly, for
+ * static routes, ie. views that overlay the main view, such as login/register pages, you can
+ * add a 'onStaticRoute' handler, that will be triggered when any static route is called
+ *
  * @type {*|void}
  */
 var Controller = RouteController.extend({

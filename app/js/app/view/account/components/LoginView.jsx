@@ -1,6 +1,5 @@
 import React from 'react';
 import Component from 'core/system/react/BackboneComponent';
-import appRouter from '../../../AppRouter';
 import login from 'core/command/Login';
 import {validString} from 'core/utils/Validator';
 
@@ -53,8 +52,7 @@ export default class LoginView extends Component {
 	 * On success, navigate to previous route
 	 */
 	onLoginSuccess() {
-		var previous = appRouter.getPrevious();
-		App.navigate(previous.fragment);
+		App.navigatePrevious();
 	}
 
 	/**

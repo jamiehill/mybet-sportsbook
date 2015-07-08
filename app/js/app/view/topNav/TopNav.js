@@ -4,8 +4,7 @@ import TopNavView from './TopNavView.jsx!';
 
 export default Module.extend({
 	regionName: 'topNav',
-
-	onHome: function() {
+	onNoMatch: function() {
 		this.showReact(TopNavView);
 	}
 });
