@@ -29,7 +29,6 @@ gulp.task('jshint', (cb) => {
 		.pipe(jshint.reporter('fail'));
 });
 
-// TODO: (martin) remove this task once problem with conditional import for systemjs-builder will be fixed
 gulp.task('js-preprocess', (cb) => {
 	return gulp.src(path.app.scripts.concat([path.app.templates, path.app.json]))
 		.pipe(preprocess())
