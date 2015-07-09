@@ -7,7 +7,6 @@ Setup
 Clone the repository and install the dependencies.
 
     $ git clone https://github.com/jamiehill/mybet-sportsbook.git && cd mybet-sportsbook
-    $ cd mybet-sportsbook
     $ npm run preinstall
     $ npm install (may need to use sudo if fails)
     $ npm run postinstall
