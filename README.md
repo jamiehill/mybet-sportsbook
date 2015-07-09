@@ -13,38 +13,62 @@ Clone the repository and install the dependencies.
     $ npm run postinstall
     $ run index.html on localhost
 
+**NB/ Gulp build process is currently not functional in the current commit**
+
 Possibly Issues
 ---------------
 
 **1. Vendor Paths**
 
-For some reason, when installing new modules, JSPM incorrectly modifies the vendor paths in `config.js`.  If you get `babel-core` missing errors in the console check that the paths section in `config.js read:
+For some reason, when installing new modules, JSPM incorrectly modifies the vendor paths in `config.js`.  If you get `babel-core` missing errors in the console check that the paths section in `config.js` reads:
 
-	"paths": {
-    	"*": "*.js",
-    	"github:*": "../../vendor/github/*.js",
-    	"npm:*": "../../vendor/npm/*.js",
-    	"core*": "../../modules/core-module/src/js/core*.js",
-    	"highlights*": "../../modules/highlights-module/src/js/highlights*"
-	}
+	System.config({
+		...
+		"paths": {
+			"*": "*.js",
+			"github:*": "../../vendor/github/*.js",
+			"npm:*": "../../vendor/npm/*.js",
+			"core*": "../../modules/core-module/src/js/core*.js",
+			"highlights*": "../../modules/highlights-module/src/js/highlights*"
+		},
+		...
+	})
 
 **2. Marionette Path**
 
-Ensure the backbone.marionette entry in `config.js` is pointing to the bundled version, not the default.  The mapping should also, NOT be prefixed with `marionettejs`.
+Ensure the **backbone.marionette** entry in `config.js`, in the `System.config({ "map": {})` object, is pointing to the bundled version, not the default.  The mapping should also, NOT be prefixed with `marionettejs`.
 
 It should read:
 
-	"backbone.marionette": "github:marionettejs/backbone.marionette@2.4.1/lib/backbone.marionette"
+	System.config({
+		"map": {
+			...
+			"backbone.marionette": "github:marionettejs/backbone.marionette@2.4.1/lib/backbone.marionette"
+			...
+		}
+	})
 
 NOT:
 
-	"marionettejs/backbone.marionette": "github:marionettejs/backbone.marionette@2.4.1"
+	System.config({
+		"map": {
+			...
+			"marionettejs/backbone.marionette": "github:marionettejs/backbone.marionette@2.4.1"
+			...
+		}
+	})
 
 **3. Marionette Shim**
 
-There also needs to be a marionette-shim entry, to ensure marionettes dependencies are import in the correct order.  Check that the followiing is present, and is not add it:
+There also needs to be a marionette-shim entry, in the `System.config({ "map": {})` object, to ensure marionettes dependencies are imported in the correct order.  Check that the followiing is present, and if not, add it:
 
-	"marionette-shim": "../../modules/core-module/src/js/core/system/shims/marionette-shim",
+	System.config({
+      "map": {
+      	...
+		"marionette-shim": "../../modules/core-module/src/js/core/system/shims/marionette-shim"
+		...
+	  }
+	 })
 
 Karma
 -----

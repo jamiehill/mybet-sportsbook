@@ -1,5 +1,6 @@
 jspm_packages/
 node_modules/
+npm-debug.log
 modules/
 vendor/
 dist/
