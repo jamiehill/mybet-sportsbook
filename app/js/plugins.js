@@ -19,7 +19,6 @@ import di from 'di-lite';
 import _s from 'underscore.string';
 //import mixins from 'app/core/framework/mixins';
 import cookie from 'jquery-cookie';
-import niceScroll from 'jquery.nicescroll';
 
 // mixin underscore.string
 _.mixin(_s.exports());

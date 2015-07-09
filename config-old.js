@@ -1,26 +1,19 @@
-import paths from './gulp/paths';
-import path from 'path';
-
-var resolve = function(p) {
-	var file = paths.root+"/"+p;
-	return path.resolve(file);
-}
-
 System.config({
-  "baseURL": path.app.baseJsPath,
+  "baseURL": "./js",
   "defaultJSExtensions": true,
   "transpiler": "babel",
   "babelOptions": {
     "optional": [
       "runtime"
-    ]
+    ],
+		"blacklist": []
   },
   "paths": {
     "*": "*.js",
-    "github:*": resolve("vendor/github/*.js"),
-    "npm:*": resolve("vendor/npm/*.js"),
-    "core*": resolve("modules/core-module/src/js/core*.js"),
-    "highlights*": resolve("modules/highlights-module/src/js/highlights*")
+    "github:*": "../../vendor/github/*.js",
+    "npm:*": "../../vendor/npm/*.js",
+    "core*": "../../modules/core-module/src/js/core*.js",
+    "highlights*": "../../modules/highlights-module/src/js/highlights*"
   }
 });
 
@@ -72,10 +65,9 @@ System.config({
     "image": "github:systemjs/plugin-image@0.1.0",
     "jquery": "github:components/jquery@2.1.4",
     "jquery-cookie": "github:carhartl/jquery-cookie@1.4.1",
-    "jquery.nicescroll": "github:carhartl/jquery-cookie@1.4.1",
     "json": "github:systemjs/plugin-json@0.1.0",
     "jsx": "github:floatdrop/plugin-jsx@1.1.0",
-    "marionette-shim": resolve("modules/core-module/src/js/core/system/shims/marionette-shim"),
+    "marionette-shim": "../../modules/core-module/src/js/core/system/shims/marionette-shim",
     "marionettejs/backbone.marionette": "github:marionettejs/backbone.marionette@2.4.1",
     "moment": "github:moment/moment@2.10.3",
     "process": "npm:process@0.11.1",
@@ -296,6 +288,14 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.1",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0",
       "type-detect": "npm:type-detect@1.0.0"
+    },
+    "npm:chalk@1.0.0": {
+      "ansi-styles": "npm:ansi-styles@2.0.1",
+      "escape-string-regexp": "npm:escape-string-regexp@1.0.3",
+      "has-ansi": "npm:has-ansi@1.0.3",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "strip-ansi": "npm:strip-ansi@2.0.1",
+      "supports-color": "npm:supports-color@1.3.1"
     },
     "npm:clean-css@3.1.9": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",

@@ -3,6 +3,7 @@ node_modules/
 modules/
 vendor/
 dist/
+build/
 .idea/
 .DS_Store
 .tmp
