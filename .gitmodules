@@ -1,7 +1,0 @@
-
-[submodule "modules/core-module"]
-	path = modules/core-module
-	url = https://github.com/jamiehill/core-module.git
-[submodule "modules/highlights-module"]
-	path = modules/highlights-module
-	url = https://github.com/jamiehill/highlights-module.git
